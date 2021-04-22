@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="row">
+    <div class="row mt-4">
         <div class="col-sm-12 col-lg-8 mx-auto">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title text-center">Register</h5>
 
                     <form class="col-sm-12 needs-validation" method="POST" action="{{ url_for('register') }}"
-                        novalidate>
+                        novalidate oninput='confirm_password.setCustomValidity(
+                            confirm_password.value != password.value ? "Passwords do not match." : "")'>
                         <div class="form-group">
                             <i class="fas fa-user-plus"></i>
                             <label for="username">Username</label>
@@ -32,7 +33,9 @@
                             <label for="password">Confirm Password</label>
                             <input type="password" class="form-control" id="confirm_password" name="confirm_password"
                                 minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
-                            <span id="password_msg"></span>
+                            <div class="invalid-feedback">
+                                Password must match.
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary text-shadow">
                             Register <i class="fas fa-sign-in-alt"></i>
