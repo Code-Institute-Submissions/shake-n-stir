@@ -27,7 +27,34 @@ def view_cocktails():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check if username already exists in the database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists. Please choose another username.")
+            return redirect(url_for('register'))
+
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm_password")
+        
+        if password != confirm_password:
+            flash("Please ensure that your passwords match.")
+            return redirect(url_for("register"))
+        if password == confirm_password:
+            register = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(
+                    request.form.get("password").lower())
+                    }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
     return render_template("register.html")
+
 
 
 if __name__ == "__main__":
