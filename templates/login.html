@@ -6,26 +6,25 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">Log In</h5>
 
-                    <form class="col-sm-12 needs-validation" method="POST" action="{{ url_for('register') }}"
-                        novalidate oninput='confirm_password.setCustomValidity(
-                            confirm_password.value != password.value ? "Passwords do not match." : "")'>
+                    <form class="col-sm-12 needs-validation" method="POST" action="{{ url_for('login') }}"
+                        novalidate>
                         <div class="form-group">
                             <i class="fas fa-user-cog"></i>
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="username" name="username"
-                                aria-describedby="username" pattern="^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15"
+                                aria-describedby="username" pattern="^[0-9a-zA-Z!@#$%^&*?]{5,25}$" minlength="5" maxlength="25"
                                 required>
                             <div class="invalid-feedback">
-                                Username must be between 5-15 characters.
+                                Username and/or Password do not match.
                             </div>
                         </div>
                         <div class="form-group">
                             <i class="fas fa-user-lock"></i>
                             <label for="password">Password</label>
-                            <input type="password" class="form-control " id="password" name="password" minlength="5"
-                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                            <input type="password" class="form-control" id="password" name="password" minlength="5"
+                                maxlength="25" pattern="^[0-9a-zA-Z!@#$%^&*?]{5,25}$" required>
                             <div class="invalid-feedback">
-                                Password must be between 5-15 characters.
+                                Username and/or Password do not match.
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary text-shadow">
