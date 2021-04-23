@@ -14,13 +14,13 @@
                 <h5 class="card-title">
                     <strong>{{ cocktail.cocktail_name }}</strong>
                     <br>
-                    <small>- {{ cocktail.category_name }}</small>
-                    <br>
-                    <br>
-                    <small>Servings: {{ cocktail.cocktail_serving }}</small>
                 </h5>
-                <p>{{ cocktail.category_name }}</p>
-                <small><i class="fas fa-user"></i> {{ cocktail.created_by }}</small>
+                <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
+                    <br>
+                    <small><i class="fas fa-users"></i> Servings: {{ cocktail.cocktail_serving }}</small>
+                    <br>
+                    <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
+                </p>
             </div>
         </div>
     </div>
