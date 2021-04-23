@@ -15,49 +15,50 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url_for('view_cocktails') }}">Shake n Stir</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{ url_for('view_cocktails') }}">Shake n Stir</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('view_cocktails') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                {% if session.user %}
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cocktails</a>
+                        <a class="nav-link" href="{{ url_for('view_cocktails') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Add Cocktail</a>
+                        <a class="nav-link" href="#">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Manage Cocktails</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('profile', username=session['user'])}}">Profile</a>
-                    </li>
+                    {% if session.user %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cocktails</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Add Cocktail</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Manage Cocktails</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('profile', username=session['user'])}}">Profile</a>
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('logout')}}">Log Out</a>
+                        </li>
+                    {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout')}}">Log Out</a>
+                        <a class="nav-link" href="{{ url_for('login')}}">Log In</a>
                     </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('login')}}">Log In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-                </li>
-                {% endif %}
-            </ul>
-        </div>
-    </nav>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
     </header>
 
 

@@ -12,4 +12,25 @@
         {{ cocktail.cocktail_img }}<br>
     {% endfor %}
 
+<!-- cocktail cards -->
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+            <img src="{{ url_for(
+                'static', filename='images/dark-n-stormy-cocktail.jpg') }}" class="card-img-top cocktail-card-image"
+                alt="dark-n-stormy-cocktail">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-secondary btn-small mx-auto">View Recipe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 {% endblock %}
