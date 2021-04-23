@@ -12,43 +12,59 @@
         <form class="col-sm-12 col-md-8 offset-md-2 needs-validation" method="POST"
             action="{{ url_for('add_cocktail')}}">
             <div class="form-row justify-content-center">
+                <!-- Cocktail Name -->
                 <div class="form-group col-md-6">
+                    <i class="fas fa-pencil-alt"></i>
                     <label for="cocktail_name">Name</label>
                     <input type="name" name="cocktail_name" class="form-control" minlength="5" maxlength="50"
                         id="cocktail_name" required>
                 </div>
+                <!-- Cocktail Category -->
                 <div class="form-group col-md-6">
+                    <i class="fas fa-folder"></i>
                     <label for="category_name">Category</label>
                     <select name="category_name" id="category_name" class="form-control" required>
-                        <option value="">Rum</option>
-                        <option value="">Gin</option>
-                        <option value="">Whiskey</option>
+                        <option value="" disabled selected>Select Category</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
                     </select>
                 </div>
-
             </div>
-
+            <!-- Cocktail Description-->
             <div class="form-group">
+                <i class="fas fa-align-left"></i>
                 <label for="cocktail_description">Description</label>
                 <textarea class="form-control" id="cocktail_description" name="cocktail_description" rows="3"
                     minlength="0" maxlength="250" required></textarea>
             </div>
+            <!-- Cocktail Ingredients -->
             <div class="form-group">
+                <i class="fas fa-flask"></i>
                 <label for="cocktail_ingredients">Ingredients</label>
                 <textarea class="form-control" id="cocktail_ingredients" name="cocktail_ingredients" rows="3"
                     minlength="10" maxlength="500" required></textarea>
             </div>
+            <!-- Cocktail Instructions -->
             <div class="form-group">
+                <i class="fas fa-clipboard-list"></i>
                 <label for="cocktail_instructions">Instructions</label>
                 <textarea class="form-control" id="cocktail_instructions" name="cocktail_instructions" rows="3"
                     minlength="10" maxlength="500" required></textarea>
             </div>
+            <!-- Cocktail Servings -->
             <div class="form-group">
+                <i class="fas fa-sort-numeric-up-alt"></i>
                 <label for="cocktail_serving">Servings</label>
                 <input type="number" name="cocktail_serving" class="form-control" id="cocktail_serving"
                     placeholder="1 Serving" minlength="0" maxlength="5" step="1" required>
             </div>
-            <button type="submit" class="btn btn-secondary">Add Cocktail <i class="fas fa-plus-square"></i></button>
+            <!-- Submit Button -->
+            <div class="row">
+                <button type="submit" class="btn mx-auto btn-sm btn-secondary">
+                    Add Cocktail <i class="fas fa-plus-square"></i>
+                </button>
+            </div>
         </form>
     </div>
 </div>
