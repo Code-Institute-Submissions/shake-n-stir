@@ -1,10 +1,14 @@
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask import jsonify
 if os.path.exists("env.py"):
     import env
 
@@ -14,6 +18,12 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUD_NAME'),
+    api_key=os.environ.get('API_KEY'),
+    api_secret=os.environ.get('API_SECRET')
+)
 
 mongo = PyMongo(app)
 
@@ -108,6 +118,9 @@ def logout():
 @app.route("/add_cocktail", methods=["GET", "POST"])
 def add_cocktail():
     if request.method == "POST":
+        photo = request.files['cocktail_img']
+        photo_upload = cloudinary.uploader.upload(
+            photo, upload_preset="yxesuzpw")
         cocktail = {
             "category_name": request.form.get("category_name"),
             "cocktail_name": request.form.get("cocktail_name"),
@@ -115,7 +128,8 @@ def add_cocktail():
             "cocktail_ingredients": request.form.get("cocktail_ingredients"),
             "cocktail_instructions": request.form.get("cocktail_instructions"),
             "cocktail_serving": request.form.get("cocktail_serving"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "cocktail_img": photo_upload['secure_url']
         }
         mongo.db.cocktails.insert_one(cocktail)
         flash("Cocktail Successfully Added")
@@ -123,7 +137,6 @@ def add_cocktail():
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_cocktail.html", categories=categories)
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
