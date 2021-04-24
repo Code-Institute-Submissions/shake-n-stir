@@ -27,20 +27,3 @@ $('#password, #confirm_password').on('keyup', function () {
       $('#confirm_password').removeClass("is-valid").addClass("is-invalid");
 });
 
-/* // cloudinary image uploader
-
-
-// cloudinary callback. Sets upload image url input
-function imageUploaded(error, result) {
-  $( '#cocktail_img' ).val(result[0].secure_url);
-}
-// Shows the cloudinary image upload widget
-$( "#image_upload_btn" ).click(function(event) {
-  event.preventDefault();
-  cloudinary.openUploadWidget(
-    {
-      cloud_name: 'dx82dshakenstir',
-      upload_preset: 'yxesuzpw'
-    },
-    imageUploaded);
-}); */
