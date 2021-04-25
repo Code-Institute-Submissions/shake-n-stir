@@ -41,10 +41,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Manage Cocktails</a>
                         </li>
+                        {% if session.user|lower == "admin"|lower %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('get_categories')}}">Manage Categories</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('profile', username=session['user'])}}">Profile</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('logout')}}">Log Out</a>
                         </li>

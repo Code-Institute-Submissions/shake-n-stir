@@ -164,6 +164,16 @@ def delete_cocktail(cocktail_id):
     return redirect(url_for("view_cocktails"))
 
 
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+
+    if session["user"] == "admin".lower():
+        return render_template("categories.html", categories=categories)
+    else:
+        return redirect(url_for("view_cocktails"))
+           
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
