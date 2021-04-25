@@ -46,7 +46,7 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 const myWidget = cloudinary.createUploadWidget({
   cloudName: 'dx82dshakenstir', 
   uploadPreset: 'yxesuzpw',
-  sources: [ 'local', 'url', 'google_drive']},
+  sources: [ 'local', 'url']},
   (error, result) => {//This is the callback to access the link from cloudinary.
       if (!error && result && result.event === "success") { 
         console.log('Done! Here is the image info: ', result.info.secure_url); 
