@@ -157,6 +157,12 @@ def edit_cocktail(cocktail_id):
     return render_template(
         "edit_cocktail.html", cocktail=cocktail, categories=categories)
 
+@app.route("/delete_cocktail/<cocktail_id>")
+def delete_cocktail(cocktail_id):
+    mongo.db.cocktails.remove({"_id": ObjectId(cocktail_id)})
+    flash("Cocktail Successfully Deleted")
+    return redirect(url_for("view_cocktails"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
