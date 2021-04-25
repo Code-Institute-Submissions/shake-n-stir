@@ -73,19 +73,21 @@
 
             <div class="form-group">
                 <i class="fas fa-image"></i>
-                <label for="cocktail_img">Upload Image</label>
+                <label for="cocktail_img">Image URL</label>
                 <input required type="text" class="form-control" name="cocktail_img" id="cocktail_img_url"
-                        aria-describedby="cocktail_img" value="{{ cocktail.cocktail_img }}" required> 
+                        aria-describedby="cocktail_img" value="{{ cocktail.cocktail_img }}" required>
+                <small>You can upload an image by inputting the url image here</small>
             </div>
 
             <div class="div">
                 <img src="{{ cocktail.cocktail_img }}" class="img-thumbnail" id="cocktail_preview_img" alt="cocktail-image">
             </div>
             
-
             <button class="" id="img_upload_btn">Upload Image
                 <i class="fas fa-cloud-upload-alt"></i> 
             </button>
+            <br>
+            <small>Click here to upload an image from your files, or input a URL image</small>
             <!-- Submit Button -->
             <div class="row">
                 <div class="col-sm-12">
