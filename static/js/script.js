@@ -35,7 +35,7 @@ const myWidget = cloudinary.createUploadWidget({
   (error, result) => {//This is the callback to access the link from cloudinary.
       if (!error && result && result.event === "success") { 
         console.log('Done! Here is the image info: ', result.info.secure_url); 
-        document.getElementById("cocktail_img").value = result.info.secure_url;
+        document.getElementById("cocktail_img_url").value = result.info.secure_url;
       }
   }
 );
@@ -48,3 +48,10 @@ if (img_upload_btn) {
   }, false
   );
 }
+
+
+//Removes vlaue inside of input box to allow the widget to open to edit a new cocktail
+
+$('#img_upload_btn').on('click', function () {
+    $('#cocktail_img_url').val("")
+});
