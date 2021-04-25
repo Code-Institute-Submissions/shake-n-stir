@@ -22,10 +22,14 @@
                     <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
                 </p>
             </div>
-            <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-secondary">
-                <i class="fas fa-edit"></i> Edit
-            </a>
+            {% if session.user|lower == cocktail.created_by|lower %}
+                <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-secondary">
+                    <i class="fas fa-edit"></i> Edit
+                </a>
+            {% endif %}
         </div>
+
+        
     </div>
     {% endfor %}
 </div>
