@@ -27,3 +27,41 @@ $('#password, #confirm_password').on('keyup', function () {
       $('#confirm_password').removeClass("is-valid").addClass("is-invalid");
 });
 
+
+/* var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'dx82dshakenstir',
+  sources: [ 'local', 'url'],
+  uploadPreset: 'yxesuzpw'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false); */
+
+  
+const myWidget = cloudinary.createUploadWidget({
+  cloudName: 'dx82dshakenstir', 
+  uploadPreset: 'yxesuzpw',
+  sources: [ 'local', 'url', 'google_drive']},
+  (error, result) => {//This is the callback to access the link from cloudinary.
+      if (!error && result && result.event === "success") { 
+        console.log('Done! Here is the image info: ', result.info.secure_url); 
+        document.getElementById("cocktail_img").value = result.info.secure_url;
+      }
+  }
+);
+
+
+
+//wires upload button up to widget
+const img_upload_btn = document.getElementById("img_upload_btn");
+if (img_upload_btn) {
+  img_upload_btn.addEventListener("click", function () {
+      myWidget.open();
+  }, false
+  );
+}

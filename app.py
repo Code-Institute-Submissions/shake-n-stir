@@ -118,9 +118,6 @@ def logout():
 @app.route("/add_cocktail", methods=["GET", "POST"])
 def add_cocktail():
     if request.method == "POST":
-        photo = request.files['cocktail_img']
-        photo_upload = cloudinary.uploader.upload(
-            photo, upload_preset="yxesuzpw")
         cocktail = {
             "category_name": request.form.get("category_name"),
             "cocktail_name": request.form.get("cocktail_name"),
@@ -129,7 +126,7 @@ def add_cocktail():
             "cocktail_instructions": request.form.get("cocktail_instructions"),
             "cocktail_serving": request.form.get("cocktail_serving"),
             "created_by": session["user"],
-            "cocktail_img": photo_upload['secure_url']
+            "cocktail_img": request.form.get("cocktail_img")
         }
         mongo.db.cocktails.insert_one(cocktail)
         flash("Cocktail Successfully Added")
@@ -141,6 +138,20 @@ def add_cocktail():
 
 @app.route("/edit_cocktail/<cocktail_id>", methods=["GET", "POST"])
 def edit_cocktail(cocktail_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "cocktail_name": request.form.get("cocktail_name"),
+            "cocktail_description": request.form.get("cocktail_description"),
+            "cocktail_ingredients": request.form.get("cocktail_ingredients"),
+            "cocktail_instructions": request.form.get("cocktail_instructions"),
+            "cocktail_serving": request.form.get("cocktail_serving"),
+            "created_by": session["user"],
+            "cocktail_img": request.form.get("cocktail_img")
+        }
+        mongo.db.cocktails.update({"_id": ObjectId(cocktail_id)}, submit)
+        flash("Cocktail Successfully Added")
+
     cocktail = mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(

@@ -16,7 +16,7 @@
                     <i class="fas fa-pencil-alt"></i>
                     <label for="cocktail_name">Name</label>
                     <input type="name" name="cocktail_name" class="form-control" minlength="5" maxlength="50"
-                        id="cocktail_name" required>
+                        id="cocktail_name" value="{{ cocktail.cocktail_name }}"required>
                 </div>
                 <!-- Cocktail Category -->
                 <div class="form-group col-md-6">
@@ -70,12 +70,22 @@
                     minlength="0" maxlength="5" step="1" required>
             </div>
             <!-- Image Upload button -->
+
             <div class="form-group">
-                    <i class="fas fa-image"></i>
-                    <label for="cocktail_img" name="cocktail_img" id="cocktail_img">Upload Photo</label>
-                    <input type="file" accept="image/*" name="cocktail_file" class="form-control-file" 
-                        id="cocktail__file" value="{{ cocktail.cocktail_img }}" required>
+                <i class="fas fa-image"></i>
+                <label for="cocktail_img">Upload Image</label>
+                <input required type="text" class="form-control" name="cocktail_img" id="cocktail_img"
+                        aria-describedby="cocktail_img" value="{{ cocktail.cocktail_img }}" required> 
             </div>
+
+            <div class="div">
+                <img src="{{ cocktail.cocktail_img }}" class="img-thumbnail" id="cocktail_preview_img" alt="cocktail-image">
+            </div>
+            
+
+            <button class="" id="img_upload_btn">Upload Image
+                <i class="fas fa-cloud-upload-alt"></i> 
+            </button>
             <!-- Submit Button -->
             <div class="row">
                 <div class="col-sm-12">
