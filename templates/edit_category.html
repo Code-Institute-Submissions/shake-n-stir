@@ -2,13 +2,13 @@
 {% block content %}
 
 <h3 class="text-center">
-    Add Category
+    Edit Category
 </h3>
 
 <div class="container">
     <div class="col-sm-12 d-flex">
         <form class="col-sm-12 col-md-8 offset-md-2 needs-validation" method="POST"
-            action="{{ url_for('add_category')}}">
+            action="{{ url_for('edit_category', category_id=category._id)}}">
             <!-- Cocktail Image heading -->
             <div class="form-row justify-content-center">
                 <!-- Category Name -->
@@ -16,13 +16,17 @@
                     <i class="fas fa-folder"></i>
                     <label for="category_name">Category Name</label>
                     <input type="name" name="category_name" class="form-control" minlength="3" maxlength="25"
-                        id="category_name" required>
+                        id="category_name" value="{{ category.category_name}}" required>
                 </div>
 
             <!-- Submit Button -->
             <div class="row">
+                <a href="{{ url_for('get_categories' )}}" class="btn btn-danger">
+                    Cancel 
+                    <i class="fas fa times circle right"></i>
+                </a>
                 <button type="submit" class="btn mx-auto btn-sm btn-success">
-                    Add Category <i class="fas fa-plus-square"></i>
+                    Edit Category <i class="fas fa-edit-square"></i>
                 </button>
             </div>
         </form>
