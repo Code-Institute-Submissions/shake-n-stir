@@ -31,7 +31,14 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/view_cocktails")
 def view_cocktails():
-    cocktails = mongo.db.cocktails.find()
+    cocktails = list(mongo.db.cocktails.find())
+    return render_template("cocktails.html", cocktails=cocktails)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    cocktails = list(mongo.db.cocktails.find({"$text": {"$search": query}}))
     return render_template("cocktails.html", cocktails=cocktails)
 
 
