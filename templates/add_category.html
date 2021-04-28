@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="text-center">
+    Add Category
+</h3>
+
+<div class="container">
+    <div class="col-sm-12 d-flex">
+        <form class="col-sm-12 col-md-8 offset-md-2 needs-validation" method="POST"
+            action="{{ url_for('add_category')}}" enctype="multipart/form-data">
+            <!-- Cocktail Image heading -->
+            <div class="form-row justify-content-center">
+                <!-- Category Name -->
+                <div class="form-group col-md-6">
+                    <i class="fas fa-folder"></i>
+                    <label for="category_name">Category Name</label>
+                    <input type="name" name="category_name" class="form-control" minlength="3" maxlength="25"
+                        id="category_name" required>
+                </div>
+
+            <!-- Submit Button -->
+            <div class="row">
+                <button type="submit" class="btn mx-auto btn-sm btn-success">
+                    Add Category <i class="fas fa-plus-square"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
