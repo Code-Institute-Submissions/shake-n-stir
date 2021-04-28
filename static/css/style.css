@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .flashes h4 {
     line-height: 2;
     margin-top: 5px;
@@ -18,11 +23,15 @@
     height: 100vh;
     max-width: 100%;
 
-    background: url('/static/images/dark-n-stormy-cocktail.jpg') no-repeat center center fixed;
+    background: url('/static/images/cocktail-board.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     position: relative;
   }
