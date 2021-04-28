@@ -26,3 +26,9 @@
 
     position: relative;
   }
+
+  .sign-up-btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
