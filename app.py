@@ -35,6 +35,12 @@ def view_cocktails():
     return render_template("cocktails.html", cocktails=cocktails)
 
 
+@app.route("/index")
+def index():
+    cocktails = list(mongo.db.cocktails.find())
+    return render_template("index.html", cocktails=cocktails)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
