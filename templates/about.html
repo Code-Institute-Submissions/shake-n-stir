@@ -25,4 +25,39 @@
     </div>
 </div>
 
+<div class="container mt-3">
+    <div class="row mt-4">
+        <div class="col-sm-12 col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Contact Us</h5>
+
+                    <form class="col-sm-12 needs-validation" method="POST" action="" novalidate>
+                        <div class="form-group">
+                            <label for="username">Name</label>
+                            <input type="text" class="form-control" id="contact-name" name="contact-name"
+                                aria-describedby="contact-name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" class="form-control" id="contact-email" placeholder="name@example.com"
+                                name="contact-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Your Message</label>
+                            <textarea class="form-control" id="contact-message" rows="3"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary text-shadow mx-auto">
+                                Send <i class="fas fa-envelope"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}
