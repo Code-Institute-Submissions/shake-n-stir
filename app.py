@@ -28,6 +28,7 @@ cloudinary.config(
 mongo = PyMongo(app)
 
 
+# main home page
 @app.route("/")
 @app.route("/view_cocktails")
 def view_cocktails():
@@ -35,18 +36,21 @@ def view_cocktails():
     return render_template("cocktails.html", cocktails=cocktails)
 
 
+# landing page
 @app.route("/index")
 def index():
     cocktails = list(mongo.db.cocktails.find())
     return render_template("index.html", cocktails=cocktails)
 
 
+# about page
 @app.route("/about")
 def about():
     cocktails = list(mongo.db.cocktails.find())
     return render_template("about.html", cocktails=cocktails)
 
 
+# search functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -54,6 +58,7 @@ def search():
     return render_template("cocktails.html", cocktails=cocktails)
 
 
+# register user functionality
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -67,7 +72,7 @@ def register():
 
         password = request.form.get("password")
         confirm_password = request.form.get("confirm_password")
-
+        # prevents user from creating account if passwords do not match
         if password != confirm_password:
             flash("Please ensure that your passwords match.")
             return redirect(url_for("register"))
@@ -86,6 +91,7 @@ def register():
     return render_template("register.html")
 
 
+# login functionality
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -103,7 +109,7 @@ def login():
                     return redirect(
                         url_for('profile', username=session["user"]))
             else:
-                # invalid password match
+                # incorrect password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
@@ -115,6 +121,7 @@ def login():
     return render_template("login.html")
 
 
+# user profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grabs the session user's username from the database
@@ -126,6 +133,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# logs user out of profile
 @app.route("/logout")
 def logout():
     # remove user from session cookies to allow for logout
@@ -134,6 +142,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# functionality to add new cocktail to db
 @app.route("/add_cocktail", methods=["GET", "POST"])
 def add_cocktail():
     if request.method == "POST":
@@ -155,6 +164,7 @@ def add_cocktail():
     return render_template("add_cocktail.html", categories=categories)
 
 
+#functionality to edit cocktails in db
 @app.route("/edit_cocktail/<cocktail_id>", methods=["GET", "POST"])
 def edit_cocktail(cocktail_id):
     if request.method == "POST":
@@ -177,6 +187,7 @@ def edit_cocktail(cocktail_id):
         "edit_cocktail.html", cocktail=cocktail, categories=categories)
 
 
+# allows users to delete their submitted cocktails
 @app.route("/delete_cocktail/<cocktail_id>")
 def delete_cocktail(cocktail_id):
     mongo.db.cocktails.remove({"_id": ObjectId(cocktail_id)})
@@ -194,8 +205,10 @@ def get_categories():
         return redirect(url_for("view_cocktails"))
 
 
+# functionality to add categories to db
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    # restricts access of category crud functionality to admin only
     if session["user"] == "admin".lower():
         if request.method == "POST":
             category = {
@@ -210,6 +223,7 @@ def add_category():
         return redirect(url_for("view_cocktails"))
 
 
+# functionality to edit categories in db
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -224,6 +238,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
+# allows user to delete categories
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
