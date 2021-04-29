@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.customer-container {
+    padding: 0px;
+}
+
 .flashes h4 {
     line-height: 2;
     margin-top: 5px;
@@ -23,7 +27,7 @@
     height: 100vh;
     max-width: 100%;
 
-    background: url('/static/images/cocktail-board.jpg') no-repeat center center fixed;
+    background: url('/static/images/cocktail-background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -31,9 +35,30 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     position: relative;
+}
+
+
+.jumbo-divider {
+    background: white;
+}
+
+.jumbotron {
+    background-color: transparent;
+    color: white;
+    margin-left: 60px;
+    padding-left: 60px;
+}
+
+.jumbotron h1 {
+    margin: 6px 0px;
+}
+
+.jumbotron .lead {
+
+    margin: 6px 0px;
 }
 
 .sign-up-btn {
