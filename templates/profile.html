@@ -18,5 +18,47 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="text-center">Here you can manage the cocktails you've created.</h4>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        
+        <!-- cocktail cards -->
+
+        <div class="row">
+            {% for cocktail in cocktails %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card mt-3 mb-3">
+                    <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
+                    <div class="text-center">
+                        <h5 class="card-title">
+                            <strong>{{ cocktail.cocktail_name }}</strong>
+                            <br>
+                        </h5>
+                        <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
+                            <br>
+                            <small><i class="fas fa-sort-numeric-up-alt"></i> Servings:
+                                {{ cocktail.cocktail_serving }}</small>
+                            <br>
+                            <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
+                        </p>
+                    </div>
+                    
+                    <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-secondary">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                    <a href="{{ url_for('delete_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-danger">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </a>
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}

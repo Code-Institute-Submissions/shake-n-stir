@@ -127,11 +127,12 @@ def profile(username):
     # grabs the session user's username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    cocktails = mongo.db.cocktails.find({'created_by': session['user']})
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template(
+            "profile.html", username=username, cocktails=cocktails)
 
     return redirect(url_for("login"))
-
 
 # logs user out of profile
 @app.route("/logout")
@@ -145,6 +146,10 @@ def logout():
 # functionality to add new cocktail to db
 @app.route("/add_cocktail", methods=["GET", "POST"])
 def add_cocktail():
+    # checks to see if user is logged before allowing to add cocktail
+    if session.get("user") is None:
+        return render_template("login.html")
+      
     if request.method == "POST":
         cocktail = {
             "category_name": request.form.get("category_name"),
@@ -164,7 +169,7 @@ def add_cocktail():
     return render_template("add_cocktail.html", categories=categories)
 
 
-#functionality to edit cocktails in db
+# functionality to edit cocktails in db
 @app.route("/edit_cocktail/<cocktail_id>", methods=["GET", "POST"])
 def edit_cocktail(cocktail_id):
     if request.method == "POST":
