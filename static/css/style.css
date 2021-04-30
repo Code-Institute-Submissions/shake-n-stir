@@ -98,3 +98,14 @@
 .icons {
       color: black;
 }
+
+.dropdown-menu {
+    min-width: fit-content;
+}
+
+.profile-btn {
+    background-color: black;
+    border: 0;
+    border-radius: 23px;
+    color: #fff;
+}

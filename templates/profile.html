@@ -10,7 +10,8 @@
                     </h3>
                     <div class="row">
                         <div class="col-sm-12 ">
-                            
+                            <a class="nav-link" href="{{ url_for('add_cocktail')}}">Add Cocktail</a>
+                            <a class="nav-link" href="{{ url_for('view_cocktails') }}">Browse Cocktails</a>
                         </div>
                     </div>
                 </div>
@@ -18,17 +19,17 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-sm-12">
                 <h4 class="text-center">Here you can manage the cocktails you've created.</h4>
             </div>
         </div>
     </div>
-    <div class="container">
-        
-        <!-- cocktail cards -->
 
+
+    <div class="container">
+        <!-- cocktail cards -->
         <div class="row">
             {% for cocktail in cocktails %}
             <div class="col-sm-12 col-md-6 col-lg-4">

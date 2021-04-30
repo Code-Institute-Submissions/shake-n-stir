@@ -30,17 +30,17 @@ mongo = PyMongo(app)
 
 # main home page
 @app.route("/")
-@app.route("/view_cocktails")
-def view_cocktails():
-    cocktails = list(mongo.db.cocktails.find())
-    return render_template("cocktails.html", cocktails=cocktails)
-
-
-# landing page
 @app.route("/index")
 def index():
     cocktails = list(mongo.db.cocktails.find())
     return render_template("index.html", cocktails=cocktails)
+
+
+# main cocktail page
+@app.route("/view_cocktails")
+def view_cocktails():
+    cocktails = list(mongo.db.cocktails.find())
+    return render_template("cocktails.html", cocktails=cocktails)
 
 
 # about page
