@@ -108,10 +108,39 @@
     </div>
 </div>
 
-
-<!-- <div class="container-fluid breakpoint-container">
-
-</div> -->
+{% if cocktails| length > 0 %}
+<!-- cocktail cards -->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="text-center">Featured Today</h4>
+        </div>
+        {% for cocktail in cocktails %}
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card mt-3 mb-3">
+                <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
+                <div class="text-center">
+                    <h5 class="card-title">
+                        <strong>{{ cocktail.cocktail_name }}</strong>
+                        <br>
+                    </h5>
+                    <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
+                        <br>
+                        <small><i class="fas fa-sort-numeric-up-alt"></i> Servings:
+                            {{ cocktail.cocktail_serving }}</small>
+                        <br>
+                        <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="col-sm-12 text-center mt-3">
+        <a href="{{ url_for('view_cocktails')}}" class="btn btn-secondary mx-auto">Browse All Cocktails</a>
+    </div>
+</div>
 
 
 {% endblock %}

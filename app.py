@@ -32,7 +32,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
-    cocktails = list(mongo.db.cocktails.find())
+    cocktails = list(
+        mongo.db.cocktails.find({"created_by": "deepbluesea"}).limit(3))
     return render_template("index.html", cocktails=cocktails)
 
 
@@ -133,6 +134,7 @@ def profile(username):
             "profile.html", username=username, cocktails=cocktails)
 
     return redirect(url_for("login"))
+
 
 # logs user out of profile
 @app.route("/logout")
