@@ -1,56 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container">
-<h3 class="text-center">All Cocktails</h3>
 
-<div class="row">
-    <div class="col-sm-12">
-        <form action="{{ url_for('search') }}" method="POST">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="input-field col-sm-12 col-md-8">
-                        <i class="fas fa-search"></i>
-                        <input type="text" name="query" id="query" minlength="3" class="" required>
-                        <label for="query">Search Cocktails</label>
-                    </div>
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title text-center">All Cocktails</h5>
+            <br>
+            <form action="{{ url_for('search') }}" method="POST" class="form-inline my-2 my-lg-0">
+                <div class="col-sm-12 text-center">
+                    <input type="text" id="query" name="query" aria-label="Search" class="form-control mr-sm-2"
+                        placeholder="Search">
+                    <button class="btn btn-outline-success my-2 mr-sm-2 my-sm-0" type="submit">Search</button>
+                    <a href="{{ url_for('view_cocktails') }}"
+                        class="reset-search btn btn-outline-danger my-2 mr-sm-2 my-sm-0">Reset</a>
+                    <label for="query"></label>
                 </div>
-                <div class="col-sm-12 col-md-4">
-                    <a href="{{ url_for('view_cocktails') }}" class="btn btn-danger">Reset</a>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-search left"></i> Search
-
-                    </button>
-                </div>
-            </div>
-        </form>
+            </form>
     </div>
 </div>
 
 
 {% if cocktails| length > 0 %}
 <!-- cocktail cards -->
-
-<div class="row">
-    {% for cocktail in cocktails %}
-    <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card mt-3 mb-3">
-            <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
-            <div class="text-center">
-                <h5 class="card-title">
-                    <strong>{{ cocktail.cocktail_name }}</strong>
-                    <br>
-                </h5>
-                <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
-                    <br>
-                    <small><i class="fas fa-sort-numeric-up-alt"></i> Servings: {{ cocktail.cocktail_serving }}</small>
-                    <br>
-                    <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
-                </p>
-            </div>
-            <!-- checks to see if user created cocktail before allowing access to edit/delete -->
-            {% if session.user|lower == cocktail.created_by|lower %}
-            <!-- checks to see if user is admin to allow access to edit/delete -->
+<div class="container">
+    <div class="row">
+        {% for cocktail in cocktails %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card mt-3 mb-3">
+                    <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
+                    <div class="text-center">
+                        <h5 class="card-title">
+                            <strong>{{ cocktail.cocktail_name }}</strong>
+                            <br>
+                        </h5>
+                        <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
+                            <br>
+                            <small><i class="fas fa-sort-numeric-up-alt"></i> Servings:
+                                {{ cocktail.cocktail_serving }}</small>
+                            <br>
+                            <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
+                        </p>
+                    </div>
+                <!-- checks to see if user created cocktail before allowing access to edit/delete -->
+                {% if session.user|lower == cocktail.created_by|lower %}
+                <!-- checks to see if user is admin to allow access to edit/delete -->
                 {% elif  session.user|lower == "admin"|lower %}
                     <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-secondary">
                         <i class="fas fa-edit"></i> Edit
@@ -58,16 +51,14 @@
                     <a href="{{ url_for('delete_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-danger">
                         <i class="fas fa-trash-alt"></i> Delete
                     </a>
-            {% endif %}
+                {% endif %}
+            </div>
         </div>
-
-        
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
-{% else %}
-    <h3 class="text-center">No Results Found</h3>
-{% endif %}
+    {% else %}
+        <h3 class="text-center">No Results Found</h3>
+    {% endif %}
 </div>
 
 {% endblock %}
