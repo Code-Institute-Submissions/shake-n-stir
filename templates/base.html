@@ -71,6 +71,7 @@
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" aria-labelledby="dropdownMenuButton">
                           <a class="dropdown-item" href="{{ url_for('profile', username=session['user'])}}">My Profile</a>
                           <a class="dropdown-item" href="{{ url_for('add_cocktail')}}">Add Cocktail</a>
+                          <a class="dropdown-item" href="{{ url_for('logout')}}">Log Out</a>
                         </div>
                     </div>
                 {% endif %}
