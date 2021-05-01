@@ -45,10 +45,10 @@ def view_cocktails():
 
 
 # about page
-@app.route("/about")
-def about():
+@app.route("/contact")
+def contact():
     cocktails = list(mongo.db.cocktails.find())
-    return render_template("about.html", cocktails=cocktails)
+    return render_template("contact.html", cocktails=cocktails)
 
 
 # search functionality
