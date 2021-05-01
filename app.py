@@ -147,7 +147,9 @@ def view_cocktails():
 
 # individual cocktail page
 @app.route("/cocktail/<cocktail_id>")
-def cocktail(cocktail_id):
+def view_cocktail(cocktail_id):
+    cocktail = mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)})
+
     return render_template(
         "cocktail.html", cocktail=cocktail)
 
