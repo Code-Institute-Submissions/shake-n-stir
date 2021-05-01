@@ -75,10 +75,10 @@ a.dropdown-item {
     position: relative;
 }
 
-.contact-container {
-    height: 70vh;
+/* .contact-container {
+    height: 75vh;
     max-width: 100%;
-    background: url('/static/images/cocktail-book.jpg') no-repeat center center fixed;
+    background: url('/static/images/three-cocktails.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -89,7 +89,7 @@ a.dropdown-item {
     justify-content: flex-start;
 
     position: relative;
-}
+} */
 
 .customer-container {
     padding: 0px;
