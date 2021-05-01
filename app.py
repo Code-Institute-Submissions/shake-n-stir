@@ -37,13 +37,6 @@ def index():
     return render_template("index.html", cocktails=cocktails)
 
 
-# main cocktail page
-@app.route("/view_cocktails")
-def view_cocktails():
-    cocktails = list(mongo.db.cocktails.find())
-    return render_template("cocktails.html", cocktails=cocktails)
-
-
 # about page
 @app.route("/about")
 def about():
@@ -145,13 +138,27 @@ def logout():
     return redirect(url_for("login"))
 
 
+# main cocktail page
+@app.route("/view_cocktails")
+def view_cocktails():
+    cocktails = list(mongo.db.cocktails.find())
+    return render_template("cocktails.html", cocktails=cocktails)
+
+
+# individual cocktail page
+@app.route("/cocktail/<cocktail_id>")
+def cocktail(cocktail_id):
+    return render_template(
+        "cocktail.html", cocktail=cocktail)
+
+
 # functionality to add new cocktail to db
 @app.route("/add_cocktail", methods=["GET", "POST"])
 def add_cocktail():
     # checks to see if user is logged before allowing to add cocktail
     if session.get("user") is None:
         return render_template("login.html")
-      
+
     if request.method == "POST":
         cocktail = {
             "category_name": request.form.get("category_name"),

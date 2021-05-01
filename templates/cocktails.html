@@ -40,6 +40,7 @@
                             <br>
                             <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
                         </p>
+                        <a href="{{url_for('get_cocktail', cocktail_id=cocktail._id)}}">View</a>
                     </div>
                 <!-- checks to see if user created cocktail before allowing access to edit/delete -->
                 {% if session.user|lower == cocktail.created_by|lower %}
