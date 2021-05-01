@@ -42,9 +42,8 @@
                         </p>
                     </div>
                 <!-- checks to see if user created cocktail before allowing access to edit/delete -->
-                {% if session.user|lower == cocktail.created_by|lower %}
+                {% if session.user|lower == cocktail.created_by|lower or session.user|lower == "admin"|lower %}
                 <!-- checks to see if user is admin to allow access to edit/delete -->
-                {% elif session.user|lower == "admin"|lower %}
                     <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-secondary">
                         <i class="fas fa-edit"></i> Edit
                     </a>
