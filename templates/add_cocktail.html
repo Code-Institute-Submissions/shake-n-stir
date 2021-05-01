@@ -8,7 +8,7 @@
 <div class="container">
     <div class="col-sm-12 d-flex">
         <form class="col-sm-12 col-md-8 offset-md-2 needs-validation" method="POST"
-            action="{{ url_for('add_cocktail')}}" enctype="multipart/form-data">
+            action="{{ url_for('add_cocktail')}}" novalidate>
             <!-- Cocktail Image heading -->
             <div class="form-row justify-content-center">
                 <!-- Cocktail Name -->
@@ -17,6 +17,9 @@
                     <label for="cocktail_name">Name</label>
                     <input type="name" name="cocktail_name" class="form-control" minlength="5" maxlength="50"
                         id="cocktail_name" required>
+                        <div class="invalid-feedback">
+                            Please a cocktail name.
+                        </div>
                 </div>
                 <!-- Cocktail Category -->
                 <div class="form-group col-md-6">
@@ -28,6 +31,9 @@
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                         {% endfor %}
                     </select>
+                    <div class="invalid-feedback">
+                        Please select a cocktail category.
+                    </div>
                 </div>
             </div>
             <!-- Cocktail Description-->
@@ -36,6 +42,9 @@
                 <label for="cocktail_description">Description</label>
                 <textarea class="form-control" id="cocktail_description" name="cocktail_description" rows="3"
                     minlength="0" maxlength="250" required></textarea>
+                    <div class="invalid-feedback">
+                        Please write a short description for your cocktail.
+                    </div>
             </div>
             <!-- Cocktail Ingredients -->
             <div class="form-group">
@@ -43,6 +52,9 @@
                 <label for="cocktail_ingredients">Ingredients</label>
                 <textarea class="form-control" id="cocktail_ingredients" name="cocktail_ingredients" rows="3"
                     minlength="10" maxlength="500" required></textarea>
+                    <div class="invalid-feedback">
+                        Please provide the ingredients for your cocktail.
+                    </div>
             </div>
             <!-- Cocktail Instructions -->
             <div class="form-group">
@@ -50,13 +62,19 @@
                 <label for="cocktail_instructions">Instructions</label>
                 <textarea class="form-control" id="cocktail_instructions" name="cocktail_instructions" rows="3"
                     minlength="10" maxlength="500" required></textarea>
+                    <div class="invalid-feedback">
+                        Please instructions for your cocktail.
+                    </div>
             </div>
             <!-- Cocktail Servings -->
             <div class="form-group">
                 <i class="fas fa-sort-numeric-up-alt"></i>
                 <label for="cocktail_serving">Servings</label>
-                <input type="number" name="cocktail_serving" class="form-control" id="cocktail_serving"
-                    placeholder="1 Serving" minlength="0" maxlength="5" step="1" required>
+                <input type="text" name="cocktail_serving" class="form-control" id="cocktail_serving"
+                    placeholder="Example: 2" minlength="0" maxlength="10" required>
+                    <div class="invalid-feedback">
+                        Please input the serving amount for this cocktail.
+                    </div>
             </div>
             <!-- Image Upload button -->
             <div class="form-group">
@@ -82,5 +100,44 @@
         </form>
     </div>
 </div>
+
+
+
+<form class="col-sm-12 needs-validation" method="POST" action="" novalidate>
+    <div class="form-group">
+        <label for="username">Name</label>
+        <input type="text" class="form-control" id="contact-name" name="contact-name"
+            aria-describedby="contact-name" placeholder="Your Name" required>
+            <div class="invalid-feedback">
+                Please enter your name.
+            </div>
+    </div>
+    <div class="form-group">
+        <label for="contact-email">Email Address</label>
+        <input type="email" class="form-control" id="contact-email" placeholder="name@example.com"
+            name="contact-email" required>
+            <div class="invalid-feedback">
+                Please enter a valid email address.
+            </div>
+    </div>
+    <div class="form-group">
+        <label for="contact-message">Your Message</label>
+        <textarea class="form-control" id="contact-message" rows="3" minlength="5" required></textarea>
+        <div class="invalid-feedback">
+            Please enter a message.
+        </div>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-outline-success text-shadow mx-auto">
+            Send <i class="fas fa-envelope"></i>
+        </button>
+    </div>
+</form>
+
+
+
+
+
+
 
 {% endblock %}
