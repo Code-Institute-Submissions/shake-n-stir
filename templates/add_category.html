@@ -1,31 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="text-center">
-    Add Category
-</h3>
 
-<div class="container">
-    <div class="col-sm-12 d-flex">
-        <form class="col-sm-12 col-md-8 offset-md-2 needs-validation" method="POST"
-            action="{{ url_for('add_category')}}">
-            <!-- Cocktail Image heading -->
-            <div class="form-row justify-content-center">
-                <!-- Category Name -->
-                <div class="form-group col-md-6">
-                    <i class="fas fa-folder"></i>
-                    <label for="category_name">Category Name</label>
-                    <input type="name" name="category_name" class="form-control" minlength="3" maxlength="25"
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title text-center">Add Cocktail Categories</h3>
+            <br>
+            <form action="{{ url_for('add_category')}}" method="POST" class="needs-validation form-inline my-2 my-lg-0">
+                <div class="col-sm-12 text-center">
+                    <input type="name" name="category_name" class="form-control mr-sm-2" minlength="3" maxlength="25"
                         id="category_name" required>
+                    <button class="btn btn-outline-success my-2 mr-sm-2 my-sm-0" type="submit">Add</button>
+                    <a href="{{ url_for('add_category')}}"
+                        class="reset-search btn btn-outline-danger my-2 mr-sm-2 my-sm-0">Cancel</a>
+                    <label for="query"></label>
                 </div>
-
-            <!-- Submit Button -->
-            <div class="row">
-                <button type="submit" class="btn mx-auto btn-sm btn-success">
-                    Add Category <i class="fas fa-plus-square"></i>
-                </button>
-            </div>
-        </form>
+            </form>
     </div>
 </div>
 

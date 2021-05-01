@@ -8,7 +8,7 @@
             <br>
             <form action="{{ url_for('search') }}" method="POST" class="form-inline my-2 my-lg-0">
                 <div class="col-sm-12 text-center">
-                    <input type="text" id="query" name="query" aria-label="Search" class="form-control mr-sm-2"
+                    <input type="search" id="query" name="query" aria-label="Search" class="form-control mr-sm-2"
                         placeholder="Search">
                     <button class="btn btn-outline-success my-2 mr-sm-2 my-sm-0" type="submit">Search</button>
                     <a href="{{ url_for('view_cocktails') }}"
