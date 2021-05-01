@@ -99,8 +99,18 @@
       color: black;
 }
 
+.dropdown {
+    padding-right: 45px;
+}
+
 .dropdown-menu {
     min-width: fit-content;
+    background-color: black;
+    color: white;
+}
+
+a.dropdown-item {
+    color: white;
 }
 
 .profile-btn {
