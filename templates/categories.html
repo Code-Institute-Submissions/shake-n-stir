@@ -1,31 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Manage Categories</h3>
-
-<div class="row">
-    <div class="col-sm-12 text-center">
-        <a href="{{ url_for('add_category')}}" class="btn btn-primary">
-            Add Category <i class="fas fa plus-square right"></i>
-        </a>
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 mt-4">
+            <h3 class="text-center">Manage Categories</h3>
+            <hr>
+        </div>
     </div>
 </div>
 
-<div class="row d-flex">
-    {% for category in categories %}
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <div class="card category-card">
-                <div class="card-body mx-auto">
-                    <h5 class="card-title">{{ category.category_name }}</h5>
-                </div>
-                <div class="mx-auto">
-                    <a href="{{ url_for('edit_category', category_id=category._id)}}" class="btn btn-sm btn-warning">Edit</a>
-                    <a href="{{ url_for('delete_category', category_id=category._id)}}" class="btn btn-sm btn-danger">Delete</a>
-                </div>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 mx-auto">
+            <ul class="list-group list-group-flush">
+                {% for category in categories %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">{{ category.category_name }} 
+                        <span class="inline">
+                            <a href="{{ url_for('edit_category', category_id=category._id)}}"
+                                class="btn btn-sm btn-outline-warning">Edit</a>
+                            <a href="{{ url_for('delete_category', category_id=category._id)}}"
+                                class="btn btn-sm btn-outline-danger">Delete</a>
+                        </span>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
-    {% endfor %}
+    </div>
+    <div class="row mt-3 mb-4">
+        <div class="col-sm-12 d-flex">
+            <a href="{{ url_for('add_category')}}" class="btn btn-outline-success btn-sm mx-auto">
+                Add Category
+            </a>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
