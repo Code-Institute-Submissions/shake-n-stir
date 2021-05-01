@@ -8,7 +8,7 @@
             <br>
             <form action="{{ url_for('search') }}" method="POST" class="form-inline my-2 my-lg-0">
                 <div class="col-sm-12 text-center">
-                    <input type="search" id="query" name="query" aria-label="Search" class="form-control mr-sm-2"
+                    <input type="text" id="query" name="query" aria-label="Search" class="form-control mr-sm-2"
                         placeholder="Search">
                     <button class="btn btn-outline-success my-2 mr-sm-2 my-sm-0" type="submit">Search</button>
                     <a href="{{ url_for('view_cocktails') }}"
@@ -40,12 +40,11 @@
                             <br>
                             <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
                         </p>
-                        <a href="{{url_for('view_cocktail', cocktail_id=cocktail._id)}}">View</a>
                     </div>
                 <!-- checks to see if user created cocktail before allowing access to edit/delete -->
                 {% if session.user|lower == cocktail.created_by|lower %}
                 <!-- checks to see if user is admin to allow access to edit/delete -->
-                {% elif  session.user|lower == "admin"|lower %}
+                {% elif session.user|lower == "admin"|lower %}
                     <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-secondary">
                         <i class="fas fa-edit"></i> Edit
                     </a>

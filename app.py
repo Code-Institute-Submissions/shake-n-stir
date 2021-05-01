@@ -33,8 +33,15 @@ mongo = PyMongo(app)
 @app.route("/index")
 def index():
     cocktails = list(
-        mongo.db.cocktails.find({"created_by": "deepbluesea"}).limit(3))
+        mongo.db.cocktails.find({"created_by": "admin"}).limit(3))
     return render_template("index.html", cocktails=cocktails)
+
+
+# main cocktail page
+@app.route("/view_cocktails")
+def view_cocktails():
+    cocktails = list(mongo.db.cocktails.find())
+    return render_template("cocktails.html", cocktails=cocktails)
 
 
 # about page
@@ -138,13 +145,6 @@ def logout():
     return redirect(url_for("login"))
 
 
-# main cocktail page
-@app.route("/view_cocktails")
-def view_cocktails():
-    cocktails = list(mongo.db.cocktails.find())
-    return render_template("cocktails.html", cocktails=cocktails)
-
-
 # individual cocktail page
 @app.route("/cocktail/<cocktail_id>")
 def view_cocktail(cocktail_id):
@@ -160,7 +160,7 @@ def add_cocktail():
     # checks to see if user is logged before allowing to add cocktail
     if session.get("user") is None:
         return render_template("login.html")
-
+   
     if request.method == "POST":
         cocktail = {
             "category_name": request.form.get("category_name"),
@@ -183,6 +183,9 @@ def add_cocktail():
 # functionality to edit cocktails in db
 @app.route("/edit_cocktail/<cocktail_id>", methods=["GET", "POST"])
 def edit_cocktail(cocktail_id):
+    if session.get("user") is None:
+        return render_template("login.html")
+
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -196,6 +199,7 @@ def edit_cocktail(cocktail_id):
         }
         mongo.db.cocktails.update({"_id": ObjectId(cocktail_id)}, submit)
         flash("Cocktail Successfully Added")
+        return redirect(url_for('view_cocktails'))
 
     cocktail = mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
