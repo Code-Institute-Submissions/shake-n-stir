@@ -56,6 +56,40 @@ a.dropdown-item {
     color: #f1f1ef;
 }
 
+/* -- Image containers --  */
+
+.landing-image {
+    height: 100vh;
+    max-width: 100%;
+
+    background: url('/static/images/cocktail-background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: relative;
+}
+
+.contact-container {
+    height: 70vh;
+    max-width: 100%;
+    background: url('/static/images/cocktail-book.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: relative;
+}
 
 .customer-container {
     padding: 0px;
@@ -77,22 +111,7 @@ a.dropdown-item {
     border-bottom: 2px solid black;
 }
 
-.landing-image {
-    height: 100vh;
-    max-width: 100%;
 
-    background: url('/static/images/cocktail-background.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    position: relative;
-}
 
 .jumbo-divider {
     background: white;
