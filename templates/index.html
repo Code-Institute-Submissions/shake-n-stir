@@ -118,14 +118,14 @@
 
 {% if cocktails| length > 0 %}
 <!-- cocktail cards -->
-<div class="container">
+<div class="container-fluid featured-container">
     <div class="row">
         <div class="col-12">
-            <h4 class="text-center">Featured Today</h4>
+            <h4 class="text-center bottom-border feature-heading">Featured Today</h4>
         </div>
         {% for cocktail in cocktails %}
         <div class="col-sm-12 col-md-6 col-lg-4">
-            <div class="card mt-3 mb-3 cocktail-cards">
+            <div class="card border-secondary mt-3 mb-3 cocktail-cards">
                 <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
                 <div class="text-center">
                     <h5 class="card-title">
@@ -139,6 +139,8 @@
                         <br>
                         <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
                     </p>
+                    <a href="{{ url_for('view_cocktail', cocktail_id=cocktail._id) }}" 
+                        class=" btn btn-sm btn-outline-secondary mb-3">View</a>
                 </div>
             </div>
         </div>

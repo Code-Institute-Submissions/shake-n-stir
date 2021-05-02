@@ -202,3 +202,22 @@ a.dropdown-item {
         display: none;
     }
 }
+
+.bottom-border {
+    border-bottom: 0.5px solid #212529;
+    padding: 5px;
+}
+
+.featured-container {
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #f1f1ef;
+}
+
+.feature-heading {
+    color: #212529
+}
+
+.cocktail-cards {
+    background-color: #f1f1ef;
+}
