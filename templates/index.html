@@ -118,7 +118,7 @@
 
 {% if cocktails| length > 0 %}
 <!-- cocktail cards -->
-<div class="container-fluid featured-container">
+<div class="container-fluid featured-container pt-3">
     <div class="row">
         <div class="col-12">
             <h4 class="text-center bottom-border feature-heading">Featured Today</h4>
@@ -147,7 +147,7 @@
         {% endfor %}
     </div>
     {% endif %}
-    <div class="col-sm-12 text-center mt-3">
+    <div class="col-sm-12 text-center mt-3 pb-4">
         <a href="{{ url_for('view_cocktails')}}" class="btn btn-secondary mx-auto">Browse All Cocktails</a>
     </div>
 </div>

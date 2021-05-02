@@ -169,7 +169,7 @@ a.dropdown-item {
 }
 
 .icons {
-      color: #212529;
+      color: #f1f1ef;
 }
 
 .card-hover {
@@ -220,4 +220,8 @@ a.dropdown-item {
 
 .cocktail-cards {
     background-color: #f1f1ef;
+}
+
+.footer-container {
+    background-color: #212529;
 }
