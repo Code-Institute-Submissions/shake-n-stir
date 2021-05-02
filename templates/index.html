@@ -10,9 +10,17 @@
                 <p class="lead">The tastiest cocktails right at home</p>
                 <hr class="jumbo-divider">
                 <p>Feeling fancy?</p>
-                <a class="btn btn-light" href="{{ url_for('register') }}" role="button">Join Today</a>
-                <br>
-                <small class="mx-auto mt-2"><a href="{{ url_for('login') }}">Already a member? Log In</a></small>
+                <!-- shows browse cocktail button for logged in users -->
+                {% if session.user %}
+                    <a class="btn btn-outline-light" href="{{ url_for('view_cocktails') }}" role="button">Browse Cocktails</a>
+                {% else %}
+                <!-- shows join today/log in button for users not in session -->
+                    <a class="btn btn-outline-light" href="{{ url_for('register') }}" role="button">Join Today</a>
+                    <br>
+                    <small class="mx-auto mt-2">
+                        <a href="{{ url_for('login') }}" class="login-link">Already a member? Log In</a>
+                    </small>
+                {% endif %}
             </div>
         </div>
     </div>
