@@ -2,20 +2,36 @@
 {% block content %}
 
 
-<div class="card">
-    <div class="card-body">
-        <h3 class="card-title text-center">Add Cocktail Categories</h3>
-            <br>
-            <form action="{{ url_for('add_category')}}" method="POST" class="needs-validation form-inline my-2 my-lg-0">
-                <div class="col-sm-12 text-center">
-                    <input type="name" name="category_name" class="form-control mr-sm-2" minlength="3" maxlength="25"
-                        id="category_name" required>
-                    <button class="btn btn-outline-success my-2 mr-sm-2 my-sm-0" type="submit">Add</button>
-                    <a href="{{ url_for('add_category')}}"
-                        class="reset-search btn btn-outline-danger my-2 mr-sm-2 my-sm-0">Cancel</a>
-                    <label for="query"></label>
+
+<div class="container">
+    <h3 class="text-center mt-3 mb-3">
+        Add Category
+    </h3>
+    <div class="row">
+        <div class="col-sm-12 d-flex">
+            <div class="card mx-auto">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Category Name</h5>
+                    <hr>
+                    <form class="form-inline  needs-validation" action="{{ url_for('add_category')}}" method="POST">
+                        <div class="input-group mr-sm-2 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-folder"></i></span>
+                            </div>
+                            <input type="name" name="category_name" class="form-control mr-sm-2" minlength="3"
+                                maxlength="25" id="category_name" required>
+                            <label for="category_name"></label>
+                            <button type="submit" class="btn btn-outline-success mr-sm-2">
+                                Add Category
+                            </button>
+                            <a href="{{ url_for('add_category' )}}" class="btn btn-outline-danger mr-sm-2">
+                                Cancel
+                            </a>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
+        </div>
     </div>
 </div>
 

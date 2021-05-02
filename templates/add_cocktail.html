@@ -84,7 +84,7 @@
                         aria-describedby="cocktail_img" required>
                 <small>You can upload an image by inputting the url image here</small>
             </div>
-            
+        
             <button id="img_upload_btn">Upload Image
                 <i class="fas fa-cloud-upload-alt"></i> 
             </button>
@@ -100,44 +100,4 @@
         </form>
     </div>
 </div>
-
-
-
-<form class="col-sm-12 needs-validation" method="POST" action="" novalidate>
-    <div class="form-group">
-        <label for="username">Name</label>
-        <input type="text" class="form-control" id="contact-name" name="contact-name"
-            aria-describedby="contact-name" placeholder="Your Name" required>
-            <div class="invalid-feedback">
-                Please enter your name.
-            </div>
-    </div>
-    <div class="form-group">
-        <label for="contact-email">Email Address</label>
-        <input type="email" class="form-control" id="contact-email" placeholder="name@example.com"
-            name="contact-email" required>
-            <div class="invalid-feedback">
-                Please enter a valid email address.
-            </div>
-    </div>
-    <div class="form-group">
-        <label for="contact-message">Your Message</label>
-        <textarea class="form-control" id="contact-message" rows="3" minlength="5" required></textarea>
-        <div class="invalid-feedback">
-            Please enter a message.
-        </div>
-    </div>
-    <div class="text-center">
-        <button type="submit" class="btn btn-outline-success text-shadow mx-auto">
-            Send <i class="fas fa-envelope"></i>
-        </button>
-    </div>
-</form>
-
-
-
-
-
-
-
 {% endblock %}
