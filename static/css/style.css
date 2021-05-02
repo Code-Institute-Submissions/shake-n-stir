@@ -239,3 +239,15 @@ a.dropdown-item {
 .footer-container {
     background-color: #212529;
 }
+
+/* .cocktail-image {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 1125px){
+    .cocktail-image {
+        max-width: 550px;
+        height: 300px;
+    }
+} */

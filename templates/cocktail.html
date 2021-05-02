@@ -2,26 +2,27 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
+    <div class="row pt-2">
         <div class="col-sm-12">
-            <h4 class="text-center pt-4">{{ cocktail.cocktail_name }}</h4>
+            <h4 class="text-center pt-2">{{ cocktail.cocktail_name }}</h4>
         </div>
         <div class="col-sm-12">
             <p class="text-center">{{ cocktail.cocktail_description}}</p>
         </div>
     </div>
+    <div class="row pt-2">
+        <div class="col-sm-12 col-md-8 offset-md-2">
+            <img src="{{ cocktail.cocktail_img }}" class="cocktail-image img-fluid" alt="cocktail-image">
+        </div>
+    </div>
+
     <div class="row pb-3">
-        <div class="col-sm-12 d-flex">
+        <div class="col-sm-12 d-flex justify-content-center">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Spirit: {{ cocktail.category_name }} </li>
                 <li class="list-group-item">Servings: {{ cocktail.cocktail_serving }}</li>
                 <li class="list-group-item">Created By: {{ cocktail.created_by }}</li>
               </ul>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-            <img src="{{ cocktail.cocktail_img }}" class="cocktail-image img-fluid" alt="cocktail-image">
         </div>
     </div>
     <div class="row pb-3">
@@ -52,29 +53,11 @@
     </div>
 </div>
 
-<div class="container">
+
     <div class="row">
         <div class="col-sm-12">
-            <img src="{{ cocktail.cocktail_img }}" class="cocktail-header img-fluid" alt="cocktail-image">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <h5 class="text-center">{{ cocktail.cocktail_name }}</h5>
-            <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
-                <br>
-                <small><i class="fas fa-sort-numeric-up-alt"></i> Servings:
-                    {{ cocktail.cocktail_serving }}</small>
-                <br>
-                <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            {% if session.user|lower == cocktail.created_by|lower %}
+            {% if session.user|lower == cocktail.created_by|lower or session.user|lower == "admin"|lower %}
             <!-- checks to see if user is admin to allow access to edit/delete -->
-            {% elif  session.user|lower == "admin"|lower %}
                 <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-secondary">
                     <i class="fas fa-edit"></i> Edit
                 </a>
@@ -84,33 +67,7 @@
             {% endif %}
         </div>
     </div>
-    <div class="col-sm-12">
-        <h6 class="text-center">Cocktail Description</h6>
-        <p class="text-center">{{ cocktail.cocktail_description}}</p>
-    </div>
-    <div class="col-sm-12">
-        <h6 class="text-center">Cocktail Ingredients</h6>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                {% set ingredients_list = cocktail.cocktail_ingredients.splitlines() %}
-                    {% for ingredients in ingredients_list %}
-                        <p>{{ ingredients }}</p>
-                    {% endfor %}
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-12">
-        <h6 class="text-center">Cocktail Instructions</h6>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                {% set instructions_list = cocktail.cocktail_instructions.splitlines() %}
-                    {% for instructions in instructions_list %}
-                        <p>{{ instructions }}</p>
-                    {% endfor %}
-            </li>
-        </ul>
-    </div>
-</div>
+   
 
 <div class="card">
     <div class="card-body">
