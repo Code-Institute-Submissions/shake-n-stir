@@ -4,6 +4,57 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
+            <h4 class="text-center pt-4">{{ cocktail.cocktail_name }}</h4>
+        </div>
+        <div class="col-sm-12">
+            <p class="text-center">{{ cocktail.cocktail_description}}</p>
+        </div>
+    </div>
+    <div class="row pb-3">
+        <div class="col-sm-12 d-flex">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Spirit: {{ cocktail.category_name }} </li>
+                <li class="list-group-item">Servings: {{ cocktail.cocktail_serving }}</li>
+                <li class="list-group-item">Created By: {{ cocktail.created_by }}</li>
+              </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <img src="{{ cocktail.cocktail_img }}" class="cocktail-image img-fluid" alt="cocktail-image">
+        </div>
+    </div>
+    <div class="row pb-3">
+        <div class="col-sm-12">
+            <h5 class="" >Ingredients</h5>
+        </div>
+        <div class="col-sm-12 d-flex">
+            <ul class="list-group list-group-flush">
+                    {% set ingredients_list = cocktail.cocktail_ingredients.splitlines() %}
+                        {% for ingredients in ingredients_list %}
+                            <li class="list-group-item">{{ ingredients }}</li>
+                        {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h5 class="" >Instructions</h5>
+        </div>
+        <div class="col-sm-12 d-flex">
+            <ul class="list-group list-group-flush">
+                {% set instructions_list = cocktail.cocktail_instructions.splitlines() %}
+                    {% for instructions in instructions_list %}
+                        <li class="list-group-item">{{ instructions }}</li>
+                    {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
             <img src="{{ cocktail.cocktail_img }}" class="cocktail-header img-fluid" alt="cocktail-image">
         </div>
     </div>
