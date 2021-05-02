@@ -54,3 +54,14 @@ if (img_upload_btn) {
 $('#img_upload_btn').on('click', function () {
     $('#cocktail_img_url').val("")
 });
+
+
+// Hover effect on cocktail cards
+
+$( '.cocktail-cards' ).hover(
+  function() {
+    $( this ).addClass( "card-hover" );
+  }, function() {
+    $( this ).removeClass( "card-hover" );
+  }
+);
