@@ -2,6 +2,7 @@
 {% block content %}
 
 <div class="container">
+    <!-- Cocktail heading and description -->
     <div class="row pt-2">
         <div class="col-sm-12">
             <h4 class="text-center pt-2">{{ cocktail.cocktail_name }}</h4>
@@ -11,42 +12,40 @@
         </div>
     </div>
     <div class="row pt-2">
-        <div class="col-sm-12 col-md-8 offset-md-2">
+        <!-- Cocktail image -->
+        <div class="col-sm-12 col-md-8 offset-md-2 pb-2 mb-2">
             <img src="{{ cocktail.cocktail_img }}" class="cocktail-image img-fluid" alt="cocktail-image">
         </div>
+        <!-- Cocktail Information -->
+        
     </div>
-
-    <div class="row pb-3">
-        <div class="col-sm-12 d-flex justify-content-center">
+    <div class="row pb-3 justify-content-center">
+        <!-- Cocktail Information -->
+        <div class="col-sm-12 col-md-4 pt-2 mt-2 info-col">
+            <h5 class>Information</h5>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Spirit: {{ cocktail.category_name }} </li>
-                <li class="list-group-item">Servings: {{ cocktail.cocktail_serving }}</li>
-                <li class="list-group-item">Created By: {{ cocktail.created_by }}</li>
-              </ul>
+                <li class="list-group-item"><i class="fas fa-wine-bottle"></i> Spirit: {{ cocktail.category_name }} </li>
+                <li class="list-group-item"><i class="fas fa-glass-cheers"></i> Servings: {{ cocktail.cocktail_serving }}</li>
+                <li class="list-group-item"><i class="fas fa-user"></i> Created By: {{ cocktail.created_by }}</li>
+            </ul>
         </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col-sm-12">
-            <h5 class="" >Ingredients</h5>
-        </div>
-        <div class="col-sm-12 d-flex">
+        <!-- Cocktail Ingredients -->
+        <div class="col-sm-12 col-md-4 pt-2 mt-2 info-col">
+            <h5 class>Ingredients</h5>
             <ul class="list-group list-group-flush">
                     {% set ingredients_list = cocktail.cocktail_ingredients.splitlines() %}
                         {% for ingredients in ingredients_list %}
-                            <li class="list-group-item">{{ ingredients }}</li>
+                            <li class="list-group-item"><i class="fas fa-flask"></i> {{ ingredients }}</li>
                         {% endfor %}
             </ul>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <h5 class="" >Instructions</h5>
-        </div>
-        <div class="col-sm-12 d-flex">
+        <!-- Cocktail Instructions -->
+        <div class="col-sm-12 col-md-4 pt-2 mt-2 info-col">
+            <h5 class>Instructions</h5>
             <ul class="list-group list-group-flush">
                 {% set instructions_list = cocktail.cocktail_instructions.splitlines() %}
                     {% for instructions in instructions_list %}
-                        <li class="list-group-item">{{ instructions }}</li>
+                        <li class="list-group-item"><i class="fas fa-glass-martini-alt"></i> {{ instructions }}</li>
                     {% endfor %}
             </ul>
         </div>
@@ -54,10 +53,14 @@
 </div>
 
 
-    <div class="row">
+
+
+
+
+<div class="row">
         <div class="col-sm-12">
             {% if session.user|lower == cocktail.created_by|lower or session.user|lower == "admin"|lower %}
-            <!-- checks to see if user is admin to allow access to edit/delete -->
+            
                 <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-secondary">
                     <i class="fas fa-edit"></i> Edit
                 </a>
@@ -66,7 +69,7 @@
                 </a>
             {% endif %}
         </div>
-    </div>
+</div>
    
 
 <div class="card">
