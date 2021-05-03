@@ -37,7 +37,7 @@
                     <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
                     <div class="text-center card-body">
                         <h5 class="card-title">
-                            <strong><a href="{{ url_for('view_cocktail', cocktail_id=cocktail._id) }}">{{ cocktail.cocktail_name }}</a></strong>
+                            <strong><a href="{{ url_for('view_cocktail', cocktail_id=cocktail._id) }}" class="text-dark">{{ cocktail.cocktail_name }}</a></strong>
                             <br>
                         </h5>
                         <p class="card-text"><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
