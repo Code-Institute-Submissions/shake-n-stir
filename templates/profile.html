@@ -1,31 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row mt-4">
+<div class="container">
+    <div class="row mt-4 pt-3 pb-3">
         <div class="col-sm-12 col-lg-8 mx-auto">
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title mx-auto text-center">
-                        {{ username }}'s Profile
+                        Welcome {{ username }}
                     </h3>
-                    <div class="row">
-                        <div class="col-sm-12 ">
-                            <a class="nav-link" href="{{ url_for('add_cocktail')}}">Add Cocktail</a>
-                            <a class="nav-link" href="{{ url_for('view_cocktails') }}">Browse Cocktails</a>
-                        </div>
-                    </div>
+                    <ul class="list-group list-group-flush profile-btns">
+                        <li class="list-group-item profile-btns"><a href="{{ url_for('add_cocktail')}}" class="btn btn-outline-success mr-sm-2">Add Cocktail</a</li>
+                        <li class="list-group-item profile-btns"><a href="{{ url_for('view_cocktails') }}" class="btn btn-outline-info mr-sm-2">Browse Cocktails</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container mt-4">
+<div class="container mt-4">
         <div class="row">
             <div class="col-sm-12">
-                <h4 class="text-center">Here you can manage the cocktails you've created.</h4>
+                <h4 class="text-center">Manage your Cocktails</h4>
             </div>
         </div>
-    </div>
+</div>
 
 
     <div class="container">
@@ -60,6 +60,17 @@
                 </div>
             </div>
             {% endfor %}
+        </div>
+        <div class="row mt-4 pt-3 pb-3">
+            <div class="col-sm-12 col-lg-4 mx-auto">
+                        <h6 class="mx-auto text-center">
+                            Manage Account
+                        </h6>
+                        <ul class="list-group list-group-flush mx-auto">
+                            <li class="list-group-item profile-btns"><a href="{{ url_for('logout')}}" class="btn btn-sm btn-outline-warning mr-sm-2">Logout</a></li>
+                            <li class="list-group-item profile-btns"><a href="#" class="btn btn-sm btn-outline-danger mr-sm-2">Delete Account</a></li>
+                        </ul>
+            </div>
         </div>
     </div>
 

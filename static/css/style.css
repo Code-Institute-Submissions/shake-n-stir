@@ -250,3 +250,8 @@ a.dropdown-item {
 .contact-container {
     background-color: #f1f1ef;
 }
+
+.profile-btns {
+    border-width: 0 0 1px;
+    margin: auto;
+}
