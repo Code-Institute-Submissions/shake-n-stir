@@ -145,6 +145,14 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/delete_profile/<username>")
+def delete_profile(username):
+    mongo.db.users.remove({"username": username.lower()})
+    flash("Profile Successfuly Deleted")
+    session.pop("user")
+    return redirect(url_for('index'))
+
+
 # individual cocktail page
 @app.route("/cocktail/<cocktail_id>")
 def view_cocktail(cocktail_id):
