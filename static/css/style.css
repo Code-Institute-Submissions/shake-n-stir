@@ -255,3 +255,13 @@ a.dropdown-item {
     border-width: 0 0 1px;
     margin: auto;
 }
+
+.edit-cocktail-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.img .thumbnail {
+    width: 300px;
+    height: 300px;
+}

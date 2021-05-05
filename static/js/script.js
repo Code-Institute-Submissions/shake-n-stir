@@ -56,6 +56,12 @@ $('#img_upload_btn').on('click', function () {
 });
 
 
+// Updates image preview box to display image url from input box
+
+$('#cocktail_img_url').on('change', function() {
+  $('img.thumbnail').prop('src', this.value);
+});
+
 // Hover effect on cocktail cards
 
 $( '.cocktail-cards' ).hover(

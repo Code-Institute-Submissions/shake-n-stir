@@ -6,7 +6,7 @@
 </h3>
 
 <div class="container">
-    <div class="col-sm-12 d-flex">
+    <div class="col-sm-12 d-flex pb-2">
         <form class="col-sm-12 col-md-8 offset-md-2 needs-validation" method="POST"
             action="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}" enctype="multipart/form-data">
             <!-- Cocktail Image heading -->
@@ -75,8 +75,8 @@
                 <label for="cocktail_img">Image</label>
                 <div class="input-group mr-sm-2 mb-3">
                     <div class="input-group-prepend">
-                        <button id="img_upload_btn" class="btn btn-sm btn-outline-dark">Upload Image
-                            <i class="fas fa-cloud-upload-alt"></i>
+                        <button id="img_upload_btn" class="btn btn-sm btn-outline-dark">
+                            <i class="fas fa-cloud-upload-alt"></i> Upload Image
                         </button>
                     </div>
                     <input type="text" class="form-control" name="cocktail_img" id="cocktail_img_url"
@@ -86,18 +86,22 @@
                         </div>
                 </div>
             </div>
-            <div class="cocktail_preview_img col-md-6 offset-md-3">
-                <img src="{{ cocktail.cocktail_img }}" class="img-thumbnail" id="cocktail_preview_img" alt="cocktail-image">
+            <div class="cocktail_preview_img col-md-6 offset-md-3 pb-2">
+                <img src="{{ cocktail.cocktail_img }}" class="thumbnail img-fluid" id="cocktail_image" alt="cocktail-image">
             </div>
-            <!-- Submit Button -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <a href="{{ url_for('view_cocktails' )}}" class="btn btn-sm btn-warning">Cancel</a>
-                    <button type="submit" class="btn mx-auto btn-sm btn-success">
-                        Edit Cocktail <i class="fas fa-edit"></i>
+            <div class="row pt-1 pb-2">
+                <div class="col-sm-12 edit-cocktail-btns">
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-sm btn-outline-success mr-2">
+                        <i class="fas fa-edit"></i> Update Cocktail
                     </button>
-                    <a href="{{ url_for('delete_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-danger">
-                        <i class="fas fa-trash-alt"></i> Delete
+                    <!-- Cancel Action -->
+                    <a href="{{ url_for('view_cocktails' )}}" class="btn btn-sm btn-outline-warning mr-2">
+                        <i class="far fa-window-close"></i> Cancel 
+                    </a>
+                    <!-- Delete Cocktail -->
+                    <a href="{{ url_for('delete_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-outline-danger mr-2">
+                        <i class="fas fa-trash-alt"></i> Delete 
                     </a>
                 </div>
             </div>
