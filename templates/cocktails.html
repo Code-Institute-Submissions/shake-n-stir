@@ -21,44 +21,54 @@
 
 
 {% if cocktails| length > 0 %}
-<!-- cocktail cards -->
 <div class="container">
+    <!-- cocktail cards -->
     <div class="row">
         {% for cocktail in cocktails %}
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 cocktail-cards">
-                    <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
-                    <div class="text-center">
-                        <h5 class="card-title">
-                            <strong>{{ cocktail.cocktail_name }}</strong>
-                            <br>
-                        </h5>
-                        <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
-                            <br>
-                            <small><i class="fas fa-sort-numeric-up-alt"></i> Servings:
-                                {{ cocktail.cocktail_serving }}</small>
-                            <br>
-                            <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
-                        </p>
-                    </div>
-                <!-- checks to see if user created cocktail before allowing access to edit/delete -->
-                {% if session.user|lower == cocktail.created_by|lower or session.user|lower == "admin"|lower %}
-                <!-- checks to see if user is admin to allow access to edit/delete -->
-                    <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-secondary">
-                        <i class="fas fa-edit"></i> Edit
-                    </a>
-                    <a href="{{ url_for('delete_cocktail', cocktail_id=cocktail._id )}}" class="btn btn-sm btn-danger">
-                        <i class="fas fa-trash-alt"></i> Delete
-                    </a>
-                {% endif %}
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card mt-3 mb-3 cocktail-cards">
+                <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
+                <div class="text-center card-body">
+                    <h5 class="card-title">
+                        <strong><a href="{{ url_for('view_cocktail', cocktail_id=cocktail._id) }}" class="text-dark">{{ cocktail.cocktail_name }}</a></strong>
+                        <br>
+                    </h5>
+                    <p class="card-text"><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
+                        <br>
+                        <small><i class="fas fa-sort-numeric-up-alt"></i> Servings:
+                            {{ cocktail.cocktail_serving }}</small>
+                        <br>
+                        <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
+                    </p>
+                    {% if session.user|lower == cocktail.created_by|lower or session.user|lower == "admin"|lower %}
+                        <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}" 
+                            class="btn btn-sm btn-outline-success mr-sm-2">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a href="{{ url_for('delete_cocktail', cocktail_id=cocktail._id )}}" 
+                            class="btn btn-sm btn-outline-danger mr-sm-2">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('view_cocktail', cocktail_id=cocktail._id) }}" 
+                            class=" btn btn-sm btn-outline-secondary mb-3">View</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
     {% else %}
-        <h3 class="text-center">No Results Found</h3>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="text-center">No Results Found</h3>
+        </div>
+    </div>
     {% endif %}
 </div>
 
 {% endblock %}
+
+
+
 
