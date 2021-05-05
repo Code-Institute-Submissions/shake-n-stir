@@ -145,6 +145,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# deletes users profile
 @app.route("/delete_profile/<username>")
 def delete_profile(username):
     mongo.db.users.remove({"username": username.lower()})
