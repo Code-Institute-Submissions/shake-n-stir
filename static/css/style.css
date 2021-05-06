@@ -95,9 +95,15 @@ a.dropdown-item {
     padding: 0px;
 }
 
-.flashes h4 {
+.flash-message {
     line-height: 2;
     margin-top: 5px;
+}
+
+.alert-warning {
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .cocktail-card-image {
