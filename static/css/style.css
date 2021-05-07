@@ -1,39 +1,30 @@
+/* Body General Styles */
+
 * {
     margin: 0;
     padding: 0;
 }
 
-/* --Navbar --*/
+.bottom-border {
+    border-bottom: 0.5px solid #212529;
+    padding: 5px;
+}
 
-/* .navbar {
-    background-color: #;
-} */
+
+/* --Navbar --*/
 
 .custom-navbar {
     background-color: #212529;
 }
 
-.navbar-brand {
-    color: #f1f1ef;
-}
-
-.navbar-brand:hover {
-    color: #f1f1ef;
-}
-
+.navbar-brand,
 .nav-icon {
     color: #f1f1ef;
 }
 
-
 .navbar-dark .navbar-toggler {
     border: solid 0.5px #f1f1ef;
     margin-left: auto;
-}
-
-
-.navbar li {
-
 }
 
 .navbar .nav-link {
@@ -45,7 +36,6 @@
 }
 
 .navbar .nav-link:hover {
-    color: #f1f1ef;   
     border-bottom: #f1f1ef 1px solid;
 }
 
@@ -96,49 +86,11 @@ a.dropdown-item {
     position: relative;
 }
 
-/* .contact-container {
-    height: 75vh;
-    max-width: 100%;
-    background: url('/static/images/three-cocktails.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    position: relative;
-} */
-
-.customer-container {
-    padding: 0px;
-}
-
-.flash-message {
-    line-height: 2;
-    margin-top: 5px;
-}
-
-.alert-warning {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.cocktail-card-image {
-    max-width: 100%;
-    height: auto;
-}
-
 .landing-page-header {
     line-height: 2;
     margin-top: 5px;
     border-bottom: 2px solid black;
 }
-
-
 
 .jumbo-divider {
     background: white;
@@ -166,61 +118,11 @@ a.dropdown-item {
     flex-direction: column;
 }
 
-.landing-page-text {
-    display: flex;
-    align-items: center;
-}
-
-.breakpoint-container {
-    height: 70vh;
-    max-width: 100%;
-
-    background: url('/static/images/cocktail-collection.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    position: relative;
-}
-
-
-
-.card-hover {
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
-}
-
 .login-link {
     color: #f1f1ef;
 }
 
-
-.bottom-border {
-    border-bottom: 0.5px solid #212529;
-    padding: 5px;
-}
-
-
-/* -- Media Query --  */
-
-@media (min-width: 1250px){
-    .featured-container {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-}
-
-@media (max-width: 1250px){
-    .featured-container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-}
-
+/* Cocktail Features */
 
 .featured-container {
     background-color: #f1f1ef;
@@ -230,43 +132,49 @@ a.dropdown-item {
     color: #212529
 }
 
+/* Cocktail Cards */
+
+.cocktail-card-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-hover {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
+}
+
 .cocktail-cards {
     background-color: #f1f1ef;
 }
+
+/* Text */
+
+.landing-page-text {
+    display: flex;
+    align-items: center;
+}
+
+/* Flash Messages */
+
+.flash-message {
+    line-height: 2;
+    margin-top: 5px;
+}
+
+.alert-warning {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Footer */
 
 .footer-container {
     background-color: #212529;
 }
 
-.info-col {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
-
-
-.contact-container {
-    background-color: #f1f1ef;
-}
-
-.profile-btns {
-    border-width: 0 0 1px;
-    margin: auto;
-}
-
-.edit-cocktail-btns {
-    display: flex;
-    justify-content: center;
-}
-
-.img .thumbnail {
-    width: 300px;
-    height: 300px;
-}
-
 .custom-footer {
     width: 100%;
-
 }
 
 .site-map {
@@ -298,5 +206,41 @@ a.dropdown-item {
 
 .footer-links:hover {
     color: #f1f1ef;
+}
+
+
+/* Contact Page */
+
+.contact-container {
+    background-color: #f1f1ef;
+}
+
+
+/* Where is this ?  */
+
+.info-col {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+
+/* Profile Page */
+
+.profile-btns {
+    border-width: 0 0 1px;
+    margin: auto;
+}
+
+/* Edit Cocktail page */
+
+.edit-cocktail-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.img .thumbnail {
+    width: 300px;
+    height: 300px;
 }
 
