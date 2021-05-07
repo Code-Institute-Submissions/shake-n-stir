@@ -104,29 +104,61 @@
         {% endblock %}
     </main>
 
-    
-    <!-- Footer -->
-    <div class="container-fluid footer-container footer fixed-bottom">
-        <div class="row pb-2">
-            <div class="col-sm-12 social-media-icons mt-3">
-                <a target="_blank" href="https://www.instagram.com/">
-                    <i class="icons fab fa-instagram fa-lg"></i>
-                </a>
-                <a target="_blank" href="https://twitter.com/?lang=en">
-                    <i class="icons fab fa-twitter fa-lg"></i>
-                </a>
-                <a target="_blank" href="https://www.facebook.com/">
-                    <i class="icons fab fa-facebook-square fa-lg"></i>
-                </a>
-                <a target="_blank" href="https://www.pinterest.com/">
-                    <i class="icons fab fa-pinterest fa-lg"></i>
-                </a>
-                <a target="_blank" href="https://www.youtube.com/">
-                    <i class="icons fab fa-youtube fa-lg"></i>
-                </a>
+
+
+
+     <!-- Footer -->
+     <footer class="custom-footer flex-shrink-0">
+        <div class="container-fluid footer-container pt-4 pb-4">
+            <div class="row pb-2">
+                
+                <!-- Basic Site Map -->
+                <div class="col-lg-4 col-md-4 col-sm-4 site-map">
+                    <h5 class="footer-text mb-2 mt-3">Site Map</h5>
+                    <a class="footer-links" href="{{ url_for('index') }}">Home</a>
+                    <a class="footer-links" href="{{ url_for('contact') }}">Contact</a>
+                    {% if session.user %}
+                        <a class="footer-links" href="{{ url_for('view_cocktails') }}">Cocktails</a>
+                        <a class="footer-links" href="{{ url_for('logout') }}">Log Out</a>
+                    {% else %}
+                        <a class="footer-links" href="{{ url_for('login')}}">Log In</a>
+                        <a class="footer-links" href="{{ url_for('register') }}">Register</a>
+                    {% endif %}
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 social-media-icons">
+                    <h5 class="footer-text mb-2 mt-3">Social Media</h5>
+                    <a target="_blank" href="https://www.instagram.com/">
+                        <i class="icons fab fa-instagram fa-lg"></i>
+                    </a>
+                    <a target="_blank" href="https://twitter.com/?lang=en">
+                        <i class="icons fab fa-twitter fa-lg"></i>
+                    </a>
+                    <a target="_blank" href="https://www.facebook.com/">
+                        <i class="icons fab fa-facebook-square fa-lg"></i>
+                    </a>
+                    <a target="_blank" href="https://www.pinterest.com/">
+                        <i class="icons fab fa-pinterest fa-lg"></i>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h5 class="footer-text mb-2 mt-3">Newsletter</h5>
+                    <p class="footer-text small">Subscribe to our newsletter to stay informed for any new features.</p>
+                    <form action="#">
+                        <div class="input-group mb-2">
+                            <input class="form-control" type="text" placeholder="Email Address" aria-label="Email Address" 
+                                aria-describedby="newsletter-btn">
+                            <div class="input-group-append mb-2">
+                                <button id="newsletter-btn" type="button" class="btn btn-outline-light">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    </footer>
+</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
