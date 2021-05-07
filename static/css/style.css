@@ -5,6 +5,8 @@
     padding: 0;
 }
 
+
+
 .bottom-border {
     border-bottom: 0.5px solid #212529;
     padding: 5px;
@@ -244,3 +246,12 @@ a.dropdown-item {
     height: 300px;
 }
 
+/* Add Category page */
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

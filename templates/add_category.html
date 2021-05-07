@@ -46,6 +46,22 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-12 quick-links">
+            <h4 class="bottom-border">Admin Quick Links</h4>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="{{ url_for('get_categories')}}" class="text-dark">View Categories</a>
+                </li><li class="list-group-item">
+                    <a href="{{ url_for('view_cocktails')}}" class="text-dark">View Cocktails</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{{ url_for('add_cocktail') }}" class="text-dark">Add Cocktail</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
