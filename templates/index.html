@@ -32,7 +32,7 @@
         <div class="col-sm-12">
             {% if session.user %}
                 <h2 class="text-center landing-page-header mt-1">
-                    A catchy heading goes here
+                    Discover, Create, Share
                 </h2>
             {% else %}
                 <h2 class="text-center landing-page-header mt-1">
@@ -52,9 +52,8 @@
                     <div class="card-body">
                         <h5 class="card-title cta-heading">Discover</h5>
                         <p class="card-text">
-                            Discover the most delicious cocktails, from the classic to Martini to the new-age Bee's
-                            Knees.
-                            You're sure to find a cocktail which satisfies your pallet.
+                            Discover delightful classics like the Old-Fashioned or modern classics like the delicious
+                            Paper Plane. You'll be sure to find something tasty.
                         </p>
                     </div>
                 </div>
@@ -64,10 +63,8 @@
                     <div class="card-body">
                         <h5 class="card-title cta-heading">Create</h5>
                         <p class="card-text">
-                            Do you have your own spin on a classic cocktail? Or maybe you've created something
-                            entirely
-                            new.
-                            We encourage a personal touch when creating cocktails.
+                            Stir your creative side into classic recipes, or shake it up and make something entirely
+                            new. We encourage the personal touch.
                         </p>
                         <a class="btn btn-light" href="{{ url_for('add_cocktail') }}" role="button">Create</a>
                     </div>
@@ -78,8 +75,8 @@
                     <div class="card-body">
                         <h5 class="card-title cta-heading text-center">Share</h5>
                         <p class="card-text">
-                            We believe that all good things should be shared.
-                            Once you create your cocktail, others can view your recipe, and try it at home!
+                            We believe that all good things should be shared. Once you create your cocktail, others can
+                            view your recipe, and try it at home!
                         </p>
                     </div>
                 </div>
@@ -95,29 +92,32 @@
 <div class="container mt-4 mb-4">
     <div class="row">
         <div class="col-sm-12 text-center mb-4">
-            <h4>Discover, Create, Shake</h4>
+            <h4>Embrace the spirits!</h4>
         </div>
         <div class="col-sm-12 col-md-6">
             <img src="{{url_for('static', filename='images/cocktail-collection.jpg')}}" class="img-fluid "alt="cocktail-collection">
         </div>
         
         <div class="col-sm-12 col-md-6 landing-page-text">
-            <p>Discover the most delicious cocktails, from the classic to Martini to the new-age Bee's
-                Knees. 
+            <p>
+                Making a cocktail is a creative practice; often shrouded in mystery, trial and error. However, we believe
+                that everyone can make delicious cocktails, right at home.
                 <br>
                 <br>
-                You're sure to find a cocktail which satisfies your pallet.
+                Shake n Stir, was created to share the love of cocktails. It allows people to share their favorite
+                cocktails, create their own creative spins on classic cocktails, or develop something entirely new.
                 <br>
                 <br>
-                Do you have your own spin on a classic cocktail? 
-                <br> Or maybe you've created something entirely new.
-                <br>
-                We encourage a personal touch when creating cocktails.
+                We believe that all good things should be shared. Once you create your cocktail, others can view your
+                recipe, and try it at home.
                 <br>
                 <br>
-                We believe that all good things should be shared.
-                Once you create your cocktail, others can view your recipe, and try it at home!
+                Whether you're a mixologist, or you've never tried a cocktail before, you'll be sure to have a satisfied
+                pallet.
             </p>
+        </div>
+        <div class="col-sm-12 text-center mt-3">
+            <a class="btn btn-outline-dark" href="{{ url_for('add_cocktail') }}" role="button">Create</a>
         </div>
     </div>
 </div>
