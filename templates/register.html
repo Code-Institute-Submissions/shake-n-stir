@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="row mt-4">
+<div class="container py-4">
+    <div class="row mt-4 mb-4">
         <div class="col-sm-12 col-lg-8 mx-auto">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title text-center">Register</h5>
-
                     <form class="col-sm-12 needs-validation" method="POST" action="{{ url_for('register') }}"
                         novalidate oninput='confirm_password.setCustomValidity(
                             confirm_password.value != password.value ? "Passwords do not match." : "")'>
@@ -41,9 +41,11 @@
                             </div>
                         </div>
                         <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary text-shadow">
-                            Register <i class="fas fa-sign-in-alt"></i>
-                        </button>
+                        <div class="text-center my-2 py-1">
+                            <button type="submit" class="btn btn-outline-dark">
+                                Register <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </div>
                     </form>
                     <div class="row">
                         <!-- Link to Log in if user has account -->
@@ -57,5 +59,6 @@
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}
