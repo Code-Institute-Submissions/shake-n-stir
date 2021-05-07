@@ -3,6 +3,7 @@
 
 <div class="container">
     <div class="row mt-4 pt-3 pb-3">
+        <!-- Username Card -->
         <div class="col-sm-12 col-lg-8 mx-auto">
             <div class="card">
                 <div class="card-body">
@@ -19,16 +20,13 @@
     </div>
 </div>
 
-<div class="container mt-4">
+
+    <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 mt-3">
                 <h4 class="text-center">Manage your Cocktails</h4>
             </div>
         </div>
-</div>
-
-
-    <div class="container">
         <!-- cocktail cards -->
         <div class="row">
             {% for cocktail in cocktails %}
@@ -36,6 +34,7 @@
                 <div class="card mt-3 mb-3 cocktail-cards">
                     <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
                     <div class="text-center card-body">
+                        <!-- Cocktail details -->
                         <h5 class="card-title">
                             <strong><a href="{{ url_for('view_cocktail', cocktail_id=cocktail._id) }}" class="text-dark">{{ cocktail.cocktail_name }}</a></strong>
                             <br>
@@ -47,6 +46,7 @@
                             <br>
                             <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
                         </p>
+                        <!-- To check if user created cocktail to enable edit/delete action -->
                         {% if session.user|lower == cocktail.created_by|lower %}
                             <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}"
                                 class="btn btn-sm btn-outline-success mr-sm-2">
@@ -92,6 +92,7 @@
         </div>
         <div class="row mt-4 pt-3 pb-3">
             <div class="col-sm-12 col-lg-4 mx-auto">
+                <!-- Account Actions -->
                         <h6 class="mx-auto text-center">
                             Manage Account
                         </h6>
@@ -112,7 +113,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="deleteProfile">Delete Cocktail</h5>
+                                        <h5 class="modal-title" id="deleteProfile">Delete Profile</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
