@@ -11,7 +11,14 @@
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-3 mb-4">
+        <div class="col-sm-12 d-flex">
+            <a href="{{ url_for('add_category')}}" class="btn btn-outline-success btn-sm mx-auto">
+                Add Category
+            </a>
+        </div>
+    </div>
+    <div class="row pb-2">
         <div class="col-sm-12 col-md-8 mx-auto">
             <ul class="list-group list-group-flush">
                 {% for category in categories %}
@@ -25,13 +32,6 @@
                     </li>
                 {% endfor %}
             </ul>
-        </div>
-    </div>
-    <div class="row mt-3 mb-4">
-        <div class="col-sm-12 d-flex">
-            <a href="{{ url_for('add_category')}}" class="btn btn-outline-success btn-sm mx-auto">
-                Add Category
-            </a>
         </div>
     </div>
 </div>
