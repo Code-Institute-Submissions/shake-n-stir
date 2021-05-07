@@ -9,14 +9,28 @@
     background-color: #;
 } */
 
-.navbar-toggler {
+.custom-navbar {
+    background-color: #212529;
+}
+
+.navbar-brand {
+    color: #f1f1ef;
+}
+
+.navbar-brand:hover {
+    color: #f1f1ef;
+}
+
+.nav-icon {
+    color: #f1f1ef;
+}
+
+
+.navbar-dark .navbar-toggler {
     border: solid 0.5px #f1f1ef;
     margin-left: auto;
 }
 
-.navbar-toggle-hamburger {
-    color: #f1f1ef;
-}
 
 .navbar li {
 
@@ -41,7 +55,7 @@
 
 .dropdown-menu {
     min-width: fit-content;
-    background-color: #343a40;
+    background-color: #212529;
     color: #f1f1ef;
 }
 
@@ -50,7 +64,14 @@ a.dropdown-item {
 }
 
 .profile-btn {
-    background-color: #343a40;
+    background-color: #212529;
+    border: #f1f1ef solid 2px;
+    border-radius: 23px;
+    color: #f1f1ef;
+}
+
+.profile-btn {
+    background-color: #212529;
     border: #f1f1ef solid 2px;
     border-radius: 23px;
     color: #f1f1ef;
@@ -62,7 +83,7 @@ a.dropdown-item {
     height: 100vh;
     max-width: 100%;
 
-    background: url('/static/images/cocktail-background.jpg') no-repeat center center fixed;
+    background: url('/static/images/cocktail-background.jpg') no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -126,8 +147,8 @@ a.dropdown-item {
 .jumbotron {
     background-color: transparent;
     color: white;
-    margin-left: 60px;
-    padding-left: 60px;
+    /* margin-left: 60px;
+    padding-left: 60px; */
 }
 
 .jumbotron h1 {
@@ -278,3 +299,4 @@ a.dropdown-item {
 .footer-links:hover {
     color: #f1f1ef;
 }
+
