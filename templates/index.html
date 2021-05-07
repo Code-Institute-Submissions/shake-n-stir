@@ -66,7 +66,6 @@
                             Stir your creative side into classic recipes, or shake it up and make something entirely
                             new. We encourage the personal touch.
                         </p>
-                        <a class="btn btn-light" href="{{ url_for('add_cocktail') }}" role="button">Create</a>
                     </div>
                 </div>
             </div>
@@ -81,12 +80,13 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-12 text-center mt-3">
+                <a class="btn btn-outline-dark" href="{{ url_for('add_cocktail') }}" role="button">Get Started</a>
+            </div>
         </div>
     </div>
     <!-- browse cocktails button -->
-    <div class="col-sm-12 text-center mt-3">
-        <a href="{{ url_for('view_cocktails')}}" class="btn btn-secondary mx-auto">Browse Cocktails</a>
-    </div>
+    
 </div>
 
 <div class="container mt-4 mb-4">
@@ -117,7 +117,7 @@
             </p>
         </div>
         <div class="col-sm-12 text-center mt-3">
-            <a class="btn btn-outline-dark" href="{{ url_for('add_cocktail') }}" role="button">Create</a>
+            <a class="btn btn-outline-dark" href="{{ url_for('view_cocktails')}}" role="button">Browse</a>
         </div>
     </div>
 </div>
