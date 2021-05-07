@@ -167,16 +167,7 @@ a.dropdown-item {
     position: relative;
 }
 
-.social-media-icons {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin:auto;
-}
 
-.icons {
-      color: #f1f1ef;
-}
 
 .card-hover {
     box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
@@ -250,4 +241,40 @@ a.dropdown-item {
 .img .thumbnail {
     width: 300px;
     height: 300px;
+}
+
+.custom-footer {
+    width: 100%;
+
+}
+
+.site-map {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.social-media-icons {
+    display: flex;
+    flex-flow: column;
+}
+
+.icons {
+      color: #f1f1ef;
+}
+
+.icons:hover {
+    transform: scale(1.2);
+}
+
+.footer-text {
+    color: #f1f1ef;
+}
+
+.footer-links {
+    color: #f1f1ef;
+}
+
+.footer-links:hover {
+    color: #f1f1ef;
 }
