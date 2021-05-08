@@ -44,13 +44,6 @@ def view_cocktails():
     return render_template("cocktails.html", cocktails=cocktails)
 
 
-# about page
-@app.route("/contact")
-def contact():
-    cocktails = list(mongo.db.cocktails.find())
-    return render_template("contact.html", cocktails=cocktails)
-
-
 # search functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():

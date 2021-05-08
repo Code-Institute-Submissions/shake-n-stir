@@ -28,9 +28,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('index') }}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
-                    </li>
                     {% if session.user %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('view_cocktails') }}">Cocktails</a>
@@ -116,7 +113,6 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 site-map">
                     <h5 class="footer-text mb-2 mt-3">Site Map</h5>
                     <a class="footer-links" href="{{ url_for('index') }}">Home</a>
-                    <a class="footer-links" href="{{ url_for('contact') }}">Contact</a>
                     {% if session.user %}
                         <a class="footer-links" href="{{ url_for('view_cocktails') }}">Cocktails</a>
                         <a class="footer-links" href="{{ url_for('logout') }}">Log Out</a>
