@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="col-sm-12 text-center mt-3">
-                <a class="btn btn-outline-dark" href="{{ url_for('add_cocktail') }}" role="button">Get Started</a>
+                <a class="btn btn-outline-dark" href="{{ url_for('add_cocktail') }}" role="button">Start Shaking</a>
             </div>
         </div>
     </div>
@@ -116,47 +116,46 @@
                 pallet.
             </p>
         </div>
-        <div class="col-sm-12 text-center mt-3">
-            <a class="btn btn-outline-dark" href="{{ url_for('view_cocktails')}}" role="button">Browse</a>
-        </div>
     </div>
 </div>
 
 {% if cocktails| length > 0 %}
 <!-- cocktail cards -->
-<div class="container-fluid featured-container pt-3">
-    <div class="row">
-        <div class="col-12">
-            <h4 class="text-center bottom-border feature-heading">Featured Today</h4>
-        </div>
-        {% for cocktail in cocktails %}
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <div class="card border-secondary mt-3 mb-3 cocktail-cards">
-                <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
-                <div class="text-center">
-                    <h5 class="card-title">
-                        <strong>{{ cocktail.cocktail_name }}</strong>
-                        <br>
-                    </h5>
-                    <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
-                        <br>
-                        <small><i class="fas fa-sort-numeric-up-alt"></i> Servings:
-                            {{ cocktail.cocktail_serving }}</small>
-                        <br>
-                        <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
-                    </p>
-                    <a href="{{ url_for('view_cocktail', cocktail_id=cocktail._id) }}" 
-                        class=" btn btn-sm btn-outline-secondary mb-3">View</a>
+<section class="featured-container">
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="text-center bottom-border feature-heading">Featured Today</h4>
+            </div>
+            {% for cocktail in cocktails %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card border-secondary mt-3 mb-3 cocktail-cards">
+                    <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
+                    <div class="text-center">
+                        <h5 class="card-title">
+                            <strong>{{ cocktail.cocktail_name }}</strong>
+                            <br>
+                        </h5>
+                        <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
+                            <br>
+                            <small><i class="fas fa-sort-numeric-up-alt"></i> Servings:
+                                {{ cocktail.cocktail_serving }}</small>
+                            <br>
+                            <small><i class="far fa-user"></i> {{ cocktail.created_by }}</small>
+                        </p>
+                        <a href="{{ url_for('view_cocktail', cocktail_id=cocktail._id) }}" 
+                            class=" btn btn-sm btn-outline-dark mb-3">View</a>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+        {% endif %}
+        <div class="col-sm-12 text-center mt-3 pb-4">
+            <a href="{{ url_for('view_cocktails')}}" class="btn btn-outline-dark mx-auto">Browse All Cocktails</a>
+        </div>
     </div>
-    {% endif %}
-    <div class="col-sm-12 text-center mt-3 pb-4">
-        <a href="{{ url_for('view_cocktails')}}" class="btn btn-secondary mx-auto">Browse All Cocktails</a>
-    </div>
-</div>
+</section>
 
 
 {% endblock %}
