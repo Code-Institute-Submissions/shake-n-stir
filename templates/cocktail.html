@@ -16,51 +16,55 @@
         <div class="col-sm-12 col-md-8 offset-md-2 pb-2 mb-2">
             <img src="{{ cocktail.cocktail_img }}" class="cocktail-image img-fluid" alt="cocktail-image">
         </div>
-        <!-- Cocktail Information -->
-        
     </div>
+</div>
+<div class="container">
     <div class="row pb-3 justify-content-center">
         <!-- Cocktail Information -->
         <div class="col-sm-12 col-md-4 pt-2 mt-2 info-col">
-            <h5 class>Information</h5>
+            <h5 class="cocktail">Information</h5>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><i class="fas fa-wine-bottle"></i> Spirit: {{ cocktail.category_name }} </li>
-                <li class="list-group-item"><i class="fas fa-glass-cheers"></i> Servings: {{ cocktail.cocktail_serving }}</li>
-                <li class="list-group-item"><i class="fas fa-user"></i> Created By: {{ cocktail.created_by }}</li>
+                <li class="list-group-item"><i class="fas fa-wine-bottle"></i> Spirit:
+                    {{ cocktail.category_name }} </li>
+                <li class="list-group-item"><i class="fas fa-glass-cheers"></i> Servings:
+                    {{ cocktail.cocktail_serving }}</li>
+                <li class="list-group-item"><i class="fas fa-user"></i> Created By: {{ cocktail.created_by }}
+                </li>
             </ul>
         </div>
         <!-- Cocktail Ingredients -->
         <div class="col-sm-12 col-md-4 pt-2 mt-2 info-col">
-            <h5 class>Ingredients</h5>
+            <h5 class="cocktail-headings">Ingredients</h5>
             <ul class="list-group list-group-flush">
-                    {% set ingredients_list = cocktail.cocktail_ingredients.splitlines() %}
-                        {% for ingredients in ingredients_list %}
-                            <li class="list-group-item"><i class="fas fa-flask"></i> {{ ingredients }}</li>
-                        {% endfor %}
+                {% set ingredients_list = cocktail.cocktail_ingredients.splitlines() %}
+                {% for ingredients in ingredients_list %}
+                    <li class="list-group-item"><i class="fas fa-flask"></i> {{ ingredients }}</li>
+                {% endfor %}
             </ul>
         </div>
         <!-- Cocktail Instructions -->
         <div class="col-sm-12 col-md-4 pt-2 mt-2 info-col">
-            <h5 class>Instructions</h5>
+            <h5 class="cocktail-headings">Instructions</h5>
             <ul class="list-group list-group-flush">
                 {% set instructions_list = cocktail.cocktail_instructions.splitlines() %}
-                    {% for instructions in instructions_list %}
-                        <li class="list-group-item"><i class="fas fa-glass-martini-alt"></i> {{ instructions }}</li>
-                    {% endfor %}
+                {% for instructions in instructions_list %}
+                    <li class="list-group-item"><i class="fas fa-glass-martini-alt"></i> {{ instructions }}</li>
+                {% endfor %}
             </ul>
         </div>
     </div>
     <div class="row pb-2 pt-3">
         <div class="col-sm-12 d-flex justify-content-center">
+            <!-- If statement to show action buttons if user is creator or admin -->
             {% if session.user|lower == cocktail.created_by|lower or session.user|lower == "admin"|lower %}
                 <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id )}}"
                     class="btn btn-sm btn-outline-warning mr-2">
                     <i class="fas fa-edit"></i> Edit
                 </a>
                 <!-- Modal Trigger -->
-                <button type="button" class="btn btn-sm btn-outline-danger mr-2" 
-                        data-toggle="modal" data-target="#deleteCocktailModal">
-                        <i class="fas fa-trash-alt"></i>Delete
+                <button type="button" class="btn btn-sm btn-outline-danger mr-2" data-toggle="modal"
+                    data-target="#deleteCocktailModal">
+                    <i class="fas fa-trash-alt"></i>Delete
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="deleteCocktailModal" tabindex="-1" aria-labelledby="deleteCocktailModal"
@@ -92,27 +96,33 @@
             {% endif %}
         </div>
     </div>
+    <!-- Browse all cocktails button -->
     <div class="row">
         <div class="col-sm-12 text-center mt-4 pb-3">
-            <a href="{{ url_for('view_cocktails')}}" class="btn btn-outline-dark mx-auto">Browse All Cocktails</a>
+            <a href="{{ url_for('view_cocktails')}}" class="btn btn-outline-dark mx-auto">Browse All
+                Cocktails</a>
         </div>
+    </div>
+
+    <div class="row">
         <div class="col-sm-12 col-md-4 offset-md-4 mt-3">
             <!-- Search bar -->
             <form action="{{ url_for('search') }}" method="POST">
                 <div class="input-group mb-2">
-                    <input class="form-control shadow-none border-dark" type="text" placeholder="Search Cocktails" aria-label="Search Cocktails" 
-                        name="query" id="query" aria-describedby="searchbar">
+                    <input class="form-control shadow-none border-dark" type="text" placeholder="Search Cocktails"
+                        aria-label="Search Cocktails" name="query" id="query" aria-describedby="searchbar">
                     <div class="input-group-append mb-2">
                         <button id="searchbar" type="submit" class="btn btn-outline-dark">
                             <i class="fas fa-paper-plane"></i>
                         </button>
-                        
+
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
 
 {% endblock %}
 
