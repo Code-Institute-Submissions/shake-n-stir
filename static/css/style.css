@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
 /* Body General Styles */
 
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
-
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
 
 .bottom-border {
     border-bottom: 0.5px solid #212529;
@@ -17,6 +22,10 @@
 
 .custom-navbar {
     background-color: #212529;
+}
+
+.navbar-brand {
+    font-family: 'Open Sans', sans-serif;
 }
 
 .navbar-brand,
@@ -35,6 +44,7 @@
     border-bottom: transparent 1px solid;
     margin-left: 4px;
     margin-right: 4px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .navbar .nav-link:hover {
@@ -270,4 +280,8 @@ a.dropdown-item {
     display: flex;
     flex-flow: column;
     align-items: center;
+}
+
+.cocktail-headings {
+    
 }
