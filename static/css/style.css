@@ -124,6 +124,10 @@ a.dropdown-item {
     color: #f1f1ef;
 }
 
+.login-link:hover {
+    color: #f1f1ef;
+}
+
 /* Cocktail Features */
 
 .featured-container {
