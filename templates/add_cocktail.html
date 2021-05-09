@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="text-center pt-3">
+<h3 class="text-center py-4">
     Add Cocktail
 </h3>
 
@@ -42,7 +42,7 @@
                     <i class="fas fa-align-left"></i>
                     <label for="cocktail_description">Description</label>
                     <textarea class="form-control" id="cocktail_description" name="cocktail_description" rows="3"
-                        minlength="0" maxlength="250" required></textarea>
+                        minlength="0" maxlength="250" placeholder="A short snippet about your cocktail" required></textarea>
                     <div class="invalid-feedback">
                         Please write a short description for your cocktail.
                     </div>
@@ -52,7 +52,8 @@
                     <i class="fas fa-flask"></i>
                     <label for="cocktail_ingredients">Ingredients</label>
                     <textarea class="form-control" id="cocktail_ingredients" name="cocktail_ingredients" rows="3"
-                        minlength="10" maxlength="500" required></textarea>
+                        minlength="10" maxlength="500" placeholder="Please place each ingredient on a new line" 
+                        required></textarea>
                     <div class="invalid-feedback">
                         Please provide the ingredients for your cocktail.
                     </div>
@@ -62,7 +63,8 @@
                     <i class="fas fa-clipboard-list"></i>
                     <label for="cocktail_instructions">Instructions</label>
                     <textarea class="form-control" id="cocktail_instructions" name="cocktail_instructions" rows="3"
-                        minlength="10" maxlength="500" required></textarea>
+                        minlength="10" maxlength="500" placeholder="Please place each instruction on a new line" 
+                        required></textarea>
                     <div class="invalid-feedback">
                         Please instructions for your cocktail.
                     </div>
