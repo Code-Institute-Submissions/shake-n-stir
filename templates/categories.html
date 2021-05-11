@@ -26,10 +26,40 @@
                         <span class="inline">
                             <a href="{{ url_for('edit_category', category_id=category._id)}}"
                                 class="btn btn-sm btn-outline-warning">Edit</a>
-                            <a href="{{ url_for('delete_category', category_id=category._id)}}"
-                                class="btn btn-sm btn-outline-danger">Delete</a>
+                                <!-- Modal Trigger -->
+                                <button type="button" class="btn btn-sm btn-outline-danger mr-2" data-toggle="modal"
+                                    data-target="#modal{{ loop.index }}">
+                                    Delete
+                                </button>
                         </span>
                     </li>
+                     <!-- Modal -->
+                     <div class="modal fade" id="modal{{ loop.index }}" tabindex="-1"
+                         aria-labelledby="modal{{ loop.index }}" aria-hidden="true">
+                         <div class="modal-dialog">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h5 class="modal-title" id="modal{{ loop.index }}">Delete Category</h5>
+                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+                                     </button>
+                                 </div>
+                                 <div class="modal-body">
+                                     Are you sure you want to delete the {{category.category_name}} category?
+                                     <br>
+                                     <small>This action cannot be undone</small>
+                                 </div>
+                                 <div class="modal-footer">
+                                     <button type="button" class="btn btn-sm btn-outline-info"
+                                         data-dismiss="modal">Close</button>
+                                     <a href="{{ url_for('delete_category', category_id=category._id )}}"
+                                         class="btn btn-sm btn-outline-danger mr-2">
+                                         <i class="fas fa-trash-alt"></i> Delete
+                                     </a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
                 {% endfor %}
             </ul>
         </div>
