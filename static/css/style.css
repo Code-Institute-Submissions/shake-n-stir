@@ -7,11 +7,19 @@
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', sans-serif;
+}
+
+li.list-group-item {
+    background-color: #f7f7f7;
 }
 
 .bottom-border {
@@ -19,11 +27,20 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5px;
 }
 
+.profile-card {
+    background-color: #f7f7f7;
+}
+
 
 /* --Navbar --*/
 
 .custom-navbar {
     background-color: #212529;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: flex-start;
 }
 
 .navbar-brand {
@@ -101,7 +118,7 @@ a.dropdown-item {
 }
 
 .landing-page-header {
-    line-height: 2;
+    line-height: 1.5;
     margin-top: 5px;
     border-bottom: 2px solid black;
 }
@@ -113,8 +130,7 @@ a.dropdown-item {
 .jumbotron {
     background-color: transparent;
     color: white;
-    /* margin-left: 60px;
-    padding-left: 60px; */
+    padding-top: 145px;
 }
 
 .jumbotron h1 {
@@ -286,12 +302,23 @@ a.dropdown-item {
 
 .cocktail-headings {
     border-bottom: 1px solid #212529;
-    
-    
 }
+
+/* Media Queries */
 
 @media screen and (max-width: 992px) {
     .parallax {
         background-attachment: scroll;
     }
+}
+
+
+@media screen and (min-width: 992px) {
+    .jumbotron {
+        background-color: transparent;
+        color: white;
+        padding-top: 145px;
+        padding-left: 100px;
+    }
+    
 }
