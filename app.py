@@ -219,17 +219,28 @@ def delete_cocktail(cocktail_id):
 
 @app.route("/get_categories")
 def get_categories():
+    # ensures that a user cannot access page without an account
+    if session.get("user") is None:
+        flash("You must have an admin account to manage categories")
+        return render_template("login.html")
+
     categories = list(mongo.db.categories.find().sort("category_name", 1))
 
+    # prevents users from accessing page without admin account
     if session["user"] == "admin".lower():
         return render_template("categories.html", categories=categories)
     else:
+        flash("You must have an admin account to manage categories")
         return redirect(url_for("view_cocktails"))
 
 
 # functionality to add categories to db
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    # prevents non-users from accessing page
+    if session.get("user") is None:
+        flash("You must have an admin account to add categories")
+        return render_template("login.html")
     # restricts access of category crud functionality to admin only
     if session["user"] == "admin".lower():
         if request.method == "POST":
@@ -242,19 +253,29 @@ def add_category():
 
         return render_template("add_category.html")
     else:
+        flash("You must have an admin account to add categories")
         return redirect(url_for("view_cocktails"))
 
 
 # functionality to edit categories in db
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
-    if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-        flash("Category Successfully Updated")
-        return redirect(url_for("get_categories"))
+    # prevents non-users from accessing page
+    if session.get("user") is None:
+        flash("You must have an admin account to edit categories")
+        return render_template("login.html")
+
+    if session["user"] == "admin".lower():
+        if request.method == "POST":
+            submit = {
+                "category_name": request.form.get("category_name")
+            }
+            mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+            flash("Category Successfully Updated")
+            return redirect(url_for("get_categories"))
+    else:
+        flash("You must have an admin account to edit categories")
+        return redirect(url_for("view_cocktails"))
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
@@ -263,9 +284,18 @@ def edit_category(category_id):
 # allows user to delete categories
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
-    flash("Category Successfully Deleted")
-    return redirect(url_for("get_categories"))
+    if session.get("user") is None:
+        flash("You must have an admin account to edit categories")
+        return render_template("login.html")
+
+    if session["user"] == "admin".lower():
+        mongo.db.categories.remove({"_id": ObjectId(category_id)})
+        flash("Category Successfully Deleted")
+        return redirect(url_for("get_categories"))
+
+    else:
+        flash("You must have an admin account to delete categories")
+        return redirect(url_for("view_cocktails"))
 
 
 if __name__ == "__main__":
