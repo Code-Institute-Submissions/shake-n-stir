@@ -6,10 +6,10 @@
         <div class="col-12">
             <!-- jumbotron -->
             <div class="jumbotron">
-                <h1 class="display-4">Shake n Stir</h1>
+                <h1 class="display-4">Shake and Stir</h1>
                 <p class="lead">The tastiest cocktails right at home</p>
                 <hr class="jumbo-divider">
-                <p>Feeling fancy?</p>
+                
                 <!-- shows browse cocktail button for logged in users -->
                 {% if session.user %}
                     <a class="btn btn-outline-light" href="{{ url_for('view_cocktails') }}" role="button">Browse Cocktails</a>
@@ -30,7 +30,7 @@
 <div class="container mt-3 mb-3">
     <div class="row">
         <div class="col-sm-12 text-center mb-2">
-            <h2 class="landing-page-header">Embrace the spirits!</h2>
+            <h2 class="landing-page-header">Embrace the spirits</h2>
         </div>
         <div class="col-sm-12 col-lg-6">
             <img src="{{url_for('static', filename='images/cocktail-collection.jpg')}}" class="img-fluid "alt="cocktail-collection">
