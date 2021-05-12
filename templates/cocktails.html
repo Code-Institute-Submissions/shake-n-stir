@@ -96,6 +96,7 @@
     </div>
 </div>
     {% else %}
+    <!-- If no results are found -->
     <div class="container">
         <div class="row">
             <div class="col-sm-12 no-results-col">
@@ -108,17 +109,30 @@
                 </span>
                 
             </div>
+            <!-- List to show popular cocktails if no results are found -->
             <div class="col-sm-12 popular-list">
-                <h4 class="mt-4">Popular Today</h4>
+                <h4 class="mt-4 bottom-border">Popular Today</h4>  
                 <ul class="list-group list-group-flush mb-3">
                     <li class="list-group-item"><a
-                            href="{{ url_for('view_cocktail', cocktail_id='60857f3583ef23e892fc401b') }}"
-                            class="text-dark">White
-                            Russian</a></li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A fourth item</li>
-                    <li class="list-group-item">And a fifth one</li>
+                            href="{{ url_for('view_cocktail', cocktail_id='60965d149521afb1fa7846e4') }}"
+                            class="text-dark">White Russian</a>
+                    </li>
+                    <li class="list-group-item"><a
+                                href="{{ url_for('view_cocktail', cocktail_id='6097f11a65fdc1303647b1e3') }}"
+                                class="text-dark">Alabama Slammer</a>
+                    </li>
+                    <li class="list-group-item"><a
+                        href="{{ url_for('view_cocktail', cocktail_id='609800d965fdc1303647b1ea') }}"
+                        class="text-dark">French 75</a>
+                    </li>
+                    <li class="list-group-item"><a
+                        href="{{ url_for('view_cocktail', cocktail_id='60965acf9521afb1fa7846e3') }}"
+                        class="text-dark">Paper Plane</a>
+                    </li>
+                    <li class="list-group-item"><a
+                        href="{{ url_for('view_cocktail', cocktail_id='609660919521afb1fa7846e6') }}"
+                        class="text-dark">Dark n Stormy</a>
+                    </li>
                 </ul>
             </div>
         </div>
