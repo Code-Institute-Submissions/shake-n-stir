@@ -322,3 +322,46 @@ a.dropdown-item {
     }
     
 }
+
+
+/* -- 404 Error Page */
+
+.error-container {
+    height: 100vh;
+    max-width: 100%;
+
+    background: url('/static/images/empty-glass.jpg') no-repeat center right fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.error-text {
+    color: #f1f1ef;
+}
+
+@media screen and (max-width: 992px) {
+    .error-container {
+        height: 100vh;
+        max-width: 100%;
+
+        background: url('/static/images/empty-glass.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+    }
+}

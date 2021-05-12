@@ -298,6 +298,12 @@ def delete_category(category_id):
         return redirect(url_for("view_cocktails"))
 
 
+# Functionality to render 404.html if error occurs
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
