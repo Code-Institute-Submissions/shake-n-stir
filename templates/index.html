@@ -55,7 +55,7 @@
             </p>
         </div>
         <div class="col-sm-12 text-center mt-3">
-            <a class="btn btn-outline-dark" href="{{ url_for('add_cocktail') }}" role="button">Start Shaking</a>
+            <a class="btn btn-outline-dark" href="{{ url_for('add_cocktail') }}" role="button">Add Cocktail</a>
         </div>
     </div>
 </div>
@@ -76,9 +76,9 @@
                     <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
                     <div class="text-center">
                         <!-- Cocktail Information -->
-                        <h5 class="card-title cocktail-card-title mt-2">
-                            {{ cocktail.cocktail_name }}
-                            <br>
+                        <h5 class="card-title mt-2"><a href="{{ url_for('view_cocktail', cocktail_id=cocktail._id) }}"
+                                class="cocktail-card-title text-dark">{{ cocktail.cocktail_name }}
+                            </a>
                         </h5>
                         <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
                             <br>
