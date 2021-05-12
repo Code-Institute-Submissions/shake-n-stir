@@ -38,6 +38,10 @@ li.list-group-item {
     background-color: #212529;
 }
 
+#navbarNav {
+    padding-right: 100px;
+}
+
 .navbar-nav {
     display: flex;
     align-items: flex-start;
@@ -364,4 +368,9 @@ a.dropdown-item {
 
         position: relative;
     }
+}
+
+.cocktail-card-title {
+    font-weight: 600;
+    font-style: italic;
 }
