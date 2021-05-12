@@ -38,9 +38,6 @@ li.list-group-item {
     background-color: #212529;
 }
 
-#navbarNav {
-    padding-right: 100px;
-}
 
 .navbar-nav {
     display: flex;
@@ -82,6 +79,10 @@ li.list-group-item {
     min-width: fit-content;
     background-color: #212529;
     color: #f1f1ef;
+}
+
+div .dropdown{
+    margin-left: auto;
 }
 
 a.dropdown-item {
@@ -258,8 +259,8 @@ a.dropdown-item {
 
 .info-col {
     display: flex;
-    flex-direction: column;
-    align-items: start;
+    flex-flow: column;
+    align-items: center;
 }
 
 
