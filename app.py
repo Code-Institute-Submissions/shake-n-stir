@@ -185,8 +185,21 @@ def add_cocktail():
 # functionality to edit cocktails in db
 @app.route("/edit_cocktail/<cocktail_id>", methods=["GET", "POST"])
 def edit_cocktail(cocktail_id):
+
+    cocktail = mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+
     if session.get("user") is None:
         return render_template("login.html")
+
+    if session.get("user") == cocktail["created_by"] or (
+                                session["user"] == "admin".lower()):
+        return render_template(
+                "edit_cocktail.html", cocktail=cocktail, categories=categories)
+
+    else:
+        flash("You can only edit cocktails that you created.")
+        return render_template("cocktails.html")
 
     if request.method == "POST":
         submit = {
