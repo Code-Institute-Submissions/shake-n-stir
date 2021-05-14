@@ -98,9 +98,9 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get(
                     "password").lower()):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(
                         url_for('profile', username=session["user"]))
             else:
                 # incorrect password match
@@ -162,7 +162,7 @@ def add_cocktail():
     # checks to see if user is logged before allowing to add cocktail
     if session.get("user") is None:
         return render_template("login.html")
-   
+
     if request.method == "POST":
         cocktail = {
             "category_name": request.form.get("category_name"),
