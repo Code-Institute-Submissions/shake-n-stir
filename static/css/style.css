@@ -18,26 +18,21 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', sans-serif;
 }
 
-li.list-group-item {
-    background-color: #f7f7f7;
-}
-
 .bottom-border {
     border-bottom: 0.5px solid #212529;
     padding: 5px;
 }
 
-.profile-card {
+.off-white-background {
     background-color: #f7f7f7;
 }
 
 
-/* --Navbar --*/
+/* Navbar */
 
 .custom-navbar {
     background-color: #212529;
 }
-
 
 .navbar-nav {
     display: flex;
@@ -96,14 +91,8 @@ a.dropdown-item {
     color: #f1f1ef;
 }
 
-.profile-btn {
-    background-color: #212529;
-    border: #f1f1ef solid 2px;
-    border-radius: 23px;
-    color: #f1f1ef;
-}
 
-/* -- Image containers --  */
+/* Home Image Container */
 
 .landing-image {
     height: 100vh;
@@ -121,6 +110,8 @@ a.dropdown-item {
 
     position: relative;
 }
+
+/* Jumbotron */
 
 .landing-page-header {
     line-height: 1.5;
@@ -161,15 +152,13 @@ a.dropdown-item {
     color: #f1f1ef;
 }
 
-/* Cocktail Features */
+/* Home Page Text Content */
 
-.featured-container {
-    background-color: #f1f1ef;
+.landing-page-text {
+    display: flex;
+    align-items: center;
 }
 
-.feature-heading {
-    color: #212529
-}
 
 /* Cocktail Cards */
 
@@ -182,15 +171,13 @@ a.dropdown-item {
     box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
 }
 
-.cocktail-cards {
+.darker-white-background {
     background-color: #f1f1ef;
 }
 
-/* Text */
-
-.landing-page-text {
-    display: flex;
-    align-items: center;
+.cocktail-card-title {
+    font-weight: 600;
+    font-style: italic;
 }
 
 /* Flash Messages */
@@ -227,42 +214,30 @@ a.dropdown-item {
     flex-flow: column;
 }
 
-.icons {
-      color: #f1f1ef;
+.dark-white-color {
+    color: #f1f1ef;
 }
 
 .icons:hover {
     transform: scale(1.2);
 }
 
-.footer-text {
-    color: #f1f1ef;
-}
-
-.footer-links {
-    color: #f1f1ef;
-}
-
-.footer-links:hover {
+.footer-link:hover {
     color: #f1f1ef;
 }
 
 
-/* Contact Page */
+/* Individual Cocktail Information */
 
-.contact-container {
-    background-color: #f1f1ef;
-}
-
-
-/* Where is this ?  */
-
-.info-col {
+.cocktail-info {
     display: flex;
     flex-flow: column;
     align-items: center;
 }
 
+li.list-group-item {
+    background-color: #f7f7f7;
+}
 
 /* Profile Page */
 
@@ -270,6 +245,8 @@ a.dropdown-item {
     border-width: 0 0 1px;
     margin: auto;
 }
+
+
 
 /* Edit Cocktail page */
 
@@ -317,7 +294,6 @@ a.dropdown-item {
     }
 }
 
-
 @media screen and (min-width: 992px) {
     .jumbotron {
         background-color: transparent;
@@ -348,10 +324,6 @@ a.dropdown-item {
     position: relative;
 }
 
-.error-text {
-    color: #f1f1ef;
-}
-
 @media screen and (max-width: 992px) {
     .error-container {
         height: 100vh;
@@ -371,7 +343,3 @@ a.dropdown-item {
     }
 }
 
-.cocktail-card-title {
-    font-weight: 600;
-    font-style: italic;
-}
