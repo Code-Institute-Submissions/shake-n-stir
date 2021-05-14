@@ -1,5 +1,3 @@
-/* --Bootstrap form validation-- */
-
 (function() {
   'use strict';
   window.addEventListener('load', function() {
@@ -52,7 +50,7 @@ if (img_upload_btn) {
 //Removes vlaue inside of input box to allow the widget to open to edit a new
 
 $('#img_upload_btn').on('click', function () {
-    $('#cocktail_img_url').val("")
+    $('#cocktail_img_url').val("");
 });
 
 
