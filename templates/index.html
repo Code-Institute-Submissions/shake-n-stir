@@ -18,7 +18,7 @@
                     <a class="btn btn-outline-light" href="{{ url_for('register') }}" role="button">Join Today</a>
                     <br>
                     <small class="mx-auto mt-2">
-                        <a href="{{ url_for('login') }}" class="login-link">Already a member? Log In</a>
+                        <a href="{{ url_for('login') }}" class="login-link ">Already a member? Log In</a>
                     </small>
                 {% endif %}
             </div>
@@ -63,7 +63,7 @@
 <!-- Featured cocktail cards -->
 
 {% if cocktails| length > 0 %}
-<section class="featured-container">
+<section class="darker-white-background">
     <div class="container pt-3">
         <div class="row">
             <div class="col-12">
@@ -71,7 +71,7 @@
             </div>
             {% for cocktail in cocktails %}
             <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card border-secondary mt-3 mb-3 cocktail-cards">
+                <div class="card border-secondary mt-3 mb-3 darker-white-background">
                     <!-- Cocktail Image -->
                     <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
                     <div class="text-center">

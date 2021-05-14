@@ -109,34 +109,34 @@
                 
                 <!-- Basic Site Map -->
                 <div class="col-lg-4 col-md-4 col-sm-4 site-map">
-                    <h5 class="footer-text mb-2 mt-3">Site Map</h5>
-                    <a class="footer-links" href="{{ url_for('index') }}">Home</a>
-                    <a class="footer-links" href="{{ url_for('view_cocktails') }}">Cocktails</a>
+                    <h5 class="dark-white-color mb-2 mt-3">Site Map</h5>
+                    <a class="footer-link dark-white-color" href="{{ url_for('index') }}">Home</a>
+                    <a class="footer-link dark-white-color" href="{{ url_for('view_cocktails') }}">Cocktails</a>
                     {% if session.user %}
-                        <a class="footer-links" href="{{ url_for('logout') }}">Log Out</a>
+                        <a class="footer-link dark-white-color" href="{{ url_for('logout') }}">Log Out</a>
                     {% else %}
-                        <a class="footer-links" href="{{ url_for('login')}}">Log In</a>
-                        <a class="footer-links" href="{{ url_for('register') }}">Register</a>
+                        <a class="footer-link dark-white-color" href="{{ url_for('login')}}">Log In</a>
+                        <a class="footer-link dark-white-color" href="{{ url_for('register') }}">Register</a>
                     {% endif %}
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 social-media-icons">
-                    <h5 class="footer-text mb-2 mt-3">Social Media</h5>
+                    <h5 class="dark-white-color mb-2 mt-3">Social Media</h5>
                     <a target="_blank" href="https://www.instagram.com/">
-                        <i class="icons fab fa-instagram fa-lg"></i>
+                        <i class="icons dark-white-color fab fa-instagram fa-lg"></i>
                     </a>
                     <a target="_blank" href="https://twitter.com/?lang=en">
-                        <i class="icons fab fa-twitter fa-lg"></i>
+                        <i class="icons dark-white-color fab fa-twitter fa-lg"></i>
                     </a>
                     <a target="_blank" href="https://www.facebook.com/">
-                        <i class="icons fab fa-facebook-square fa-lg"></i>
+                        <i class="icons dark-white-color fab fa-facebook-square fa-lg"></i>
                     </a>
                     <a target="_blank" href="https://www.pinterest.com/">
-                        <i class="icons fab fa-pinterest fa-lg"></i>
+                        <i class="icons dark-white-color fab fa-pinterest fa-lg"></i>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    <h5 class="footer-text mb-2 mt-3">Discover</h5>
-                    <p class="footer-text small">The tastiest cocktails right at home.</p>
+                    <h5 class="dark-white-color mb-2 mt-3">Discover</h5>
+                    <p class="dark-white-color small">The tastiest cocktails right at home.</p>
                     <form action="{{ url_for('search') }}" method="POST">
                         <div class="input-group mb-2">
                             <input class="form-control" type="text" placeholder="Search Cocktails" aria-label="Search Cocktails" 
