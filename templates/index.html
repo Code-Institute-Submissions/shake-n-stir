@@ -71,13 +71,13 @@
             </div>
             {% for cocktail in cocktails %}
             <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card border-secondary mt-3 mb-3 darker-white-background">
+                <div class="card cocktail-cards border-secondary mt-3 mb-3 darker-white-background">
                     <!-- Cocktail Image -->
                     <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
                     <div class="text-center">
                         <!-- Cocktail Information -->
                         <h5 class="card-title mt-2"><a href="{{ url_for('view_cocktail', cocktail_id=cocktail._id) }}"
-                                class="cocktail-card-title text-dark">{{ cocktail.cocktail_name }}
+                                class="cocktail-cards-title text-dark">{{ cocktail.cocktail_name }}
                             </a>
                         </h5>
                         <p><small><i class="fas fa-cocktail"></i> {{ cocktail.category_name }}</small>
