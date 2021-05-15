@@ -118,7 +118,7 @@ def login():
 # user profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # redirects none users to login if attempted to go to a user's profile
+    # redirects non-users to login if attempted to go to a user's profile
     if session.get("user") is None:
         return redirect(url_for("login"))
     # grabs the session user's username from the database
