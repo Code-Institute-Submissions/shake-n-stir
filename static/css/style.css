@@ -12,6 +12,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f7f7f7;
+    font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -167,7 +168,9 @@ a.dropdown-item {
     height: auto;
 }
 
-.card:hover {
+
+
+.card-hover {
     box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
 }
 
@@ -192,6 +195,70 @@ a.dropdown-item {
     display: flex;
     justify-content: center;
 }
+
+
+
+/* Individual Cocktail Information */
+
+.cocktail-info {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+li.list-group-item {
+    background-color: #f7f7f7;
+}
+
+.cocktail-headings {
+    border-bottom: 1px solid #212529;
+}
+
+/* Profile Page */
+
+.profile-btns {
+    border-width: 0 0 1px;
+    margin: auto;
+}
+
+
+/* Edit Cocktail page */
+
+.edit-cocktail-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.img .thumbnail {
+    width: 300px;
+    height: 300px;
+}
+
+/* Add Category page */
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+/* No Results from search */
+
+.no-results-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popular-list {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
 
 /* Footer */
 
@@ -227,84 +294,6 @@ a.dropdown-item {
 }
 
 
-/* Individual Cocktail Information */
-
-.cocktail-info {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-
-li.list-group-item {
-    background-color: #f7f7f7;
-}
-
-/* Profile Page */
-
-.profile-btns {
-    border-width: 0 0 1px;
-    margin: auto;
-}
-
-
-
-/* Edit Cocktail page */
-
-.edit-cocktail-btns {
-    display: flex;
-    justify-content: center;
-}
-
-.img .thumbnail {
-    width: 300px;
-    height: 300px;
-}
-
-/* Add Category page */
-
-.quick-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.no-results-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.popular-list {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-
-.cocktail-headings {
-    border-bottom: 1px solid #212529;
-}
-
-/* Media Queries */
-
-@media screen and (max-width: 992px) {
-    .parallax {
-        background-attachment: scroll;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .jumbotron {
-        background-color: transparent;
-        color: white;
-        padding-top: 145px;
-        padding-left: 100px;
-    }
-    
-}
-
-
 /* -- 404 Error Page */
 
 .error-container {
@@ -322,6 +311,25 @@ li.list-group-item {
     justify-content: center;
 
     position: relative;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 992px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .jumbotron {
+        background-color: transparent;
+        color: white;
+        padding-top: 145px;
+        padding-left: 100px;
+    }
+    
 }
 
 @media screen and (max-width: 992px) {
@@ -342,4 +350,5 @@ li.list-group-item {
         position: relative;
     }
 }
+
 
