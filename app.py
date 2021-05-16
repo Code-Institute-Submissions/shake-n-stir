@@ -74,7 +74,7 @@ def register():
             register = {
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(
-                    request.form.get("password").lower())
+                    request.form.get("password"))
                     }
         mongo.db.users.insert_one(register)
 
@@ -97,7 +97,7 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get(
-                    "password").lower()):
+                    "password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(
