@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="col-sm-12 d-flex pb-2">
-        <form class="col-sm-12 col-md-8 offset-md-2 needs-validation" method="POST"
+        <form class="col-sm-12 col-md-8 offset-md-2 needs-validation" novalidate method="POST"
             action="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}" enctype="multipart/form-data">
             <!-- Cocktail Image heading -->
             <div class="form-row justify-content-center">
@@ -17,6 +17,9 @@
                     <label for="cocktail_name">Name</label>
                     <input type="name" name="cocktail_name" class="form-control" minlength="5" maxlength="50"
                         id="cocktail_name" value="{{ cocktail.cocktail_name }}"required>
+                        <div class="invalid-feedback">
+                            Please provide a cocktail name.
+                        </div>
                 </div>
                 <!-- Cocktail Category -->
                 <div class="form-group col-md-6">
@@ -32,6 +35,9 @@
                             {% endif %}
                         {% endfor %}
                     </select>
+                    <div class="invalid-feedback">
+                        Please select a cocktail category.
+                    </div>
                 </div>
             </div>
             <!-- Cocktail Description-->
@@ -42,6 +48,9 @@
                     minlength="0" maxlength="250" placeholder="A short snippet about your cocktail" required>
                 {{- cocktail.cocktail_description -}}
                 </textarea>
+                <div class="invalid-feedback">
+                    Please write a short description for your cocktail.
+                </div>
             </div>
             <!-- Cocktail Ingredients -->
             <div class="form-group">
@@ -51,6 +60,9 @@
                     minlength="10" maxlength="500" placeholder="Please place each ingredient on a new line" required>
                 {{- cocktail.cocktail_ingredients -}} 
                 </textarea>
+                <div class="invalid-feedback">
+                    Please provide the ingredients for your cocktail.
+                </div>
             </div>
             <!-- Cocktail Instructions -->
             <div class="form-group">
@@ -60,14 +72,20 @@
                     minlength="10" maxlength="500" placeholder="Please place each instruction on a new line" required>
                 {{- cocktail.cocktail_instructions -}}
                 </textarea>
+                <div class="invalid-feedback">
+                    Please provide instructions for your cocktail.
+                </div>
             </div>
             <!-- Cocktail Servings -->
             <div class="form-group">
                 <i class="fas fa-sort-numeric-up-alt"></i>
                 <label for="cocktail_serving">Servings</label>
                 <input type="text" name="cocktail_serving" class="form-control" id="cocktail_serving"
-                    placeholder="Example: 2" minlength="1" maxlength="2" pattern="^[1-10]{1,10}$" 
+                    placeholder="Example: 2" minlength="1" maxlength="2" pattern="^([1-9])$" 
                     value="{{ cocktail.cocktail_serving }}"required>
+                    <div class="invalid-feedback">
+                        Please input the serving amount for this cocktail. (1-9 Servings).
+                    </div>
             </div>
             <!-- Image Upload button -->
             <div class="form-group pb-1">
