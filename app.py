@@ -8,7 +8,6 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask import jsonify
 if os.path.exists("env.py"):
     import env
 
