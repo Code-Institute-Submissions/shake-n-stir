@@ -22,6 +22,7 @@
         <div class="col-sm-12 col-md-8 mx-auto">
             <ul class="list-group list-group-flush">
                 {% for category in categories %}
+                <!-- List group to display categories -->
                     <li class="list-group-item d-flex justify-content-between align-items-center">{{ category.category_name }} 
                         <span class="inline">
                             <a href="{{ url_for('edit_category', category_id=category._id)}}"
@@ -32,32 +33,34 @@
                                     Delete
                                 </button>
                         </span>
+                         <!-- Modal -->
+                        <div class="modal fade" id="modal{{ loop.index }}" tabindex="-1"
+                            aria-labelledby="modal{{ loop.index }}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Delete Category</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete the {{category.category_name}}
+                                            category?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-sm btn-outline-info"
+                                            data-dismiss="modal">Close</button>
+                                            <!-- Delete Category Button -->
+                                        <a href="{{ url_for('delete_category', category_id=category._id )}}"
+                                            class="btn btn-sm btn-outline-danger mr-2">
+                                            <i class="fas fa-trash-alt"></i> Delete
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                     <!-- Modal -->
-                     <div class="modal fade" id="modal{{ loop.index }}" tabindex="-1"
-                         aria-labelledby="modal{{ loop.index }}" aria-hidden="true">
-                         <div class="modal-dialog">
-                             <div class="modal-content">
-                                 <div class="modal-header">
-                                     <h5 class="modal-title" id="modal{{ loop.index }}">Delete Category</h5>
-                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                         <span aria-hidden="true"><i class="far fa-times-circle"></i></span>
-                                     </button>
-                                 </div>
-                                 <div class="modal-body">
-                                    <p>Are you sure you want to delete the {{category.category_name}} category?</p>
-                                 </div>
-                                 <div class="modal-footer">
-                                     <button type="button" class="btn btn-sm btn-outline-info"
-                                         data-dismiss="modal">Close</button>
-                                     <a href="{{ url_for('delete_category', category_id=category._id )}}"
-                                         class="btn btn-sm btn-outline-danger mr-2">
-                                         <i class="fas fa-trash-alt"></i> Delete
-                                     </a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
                 {% endfor %}
             </ul>
         </div>
