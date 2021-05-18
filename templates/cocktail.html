@@ -74,7 +74,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="deleteCocktailModal">Delete Cocktail</h5>
+                                <h5 class="modal-title">Delete Cocktail</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true"><i class="far fa-times-circle"></i></span>
                                 </button>
@@ -110,7 +110,7 @@
             <form action="{{ url_for('search') }}" method="POST">
                 <div class="input-group mb-2">
                     <input class="form-control shadow-none border-dark" type="text" placeholder="Search Cocktails"
-                        aria-label="Search Cocktails" name="query" id="query" aria-describedby="searchbar">
+                        aria-label="Search Cocktails" name="query" id="cocktail_query" aria-describedby="searchbar">
                     <div class="input-group-append mb-2">
                         <button id="searchbar" type="submit" class="btn btn-outline-dark">
                             <i class="fas fa-paper-plane"></i>
