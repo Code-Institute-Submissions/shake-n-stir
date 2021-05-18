@@ -11,13 +11,13 @@
             <form action="{{ url_for('search') }}" method="POST">
                 <div class="input-group mb-2">
                     <input class="form-control shadow-none border-dark" type="text" placeholder="Search Cocktails" aria-label="Search Cocktails" 
-                        name="query" id="query" aria-describedby="searchbar-footer">
+                        name="query" id="cocktailSearch" aria-describedby="cocktailSearch">
                     <div class="input-group-append mb-2">
                         <a href="{{ url_for('view_cocktails') }}"
                         class="btn bg-transparent reset-search shadow-none" style="margin-left: -40px; z-index: 100;">
                         <i class="fa fa-times"></i>
                         </a>
-                        <button id="searchbar-footer" type="submit" class="btn btn-dark">
+                        <button id="cocktail-search" type="submit" class="btn btn-dark">
                             <i class="fas fa-paper-plane"></i>
                         </button>
                         
@@ -28,9 +28,9 @@
     </div>
 </div>
 
-
-{% if cocktails| length > 0 %}
 <div class="container">
+{% if cocktails| length > 0 %}
+
     <!-- cocktail cards -->
     <div class="row">
         {% for cocktail in cocktails %}
@@ -71,7 +71,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="modal{{ loop.index }}">Delete Cocktail</h5>
+                                <h5 class="modal-title">Delete Cocktail</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true"><i class="far fa-times-circle"></i></span>
                                 </button>
@@ -94,7 +94,7 @@
         </div>
         {% endfor %}
     </div>
-</div>
+
     {% else %}
     <!-- If no results are found -->
     <div class="container">
