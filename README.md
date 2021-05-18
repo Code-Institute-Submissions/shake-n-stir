@@ -4,52 +4,16 @@ Shake and Stir is a community-focused cocktail recipe app. This app aims to prom
 
 [You can view the live project here](https://shake-and-stir.herokuapp.com/)
 
-![Website Overview]()
+![Website Overview](./docs/wireframes/website-overview.png)
 
 ## Overview
 
-A website for people who wish to discover, create and share their favorite cocktail recipes with others. 
-
-The website is built with CRUD functionality and maintains responsiveness across all main devices; desktop, tablet, and mobile. 
+A website for people who wish to discover, create and share their favorite cocktail recipes with others.
 
 The website features a register and login form, to allow users to create their profile. Once a user has created their profile, they can create, edit and delete their cocktail recipes. The website also features a landing page, a cocktail collection page, as well as individual cocktail pages. 
-
 The main goal of this website is to promote the art and joy of making cocktails, while also allowing others to discover unknown cocktail recipes.
 
-
-The cocktail creation form allows users to provide ingredients, instructions, and an image to help showcase their cocktail. 
-
-In addition, all users can view other created cocktails and attempt to make them at home. 
-
-The website also features admin privileges, to create, edit and delete cocktail spirit categories, i.e Vermouth, Gin, Rum, etc. 
-
-The admin account can also edit/delete all cocktails which are posted to the website. 
-
-
-User Stories
-Project Goals
-UX
-Strategy
-- Business Goals
-- User Goals
-Scope
-Structure
-Skeleton
-- Wireframes
-Surface
-- Images
-- Colors
-- Font
-- Icons
-Features
-- Current Features
-- Future Features
-Database Information
-Technologies Used
-Testing
-Deployment
-Credits
-Acknowledgments
+The website is built with CRUD functionality and maintains responsiveness across all main devices; desktop, tablet, and mobile.
 
 ## User Stories
 
@@ -63,8 +27,6 @@ Acknowledgments
 * I want to be able to edit or delete my created cocktail recipes.
 * I want my profile to be password protected.
 * I would like to be able to follow the website's social media accounts.
-
-
 
 ## Project Goals
 
@@ -80,11 +42,7 @@ Acknowledgments
 
 ## UX 
 
-
-The practice of making a cocktail is a creative process, which is often mysterious, and full of trial and error. I created this website, to help develop an online community where people can create and share their favorite cocktail recipes.
-
-Develop this more
-
+The practice of making a cocktail is a creative process, which is often mysterious, and full of trial and error. I created this website, to help develop an online community where people can create and share their favorite cocktail recipes. I always believed that because taste is truly subjective, many people have different preferences when it comes to a 'perfect' cocktail. As a result, I wanted to create a space for all cocktails, free of arbitrary ratings, and conventional recipes. 
 
 ## Strategy 
 
@@ -156,9 +114,21 @@ The wireframes of each page and their respective devices are linked below.
 
 ### Wireframes  
 
-* [Desktop](./docs/wireframes/)
-* [Tablet](./docs/wireframes/)
-* [Mobile](./docs/wireframes/)
+* [Home Page Desktop](./docs/wireframes/home-page-desktop.png)
+* [Home Page Tablet](./docs/wireframes/home-page-tablet.png)
+* [Home Page Mobile](./docs/wireframes/home-page-mobile.png)
+
+* [Recipe Page Desktop](./docs/wireframes/recipes-page-desktop.png)
+* [Recipe Page Tablet](./docs/wireframes/recipes-page-tablet.png)
+* [Recipe Page Mobile](./docs/wireframes/recipes-page-mobile.png)
+
+* [User Profile Page Desktop](./docs/wireframes/user-profile-desktop.png)
+* [User Profile Page Tablet](./docs/wireframes/user-profile-tablet.png)
+* [User Profile Page Mobile](./docs/wireframes/user-profile-mobile.png)
+
+* [FAQ Page Desktop](./docs/wireframes/faq-page-desktop.png)
+* [FAQ Page Tablet](./docs/wireframes/faq-page-tablet.png)
+* [FAQ Page Mobile](./docs/wireframes/faq-page-mobile.png)
 
 ## Surface 
 
@@ -172,7 +142,6 @@ There are two ways in which images are used throughout this app;  Static and Dyn
 I decided to use a large bright image of a cocktail, which clearly shows the user that the website is about cocktails. 
 
 The second static image I have used is a collection of cocktails with a variety of different colors, while also maintaining dark tones in the background 
-
 
 The second way in which images are handled is through Cloudinary. I have decided to use the Cloudinary Widget API, as I felt it offered a good UX. 
 
