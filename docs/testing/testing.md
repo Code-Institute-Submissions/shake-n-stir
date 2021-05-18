@@ -7,8 +7,13 @@ I have organized the testing.md file by first testing the HTML files, CSS file, 
 
 ## HTML 
 
-I passed the HTML code through the W3C Markup Validation Service. 
+I passed all HTML code through the W3C Markup Validation Service. I recieved two errors, which are outlined below: 
 
+1. I had an error on the cocktails.html page due to duplicate ids. These duplicate ids referred to the search functionality which is used twive on this page (once in the footer and once at the top of the page). This error was quickly fixed by changing the id.
+
+2. For the categories.html page, I received an error for having a div(modal) inside of a 'ul'. If I moved the modal outside of the ul, it would no longer target the correct categories. However, a div is allowed to be placed within a 'li' and once placed here, the error no longer appeared. 
+
+I passed all pages through the W3C Markup Validation Service again, and no errors were found. 
 
 ## CSS
 
@@ -183,9 +188,9 @@ I tested the various aspects of the website through the development process. Onc
 
 * I tested the website across several browsers, with no issues to report. The browsers tested are Google Chrome, Firefox, and Safari.
 
-* Google Lighthouse? 
+* I tested the website using [Google Mobile Friendly Test](https://search.google.com/test/mobile-friendly) and the website has passed. 
 
-* Google Mobile? 
+* I tested the website uisng Google Lighthouse on both mobile and desktop. The website scored '97' on Desktop and '81' on Mobile.
 
 
 ## Testing User Stories 
