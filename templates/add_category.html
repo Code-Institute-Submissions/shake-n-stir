@@ -11,6 +11,7 @@
         </div>
     </div>
     <div class="row">
+        <!-- Add Category information -->
         <div class="col-sm-12 col-md-4">
             <p class="align-left mt-4 mb-4">
                 Categories refer to the main spirit used in a cocktail.
@@ -26,12 +27,13 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">Category Name</h5>
                     <hr>
+                    <!-- Add Category form -->
                     <form class="form-inline needs-validation" action="{{ url_for('add_category')}}" method="POST">
                         <div class="input-group mr-sm-2 mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-folder"></i></span>
                             </div>
-                            <input type="name" name="category_name" class="form-control mr-sm-2" minlength="3"
+                            <input type="text" name="category_name" class="form-control mr-sm-2" minlength="3"
                                 maxlength="25" id="category_name" required>
                             <label for="category_name"></label>
                             <button type="submit" class="btn btn-outline-success mr-sm-2">
@@ -47,6 +49,7 @@
         </div>
     </div>
     <div class="row">
+        <!-- Admin Links -->
         <div class="col-sm-12 quick-links">
             <h4 class="bottom-border">Admin Quick Links</h4>
             <ul class="list-group list-group-flush">
