@@ -15,8 +15,8 @@
                 <div class="form-group col-md-6">
                     <i class="fas fa-pencil-alt"></i>
                     <label for="cocktail_name">Name</label>
-                    <input type="name" name="cocktail_name" class="form-control" minlength="5" maxlength="50"
-                        id="cocktail_name" value="{{ cocktail.cocktail_name }}"required>
+                    <input type="text" name="cocktail_name" class="form-control" minlength="5" maxlength="50"
+                        id="cocktail_name" value="{{ cocktail.cocktail_name }}" required>
                         <div class="invalid-feedback">
                             Please provide a cocktail name.
                         </div>
@@ -82,7 +82,7 @@
                 <label for="cocktail_serving">Servings</label>
                 <input type="text" name="cocktail_serving" class="form-control" id="cocktail_serving"
                     placeholder="Example: 2" minlength="1" maxlength="2" pattern="^([1-9])$" 
-                    value="{{ cocktail.cocktail_serving }}"required>
+                    value="{{ cocktail.cocktail_serving }}" required>
                     <div class="invalid-feedback">
                         Please input the serving amount for this cocktail. (1-9 Servings).
                     </div>
@@ -90,7 +90,7 @@
             <!-- Image Upload button -->
             <div class="form-group pb-1">
                 <i class="fas fa-image"></i>
-                <label for="cocktail_img">Image</label>
+                <label for="cocktail_img_url">Image</label>
                 <div class="input-group mr-sm-2 mb-3">
                     <div class="input-group-prepend">
                         <button id="img_upload_btn" class="btn btn-sm btn-outline-dark" type="button">
@@ -98,7 +98,7 @@
                         </button>
                     </div>
                     <input type="text" class="form-control" name="cocktail_img" id="cocktail_img_url"
-                        aria-describedby="cocktail_img" value="{{ cocktail.cocktail_img }}" required>
+                        aria-describedby="cocktail_img_url" value="{{ cocktail.cocktail_img }}" required>
                         <div class="invalid-feedback">
                             Please attach an image.
                         </div>
@@ -128,7 +128,7 @@
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="deleteCocktailModal">Delete Cocktail</h5>
+                              <h5 class="modal-title">Delete Cocktail</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
