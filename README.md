@@ -464,47 +464,8 @@ touch .gitignore
 
 Open the .gitignore file, and type in 'env.py'. This allows your sensitive information to be hidden.
 
-In app.py, switch debug=False to debug=True.
+You should now be able to locally deploy this project. 
 
-In addition, you will need to create a MongoDB account. Create a new database with the following information: 
-
-Example of Database: 
-
-Cocktails: 
-
-_id: ObjectID('Cocktail ID')
-
-category_name: "string"
-
-cocktail_name: "string"
-
-cocktail_description: "string"
-
-cocktail_ingredients: "string"
-
-cocktail_instructions: "string"
-
-cocktail_serving: "string"
-
-created_by: "string"
-
-cocktail_img: "string"
-
-Categories: 
-
-_id: ObjectID ('Category ID')
-
-category_name:"string"
-
-Users:
-
-_id: ObjectID('User ID')
-
-username: "string"
-
-password: "string"
-
-You can now run this project locally. 
 
 ## Credits 
 

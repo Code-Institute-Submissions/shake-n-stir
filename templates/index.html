@@ -9,7 +9,6 @@
                 <h1 class="display-4">Shake and Stir</h1>
                 <p class="lead">The tastiest cocktails right at home</p>
                 <hr class="jumbo-divider">
-                
                 <!-- shows browse cocktail button for logged in users -->
                 {% if session.user %}
                     <a class="btn btn-outline-light" href="{{ url_for('view_cocktails') }}" role="button">Browse Cocktails</a>
@@ -38,12 +37,12 @@
         
         <div class="col-sm-12 col-lg-6 landing-page-text">
             <p class="pt-2 mt-2">
-                Making a cocktail is a creative practice; often shrouded in mystery, trial and error. However, we believe
-                that everyone can make delicious cocktails, right at home.
+                Making a cocktail is a creative practice; often shrouded in mystery, trial, and error. However, we
+                believe that everyone can make delicious cocktails, right at home.
                 <br>
                 <br>
-                Shake n Stir, was created to share the love of cocktails. It allows people to share their favorite
-                cocktails, create their own creative spins on classic cocktails, or develop something entirely new.
+                Shake and Stir, was created to share the love of cocktails. It allows people to share their favorite
+                cocktails, add creative spins on classic cocktails, or develop something entirely new.
                 <br>
                 <br>
                 We believe that all good things should be shared. Once you create your cocktail, others can view your
@@ -70,7 +69,7 @@
                 <h4 class="text-center bottom-border feature-heading">Featured Today</h4>
             </div>
             {% for cocktail in cocktails %}
-            <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="col-sm-12 col-md-4 col-lg-4">
                 <div class="card cocktail-cards border-secondary mt-3 mb-3 darker-white-background">
                     <!-- Cocktail Image -->
                     <img src="{{ cocktail.cocktail_img }}" class="card-img-top img-fluid" alt="cocktail-image">
@@ -101,6 +100,5 @@
         </div>
     </div>
 </section>
-
 
 {% endblock %}
