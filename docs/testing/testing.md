@@ -198,55 +198,53 @@ I tested the various aspects of the website through the development process. Onc
 
 * I want a website that allows me to create my cocktail recipes.
     * This is evident in the Add Cocktail form, which allows a user to create their cocktail. 
-        * You can see this [here]()
+        * You can see this [here](./user-stories/user-story-add-cocktail.png)
 
-* I would like other users to view my created cocktail recipes.
-    * This is evident in Cocktail Collection, which allows a user view their cocktail recipes. This is also evident on a user's profile page, where they can view all of their created cocktails. 
-        * You can see this [here]()
-
-* * I want a website where I can view other people's cocktail recipes. 
+* I want a website where I can view other people's cocktail recipes. 
      * This is evident in Cocktail Collection, which allows a user to view all cocktails created by other users.
-        * You can see this [here]()
+        * You can see this [here](./user-stories/user-story-view-other-cocktails.png)
 
 * I want the ability to search for cocktails on the website. 
     * This is evident from the Cocktail Collection page where a user can search for specific cocktails. This is also evident in the footer where there is a search function, that users can utilize on any page. 
-        * You can see this [here]()
+        * You can see this [here](./user-stories/user-story-search-cocktails.png)
         
 * I want a website that is easily accessed on my mobile phone and tablet. 
      * The website is responsive for both mobile phones and tablets. I have taken steps to ensure each device is a smooth experience. I have achieved this by adhering to bootstrap's responsive classes as well as custom media queries used throughout the website. 
-        * You can see this [here]()
+        * You can see this [here](./user-stories/user-story-mobile-view.png)
 
     * The navigation bar also changes to a hamburger-style icon on smaller devices. The dropdown navigation bar frees up screen space on mobile and tablet devices.
-        * You can see this [here]()
+        * You can see this [here](./user-stories/user-story-smaller-nav.png)
     * The amount of cards showing on a row is also adjusted depending on the size of the user's device. On mobiles, a card takes up one row, whereas, on a desktop, there are three cards. 
-        * You can see this [here]()
+        * You can see this [here](./user-stories/user-story-mobile-view.png)
 
 * I want a website that is easy to understand and navigate. 
 
     * The hero image, and jumbotron quickly outline the main purpose of the website. I have developed the website to be easily understood, and easy to traversable. This is achieved by utilizing visual cues such as buttons, icons, and relevant navigation links. 
-    * Each navigation link is clearly stated and directs users to the relevant sections. 
+    * Each navigation link is clearly stated and directs users to the relevant sections.
+        * You can see this [here](./user-stories/user-story-nav-bar.png) 
     * All social media links are clearly outlined, and when clicked, open a new tab. 
     * All navigation links display a subtle hover effect to provide a visual cue to a user what they are about to click.
     * I have also opted to use hover effects on buttons, which often change color when hovered, which displays to the user what they are about to click. 
-        * You can see this [here] which one are we showing? from about too
+    * All forms are outlined, and provide guidelines via placeholders and invalid feedback
+        * You can see this [here](./user-stories/user-story-helper-text.png)
 
 * I want to have my own profile to store my created cocktails.
 
     * When a user creates a cocktail, the cocktail information is also stored on their profile. Each time a user is logged into their Profile, they can quickly view their cocktails. 
-        * This can be seen[here]()
+        * This can be seen[here](./user-stories/view-self-cocktails.png)
 
 * I want to be able to edit or delete my created cocktail recipes.
 
      * If a user has created a cocktail, they are given the option to edit and delete their cocktail. This can be accessed from the main cocktail page, or from a user's profile.
 
-        * Examples of editing and delete options from a user's profile can be seen [here]()
+        * Examples of editing and delete options from a user's profile can be seen [here](./user-stories/user-story-edit-delete.png)
 
 * I would like to be able to follow the website's social media accounts.
 
     * The social media accounts for the website are displayed on every page in the footer section. Once a user clicks on a social media icon, a new tab is opened and directs users to the relevant social media page. 
-        * The social media icons can be viewed [here]() 
+        * The social media icons can be viewed [here](./user-stories/user-story-social-media.png) 
 
 * I want my profile to be password protected.
 
     * A user is not able to create an account, without also creating a password for their account. A profile cannot be accessed when logging in without knowing the password. All passwords are protected by HASH??? 
-        * A the login form displaying the password can be seen [here]()
+        * A the login form displaying the password can be seen [here](./user-stories/user-story-password.png)
