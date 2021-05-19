@@ -256,30 +256,7 @@ I have opted to use a NoSQL database, namely, MongoDB to store category, cocktai
 
 I have created a database wireframe using dbdiagram. This can be seen [here](./docs/wireframes/database-wireframe.png)
 
-Example of Database: 
-
-Cocktails: 
-
-_id: ObjectID('Cocktail ID')
-category_name: "Bourbon"
-cocktail_name: "Paper Plane"
-cocktail_description: "A fruity twist on the classic Whiskey Sour."
-cocktail_ingredients: "3/4 ounce bourbon\r\n3/4 ounce Aperol\r\n3/4 ounce Amaro Nonino Quintessentia\r\n3/4 ounce lemon juice, freshly squeezed"
-cocktail_instructions: "Add the bourbon, Aperol, Amaro Nonino, and lemon juice into a shaker with ice. \r\nShake until well-chilled.\r\nStrain into a coupe glass."
-cocktail_serving: "1"
-created_by: "admin"
-cocktail_img: "https://res.cloudinary.com/dx82dshakenstir/image/upload/v1620466353/fbtgvcs3qifryjxulo8o.jpg"
-
-Categories: 
-
-_id: ObjectID ('Category ID')
-category_name:"Bourbon"
-
-Users:
-
-_id: ObjectID('User ID')
-username: "username"
-password: "password"
+The full database can be viewed in the 'Deployment' section of this README.
 
 ## Troubleshooting
 
@@ -443,6 +420,80 @@ Before clicking the 'Enable Automatic Deploys' button, scroll up to the top of t
 8. Choose the master branch.
 9. Your application is now deployed. 
 
+
+### Local Development
+
+To run this project locally on your system - you will need the following components installed on your system:
+
+In order to locally deploy this project, you will need to open your IDE, and create an environment. 
+
+The following are required: 
+* Python 3.8 including pip
+* Flask.
+* MongoDB.
+* Git.
+
+Open your terminal, and clone this link: 
+https://github.com/TomC2311/shake-n-stir.git
+
+
+Install the requirements.txt file by typing the following into your terminal 
+```
+pip3 install -r requirements.txt
+```
+
+Then crete an env.py to store your enviromental variables. All your sensitive information will go here. 
+
+```
+touch env.py
+```
+
+In addition, you will also need to update the environment variables within the env.py file. 
+
+```
+"SECRET_KEY" = "SECRET KEY HERE" 
+"MONGO_URI" =  mongodb+srv://..
+"MONGO_DBNAME" = "YOUR DATABASE NAME"
+```
+
+You also need to inform GitHub to ignore this file, so this informaiton can remain hidden to others. To do this, you must create a .gitignore file. 
+
+```
+touch .gitignore
+```
+
+Open the .gitignore file, and type in 'env.py'. This allows your sensitive information to be hidden.
+
+In app.py, switch debug=False to debug=True.
+
+In addition, you will need to create a MongoDB account. Create a new database with the following information: 
+
+Example of Database: 
+
+Cocktails: 
+
+_id: ObjectID('Cocktail ID')
+category_name: "string"
+cocktail_name: "string"
+cocktail_description: "string"
+cocktail_ingredients: "string"
+cocktail_instructions: "string"
+cocktail_serving: "string"
+created_by: "string"
+cocktail_img: "string"
+
+Categories: 
+
+_id: ObjectID ('Category ID')
+category_name:"string"
+
+Users:
+
+_id: ObjectID('User ID')
+username: "string"
+password: "string"
+
+You can now run this project locally. 
 
 ## Credits 
 
