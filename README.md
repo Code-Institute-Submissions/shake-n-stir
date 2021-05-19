@@ -17,7 +17,6 @@ The website is built with CRUD functionality and maintains responsiveness across
 ## User Stories
 
 * I want a website that allows me to create my cocktail recipes.
-* I would like other users to view my created cocktail recipes.
 * I want a website where I can view other people's cocktail recipes. 
 * I want the ability to search for cocktails on the website. 
 * I want a website that is easily accessed on my mobile phone and tablet. 
