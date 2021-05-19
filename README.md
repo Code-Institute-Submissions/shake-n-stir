@@ -8,10 +8,9 @@ Shake and Stir is a community-focused cocktail recipe app. This app aims to prom
 
 ## Overview
 
-A website for people who wish to discover, create and share their favorite cocktail recipes with others.
+A website for people who wish to discover, create and share their favorite cocktail recipes.
 
-The website features a register and login form, to allow users to create their profile. Once a user has created their profile, they can create, edit and delete their cocktail recipes. The website also features a landing page, a cocktail collection page, as well as individual cocktail pages. 
-The main goal of this website is to promote the art and joy of making cocktails, while also allowing others to discover unknown cocktail recipes.
+The website features a register and login form, to allow users to create their profile. Once a user has created their profile, they can create, edit and delete their cocktail recipes. The website also features a landing page, a cocktail collection page, as well as individual cocktail pages. The main goal of this website is to promote the art and joy of making cocktails, while also allowing others to discover unknown cocktail recipes.
 
 The website is built with CRUD functionality and maintains responsiveness across all main devices; desktop, tablet, and mobile.
 
@@ -42,14 +41,11 @@ The website is built with CRUD functionality and maintains responsiveness across
 
 ## UX 
 
-The practice of making a cocktail is a creative process, which is often mysterious, and full of trial and error. I created this website, to help develop an online community where people can create and share their favorite cocktail recipes. I always believed that because taste is truly subjective, many people have different preferences when it comes to a 'perfect' cocktail. As a result, I wanted to create a space for all cocktails, free of arbitrary ratings, and conventional recipes. 
+The practice of making a cocktail is a creative process, mysterious, and full of trial and error. I created this website to help develop an online community where people can create and share their favorite cocktail recipes. I always believed that taste is subjective, and many people have different preferences when it comes to a 'perfect' cocktail. As a result, I wanted to create a space for all cocktails, free of arbitrary ratings and conventional recipes. 
 
 ## Strategy 
 
-
-The goal of this website is to support and encourage the cocktail-making community. The website was built to enable users to create their cocktails. The secondary goal of this website is to promote Stir n Shake's social media following and to provide a place where people can discover cocktails they never knew about before. This allows for a sense of community, and continuous growth for the website.
-
-
+The goal of this website is to support and encourage the cocktail-making community. The website was built to provide a platform for users to share cocktail recipes. The secondary goal of this website is to promote Stir n Shake's social media following and to provide a place where people can discover cocktails they never knew about before. This allows for a sense of community, and continuous growth for the website.
 
 ### Business Goals: 
 
@@ -57,7 +53,6 @@ The goal of this website is to support and encourage the cocktail-making communi
 * A simple and easy to navigate website with a clear purpose.
 * Mobile-first design to increase ease of use for those without PCs.
 * Increase web presence to grow the brand and discover unique cocktail recipes.
-
 
 ### User Goals: 
 
@@ -70,33 +65,22 @@ The goal of this website is to support and encourage the cocktail-making communi
 * A password-protected profile.
 * To follow the website's social media accounts.  
 
-
 ## Scope 
 
-The Scope and features of this project were based on personal experiences throughout the last year. As many bars and restaurants closed for long periods, I had missed the experience of trying new beverages, particularly cocktails.
+The Scope and features of this project were based on personal experiences throughout the last year. As many bars and restaurants closed for long periods, I had missed the experience of trying new cocktails.
 
-Taste is subjective, and my favorite part of trying new cocktails, are the creative spins people can employ when making their version of a popular cocktail.
+Taste is subjective, and my favorite part of trying new cocktails, are the creative spins people can employ when making their version of a popular cocktail. For this reason, I wanted to create a cocktail recipe community, that allowed anyone to make an account, and share their recipe. 
 
-For this reason, I wanted to create a cocktail recipe community, that allowed anyone to make an account, and share their recipe. 
-
-With this in mind, I decided to forego a common feature; ratings. In addition, I wanted the focus to be on people's cocktail recipes, and so I decided to keep the home page short and to the point. I also used several call-to-action buttons to help users quickly create an account and start making cocktails. 
-
+I decided to forego a common feature; ratings. In addition, I wanted the focus to be on people's cocktail recipes, and so I decided to keep the home page short and to the point. I also used several call-to-action buttons to help users quickly create an account and start making cocktails. 
 
 ## Structure 
 
 
 My goal was to provide users with a simple and easy-to-navigate interface and experience. I want users to enter the site, and feel confident in navigating throughout the various pages. 
 
-The home page features a large colorful image, and a call to action button for users to join the website or to log into their account. This button changes if a user is already logged into their account, and will instead encourage users to browse the collection of cocktails. 
+The home page features a large colorful image, and a call to action button for users to join the website or to log into their account. This button changes if a user is already logged into their account, and will instead encourage users to browse the collection of cocktails. The home page provides users with an introduction website's philosophy. At the bottom of the home page, users are presented with three cocktail cards to encourage users to make a cocktail or browse more cocktails. I have also created a footer with a basic site map, social media links, and a search bar to quickly search for cocktails. 
 
-The home page also features a body of text with an introduction to the website and the website's philosophy. 
-
-At the bottom of the home page, users are presented with three cocktail cards to encourage users to make a cocktail or browse more cocktails. 
-
-I have also employed a footer with a basic site map, social media links, and a search bar to quickly search for cocktails. 
-
-As there are over 10 different pages for this website, I have also given a rundown of the most notable aspects in the 'Features' section below.
-
+As there are over 10 different pages for this website, I have provided a summary of the most notable aspects in the 'Features' section below.
 
 
 ## Skeleton 
@@ -136,44 +120,28 @@ The wireframes of each page and their respective devices are linked below.
 
 There are two ways in which images are used throughout this app;  Static and Dynamic images. 
 
-1. Static Images 
-- The first is by storing images in a static folder. I have stored the landing page images here, as they are fixed, and will not be changed. 
+Images that do not change are in the 'static' folder. I have stored the landing page images here, as they are fixed and will not be changed. I decided to use a bright photo of a cocktail, which clearly shows the user that the website is about cocktails. The second static image I have used is a collection of cocktails with a variety of colors while also maintaining dark tones in the background of the image.
 
-I decided to use a large bright image of a cocktail, which clearly shows the user that the website is about cocktails. 
-
-The second static image I have used is a collection of cocktails with a variety of different colors, while also maintaining dark tones in the background 
-
-The second way in which images are handled is through Cloudinary. I have decided to use the Cloudinary Widget API, as I felt it offered a good UX. 
-
-This stores images on Cloudinary, and also avoid the risk of being removed on Heroku once deployed. 
+I consider the images that users uploaded to be 'dynamic' as they are subject to change. The dynamic images are handled through Cloudinary. I have decided to use the Cloudinary Widget API, as I felt it offered a good UX and allowed a seamless way of utilizing images that are not stored as a static file. By using Cloudinary, images avoid the risk of being removed on Heroku once deployed. 
 
 ### Colours
 
-One of the challenges of styling the front-end of this website was that users can upload images of their cocktails. This added a lot of variables when choosing the website colors.
+One of the challenges of styling the front-end of this website was that users can upload images of their cocktails. This adds a lot of variables when choosing the website colors. A cocktail can be bright in color, or it can also be a dark-colored cocktail. The background colors of a user's uploaded image can also impact the website's overall feel and tone. 
 
-A cocktail can be quite bright in color, or it can also be a dark-colored cocktail. In addition, the background colors of a user's uploaded image can also have an impact on the website's overall feel and tone. 
+It was necessary to use neutral colors throughout the website to avoid jarring color clashes. For this reason, I choose a bright orange with dark red tones image of a cocktail for the home page image. I also choose this image as it had a dark-colored straw. 
 
-It was important for me to use neutral colors throughout the website to avoid jarring clashes. For this reason, I choose a bright orange with dark red tones image of a cocktail for the home page image. I also choose this image as it had a dark-colored straw in the image. 
+I decided to match the navigation bar, footer, text, and majority of buttons to the color of the straw in this photo. The color I felt closely matched this was #212529: a very dark, almost black, blue. This results in a subtle symmetry that's established once a user enters the website. Users from the home page will feel accustomed to seeing a bright image complemented with darker colors. 
 
-I decided to match the navigation bar, footer, and majority of buttons to the color of the straw in this photo. The color I felt closely matched this was #212529, which is a very dark, almost black blue.
+The background color of the website alternatives between two shades of white (#f7f7f7 and #f1f1ef). I felt these maintained their neutrality whether the image was bright, dark, or in between. 
 
-This resulted in a subtle symmetry that is established once a user enters the website. 
+The navigation buttons used throughout the website were Bootstrap's "outline-dark" and "outline-light". The hover state of these buttons match the color of the navigation bar and footer and created a consistent flow to the website.  
 
-Users from the home page will feel accounted to seeing a bright image complemented with darker colors. 
-
-Finally, the only other color which has been used in this an off-white for the cocktail card body. 
-
-I felt this was a neutral color which didn't feel out of place whatever the cocktail image was in the card. It maintained its neutrality whether the image was bright, dark, or in between. 
-
-In regards to the navigation buttons used throughout the website, I alternated with Bootstrap "outline-dark" and "outline-light". This was because the hover state of the buttons closely match the color of the navigation bar and footer and created a consistent flow to the website.  
-
-A dark blue, almost black (#212529) was chosen for the main text was I felt it contrasted with both backgrounds used in the website (#f7f7f7 and #f1f1ef) I also chose to use this text color, as it was the color used for the footer, navigation bar, and various buttons. This helped to create a consistent feel throughout the whole website, which was important due to the unpredictable shifts that occur due to a user's uploaded cocktail card, and image. 
+The minimal use of background colors, and color shifts with the footer, text, buttons, and navigation bar helped to create a consistent feel. This was especially important due to the unpredictable changes that can occur due to a user's uploaded cocktail card, and image. 
 
 ### Font 
 
-I decided to use two fonts for the website. I chose the font 'Open Sans' for the navigation links, footer links, and all headings. I felt this font was extremely readable, and simple.
+I decided to use two fonts for the website. I chose the font 'Open Sans' for the navigation links, footer links, and all headings. I felt this font was extremely readable, and simple. For the remainder of the text, I chose to use the font 'Roboto'.  I felt this font was easy to read and paired well with Open Sans.
 
-For the body, I chose to use the font 'Roboto'.  I felt this font was easy to read and paired well with Open Sans.
 It was important to not use an unconventional font, which could be distracting, as there are already quite a lot of color differences due to the ability of users to upload their images. 
 
 
@@ -181,22 +149,19 @@ It was important to not use an unconventional font, which could be distracting, 
 
 I felt it was important to use icons throughout the website as it helped to separate chunks of information, and exhibit a welcoming feeling, particularly in the cocktail recipe section, and the cocktail forms.
 
-An icon is used beside the navbar brand, and throughout the cocktail cards, to help identify each piece of information. In addition, I chose to place a trash bin icon beside the delete button within the delete modals, to re-instate the finality of deleting a piece of information. 
+Icons are utilized throughout the cocktail cards, and cocktail recipes to help identify each piece of information. In addition, I chose to place a trash bin icon beside the delete button within the delete modals, to re-instate the finality of deleting a piece of information. 
 
-Social Media icons correlate to the relevant social media sites, for instance, a Facebook icon is used to represent the website's Facebook, etc. These are located in the footer section of the website. Currently, these icons open a new tab in the browser to the social media's home page, as Shake n Stir was a website developed for educational purposes, there are no social media pages. 
-??? remove ??
+Finally, the use of Social Media icons helps to remove unnecessary text, as a Facebook icon is used to represent the website's Facebook, etc. 
 
 ## FEATURES
 
+Throughout the website, I have had added defensive measures to prevent unauthorized access to pages. For instance, a user cannot edit a cocktail created by another user, and a user without an account is unable to create a cocktail. These measures are present on most pages, and offer a secure experience for those who create a profile, and cocktails.
 
 ### Current Features 
 
-
 #### The Navigation Bar
 
-The navbar items vary depending on whether a user has created an account or not, and also whether the account is an admin or not. 
-
-When a new user arrives at the website they will see four items: 
+The navbar items vary depending on whether a user has created an account or not, and also whether the account is an admin or not.When a new user arrives at the website they will see four items: 
 
 - Home,
 - Cocktails,
@@ -223,31 +188,15 @@ Finally, if a user who logs in is an Admin, then they will see one more navigati
 Each page contains a footer, which has a basic site map consisting of 
 Home, Cocktails (Login and Register for non-account users) and (Add Cocktail, and Profile for Logged in users). 
 
-The footer also contains social media links for the website's social media accounts. 
-
-In addition, the footer also features a search bar, to allow users to quickly search for a cocktail. When a user searches for a cocktail they are directed to the cocktails.html page and shown the relevant results. 
-
-
-The main feature of the website is the cocktail recipes. I have broken this aspect of the website into two sections; the collection of cocktails (cocktails.html) and the individual cocktail page (cocktail.html). 
-
+The footer features a search bar, to allow users to quickly search for a cocktail. When a user searches for a cocktail they are directed to the cocktails.html page and shown the relevant results. The footer also contains social media links for the website's social media accounts. 
 
 #### Register and Log In Pages
 
 ##### Register Page
 
-The Register Page consists of a simple form where a user can input a username and password. To help with creating an account, I have inserted both a password field and a confirm password field. To ensure that a user is unable to create an account if their passwords do not match, I have added visual cues via jQuery/Bootstrap validation classes to change the input fields to red and display feedback to the user, to help them create an account. 
-
-In addition, with the help of Python, I have prevented access from posting the form to the database if the password fields do not match.
+The Register Page consists of a simple form where a user can input a username and password. To help with creating an account, I have inserted both a password field and a confirm password field. To ensure that a user is unable to create an account if their passwords do not match, I have added visual cues via jQuery/Bootstrap validation classes to change the input fields to red and display feedback to the user, to help them create an account. In addition, with the help of Python, I have prevented access from posting the form to the database if the password fields do not match.
 
 Finally, I have a link to the log-in page, just in case a user already has an account. 
-
-In regards to the user registration; I have multiple forms of validation to ensure that the user enters the correct password. In addition, within the app.py, I have a validation to ensure that the password field and confirm password field match, otherwise the user cannot register the account. 
-
-I also have front-end cues via javascript and bootstrap which prevents the form from being submitted if the fields are not valid. This ensures that the username meets the criteria, as well that both passwords match. 
-
-They are visual cues that highlight the input field as either green or red on attempted submission. Furthermore, there is an onchange() for the password confirm field, which quickly shows the user if the passwords match or not. 
-
-Finally, if for some reason the user can bypass the front-end/JS cues in regards to the confirm password validation, the backend code will still prevent the user from logging in with invalid information. 
 
 ##### Log In Page
 
@@ -255,139 +204,86 @@ The login page features a simple form, where a user inputs their username and pa
 
 Finally, I have a link to the register page, just in case a user has not yet created an account. 
 
-For both login and register pages, once successful, a user is directed to their profile page. 
-
-
 #### Profile Page
 
-The Profile Page features a card with a personalized Welcome heading using Jinja and the session user's username. 
+The Profile Page features a card with a personalized 'Welcome' heading using Jinja and the session user's username. For quick access, the profile card also features two buttons; Add Cocktail which links to the Add Cocktail Form, and browse Cocktails, which links to the Cocktails.html page. 
 
-For quick access, the profile card also features two buttons; Add Cocktail which links to the Add Cocktail Form, and browse Cocktails, which links to the Browse All Cocktails Page. 
+Beneath the profile card, I chose to place the cocktails a user has created, for quick management. Here a user can see which cocktails they created, as well as buttons to either Edit or Delete their cocktail. When a user clicks to delete their created cocktail, a modal is triggered which asks the user to confirm whether they want to delete the cocktail or not. 
 
-Beneath the profile card, I chose to place the cocktails a user has created, for quick management. Here a user can see which cocktails they created, as well as buttons to either Edit or Delete their cocktail. 
-
-When a user clicks to delete their created cocktail, a modal is triggered which asks the user to confirm whether they want to delete the cocktail or not. 
-
-At the bottom of each profile page, a user is shown two more buttons; Log out, and Delete Profile. 
-
-If a user clicks Log Out they are removed from the current session and redirected to the login page. 
-
-If a user clicks the Delete Account button, a modal is triggered and asks the user to confirm whether they want to delete their account. If yes, the account is removed, and the user is redirected to the home page. 
-
-I have decided to place the account action buttons at the end of the profile page to prevent the profile page from feeling overwhelmed by action buttons. 
-
+At the bottom of each profile page, a user is shown two more buttons; Log out, and Delete Profile. If a user clicks Log Out they are removed from the current session and redirected to the login page. If a user clicks the Delete Account button, a modal is triggered and asks the user to confirm whether they want to delete their account. If yes, the account is removed, and the user is redirected to the home page. 
 
 #### Add Cocktail page
 
-The Add Cocktail page features a BootStrap form. Each field is accompanied by Font Awesome Icons to help style an otherwise simple page. 
-
-I have added placeholder text with instructions for the user to assist in filling out the form. 
-
-Finally, I have given users the option of directly inputting an image URL for their cocktail image, or the option to upload from their files. 
-
-The images are stored in Cloudinary, and the image input button initializes the Cloudinary widget. 
-
-I have appended the button to the file input to keep the form layout consistent. 
-
+The Add Cocktail page features a BootStrap form. Each field is accompanied by Font Awesome Icons to help style an otherwise simple page. I have added placeholder text with instructions for the user to assist in filling out the form. Finally, I have given users the option of directly inputting an image URL for their cocktail image, or the option to upload from their files. The images are stored in Cloudinary, and the image input button initializes the Cloudinary widget. I have appended the button to the file input to keep the form layout consistent. 
 
 #### The Edit Cocktail 
 
-The Edit Cocktail page is the same as the Add Cocktail Page, except for a few layout differences. First, the value of the cocktail remains in the appropriate fields, and a thumbnail of the user's inputted image is displayed. 
+The Edit Cocktail page is the same as the Add Cocktail Page, except for a few layout differences. 
 
-If a user decides to change their cocktail image, the thumbnail is updated accordingly. 
-
-Finally, there is an option for the user to cancel their edit, and revert the changes, there is an option to update their edited cocktail, and to delete their cocktail. 
-
-Like all deleted actions, users are first presented with a modal to confirm their choice. 
-
+First, the value of the cocktail remains in the appropriate fields, and a thumbnail of the user's inputted image is displayed. If a user decides to change their cocktail image, the thumbnail is updated accordingly. Finally, there is an option for the user to cancel their edit, and revert the changes, there is an option to update their edited cocktail, and to delete their cocktail. Like all deleted actions, users are first presented with a modal to confirm their choice. 
 
 #### Cocktail Collection Page
 
 To display the collection of cocktail recipes, I decided to use Bootstrap's cards. I styled these cards to place the user image on top, and place a small amount of information beneath the image. This layout gave a clean, and professional feel, while also giving the other cards space to breathe. Within the body of the card, I decided to omit a short description, as I felt with more and more cocktail cards being added, it could become overwhelming. Therefore, I used Font Awesome icons and labeled each cocktail card with a category: rum, gin, whiskey, etc as well as the servings: 1, 2, etc and who created the cocktail. 
 
-I have also placed a very subtle shadow effect when hovering over the cards, to indicate to the user which card is currently selected. I have also added a 'View' button that redirects the user to that specific cocktail page, as well as an anchor tag on the title of the cocktail card which also redirects the user to the specific cocktail page when clicked. 
-
-When a user clicks on a cocktail card, they are redirected to the cocktail recipe page, where ingredients, and instructions are outlined. 
-
-This allows the user to control which cocktail recipes they wish to view and allows quick navigation between different cocktail recipes. 
-
+I have also placed a very subtle shadow effect when hovering over the cards, to indicate to the user which card is currently selected. I have also added a 'View' button that redirects the user to that specific cocktail page, as well as an anchor tag on the title of the cocktail card which also redirects the user to the specific cocktail page when clicked. When a user clicks on a cocktail card, they are redirected to the cocktail recipe page, where ingredients, and instructions are outlined. This allows the user to control which cocktail recipes they wish to view and allows quick navigation between different cocktail recipes. 
 
 #### Category Page
 
-The Category page which is only accessible through an admin account features a simple list of all current categories with small action buttons beside each one; edit and delete. 
+The Category page which is only accessible through an admin account features a simple list of all current categories with small action buttons beside each one; edit and delete. Clicking on the edit button, redirects to the 'Edit Category Form' and clicking on the delete button, triggers a confirmation modal to delete the category. I tried to keep the information and structure as simple and concise as possible. This was a decision choice. The goal was to find a balance, as these pages are highly text-based, and can easily look overwhelming, cluttered. 
 
-#### General Features
+#### Search Functionality 
 
-Throughout the website, I implemented numerous buttons to help with quick access, as well as acting as subtle call-to-action to encourage users to create a cocktail/browse cocktails.
+Users can search for cocktail names and cocktail categories. If a user searches for 'Whiskey' all cocktails with the category of whiskey are returned. If there are no results returned, the page displays a list of popular cocktails. I chose to use a list, as cocktail cards were already used on the index page, and the cocktails.html page. I felt a list offered concise information and a visual change.
 
-I have mainly used standard Bootstrap button classes, as I felt they fit my needs. Particularly, Bootstrap's 'btn-outline-dark' class which when hovered reveals a button the same color as the footer, and navigation bar. 
+#### 404 Page
 
-As the cocktail recipe page can be quite text-based, I decided to use font-awesome icons for each section i.e instructions, ingredients, etc. I felt this added flair and character to the recipe page, while also not being distracting. 
-
-For the adding/editing categories page, I tried to keep the information and structure as simple and concise as possible. This was a decision choice. The goal was to find a balance, as these pages are highly text-based, and can easily look overwhelming, cluttered. 
-
-In regards to the cocktails, I have aimed to have a mix of popular and not so popular cocktails, which I hope encourages future users to continue the trend of adding both types of cocktails. 
-
-The search feature when returns no result, displays a list of popular cocktails, I chose to not use cocktail cards here because I felt cocktail cards were already used on the index page, and the cocktails.html page, as a result, I felt a list offered concise information. 
-
-I have also added a 404.html page with a button to redirect users to the home page. This creates a better experience for all users, so they do not have to use the browser to navigate. 
-
-Furthermore, throughout the website, I have had added defensive measures to prevent unauthorized access to pages. For instance, a user cannot edit a cocktail created by another user, and a user without an account is unable to create a cocktail. 
+If a user finds themselves with a broken link or a page that doesn't exist, they are presented with a 404.html page. This page features a title, and some text to explain what has happened. It also features a button to redirect users to the home page. This creates a better experience for all users, so they do not have to use the browser to navigate.
 
 ### Future Features 
 
-In the future, I would like to deepen the search parameters, so when a user searches for lime, all the cocktails with lime garnish will populate. 
+1. In the future, I would like to deepen the search parameters, so when a user searches for lime, all the cocktails with lime garnish will populate. 
 
-I would also like to add instructional videos in the future, where people can upload a video of themselves making the cocktail so people have a clearer idea of how the cocktail is made. 
+2. I would like to add an option for users to save their favorite cocktails to their profile. 
 
-Finally, I would like to add an option for users to save their favorite cocktails to their profile. 
+3. I would like to introuduce sub classes for cocktails. For example, for each Martini recipe, they are sub-classes which link to French Martini, Dry Martini etc. 
 
-Introduce more admin accounts. 
-
-Introduce a full-text search feature. 
-
-Introduce video instructions:
-
-Introduce sub class cocktails for instance 
-
-Martini:
-	French Martini 
-	Dry Martini etc 
-
+4. Finally, in the future, I would also like to introduce more admin accounts, to help manage the website. 
 
 ## Database Information. 
 
-I have opted to use a NoSQL database, namely, MongoDB to store category, cocktail, and user information. I tried to keep the information as concise as possible, and where possible linked data to one another. For instance, each cocktail has a created_by which links to the id of a user. 
+I have opted to use a NoSQL database, namely, MongoDB to store category, cocktail, and user information. I tried to keep the information as concise as possible, and where possible link data to one another. For instance, each cocktail has a created_by which links to the id of a user. Each cocktail also has a category, which links to the catetories 'category_name' value.
 
-Example of Database:
+I have created a database wireframe using dbdiagram. This can be seen [here](./docs/wireframes/database-wireframe.png)
+
+Example of Database: 
 
 Cocktails: 
 
 _id: ObjectID('Cocktail ID')
-category_name: 
-cocktail_name:
-cocktail_description:
-cocktail_ingredients:
-cocktail_instructions:
-cocktail_serving:
-created_by:
-cocktail_img:
+category_name: "Bourbon"
+cocktail_name: "Paper Plane"
+cocktail_description: "A fruity twist on the classic Whiskey Sour."
+cocktail_ingredients: "3/4 ounce bourbon\r\n3/4 ounce Aperol\r\n3/4 ounce Amaro Nonino Quintessentia\r\n3/4 ounce lemon juice, freshly squeezed"
+cocktail_instructions: "Add the bourbon, Aperol, Amaro Nonino, and lemon juice into a shaker with ice. \r\nShake until well-chilled.\r\nStrain into a coupe glass."
+cocktail_serving: "1"
+created_by: "admin"
+cocktail_img: "https://res.cloudinary.com/dx82dshakenstir/image/upload/v1620466353/fbtgvcs3qifryjxulo8o.jpg"
 
 Categories: 
 
 _id: ObjectID ('Category ID')
-category_name:"Rum"
+category_name:"Bourbon"
 
 Users:
 
 _id: ObjectID('User ID')
-username: (username)
-password: ("password")
-
+username: "username"
+password: "password"
 
 ## Troubleshooting
 
-I experienced several issues in different stages of development. Often these issues were part of a major feature, and so I have separated the troubleshooting aspect accordingly. 
+I experienced several issues in different stages of development. Often these issues were part of a major feature, and so I have divided the troubleshooting section accordingly. 
 
 ### Register Form
 
@@ -460,7 +356,9 @@ I experienced several issues in different stages of development. Often these iss
 * [MongoDB](https://www.mongodb.com/) was the Database used in this project.
 * The fonts used in this website were imported from [Google Fonts](https://fonts.google.com/). 
 * I used [Font Awesome](https://fontawesome.com/) for all icons.
+I used [Unsplash](https://unsplash.com/) to source images used on the website.
 * [Bootstrap](https://getbootstrap.com/) was used to structure the layout of the website and maintaining layout and responsiveness to tablet and mobile devices. I linked Bootstrap to the HTML document via [CDN](https://www.bootstrapcdn.com/).
+* [Cloudinary](https://cloudinary.com/) was used to store user uploaded images. 
 * This website was initially designed with wireframes using [Balsamiq](https://balsamiq.com/). 
 * [Git](https://git-scm.com/) version control was used to store the version of files and track the development progress. 
 * The IDE used to work on this project was [Gitpod](https://www.gitpod.io/). 
@@ -493,11 +391,11 @@ Before attempting to deploy this website on Heroku, I first created my Database 
 5. Name your Database.
 6. Create an initial collection, I chose to create one called 'categories', and click on the create button.
 7. For my project, I created three collections: 
-	1. 'Categories'
-	2. 'Cocktails'
-	3. 'Users'
+	* 'Categories'
+	* 'Cocktails'
+	* 'Users'
 8. Click on one of your created collections, and click 'Insert Document'. This is where the information is stored. For example, in the 'Categories' collection, I insert a document with the following information: 
-	1. "category_name: Rum"
+	* "category_name: Rum"
 9. You can decide to manually add the remaining information for this document, or insert more information later with Python. I chose to populate the remaining information with Python. 
 10. To continue to create your Database manually, repeat steps 6-8 as needed.
 
@@ -560,8 +458,6 @@ The website text for headings, paragraphs, etc were written by myself.
 
 Cocktail recipes were taken from [Liquor.com](https://www.liquor.com/recipes/)
 
-
-
 ## References for Code
 
 * Inspiration for the README file was taken from Code Institute README template. This can be seen [here](https://github.com/Code-Institute-Solutions/SampleREADME) 
@@ -580,7 +476,6 @@ Cocktail recipes were taken from [Liquor.com](https://www.liquor.com/recipes/)
 
 ## Acknowledgements
 
-
-* I would like to thank my mentor Aaron Sinnott for his continuous support and feedback. 
+* I would like to thank my mentor Aaron Sinnott for his continuous support, encouragement, and feedback.  
 * I would like to thank the Tutors at Code Institute for their support and patience.
 * I would like to thank the Code Institute Slack community for assistance and support in understanding JavaScript. 
