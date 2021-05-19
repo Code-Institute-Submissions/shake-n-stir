@@ -473,24 +473,35 @@ Example of Database:
 Cocktails: 
 
 _id: ObjectID('Cocktail ID')
+
 category_name: "string"
+
 cocktail_name: "string"
+
 cocktail_description: "string"
+
 cocktail_ingredients: "string"
+
 cocktail_instructions: "string"
+
 cocktail_serving: "string"
+
 created_by: "string"
+
 cocktail_img: "string"
 
 Categories: 
 
 _id: ObjectID ('Category ID')
+
 category_name:"string"
 
 Users:
 
 _id: ObjectID('User ID')
+
 username: "string"
+
 password: "string"
 
 You can now run this project locally. 
