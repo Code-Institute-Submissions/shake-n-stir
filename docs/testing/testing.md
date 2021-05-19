@@ -1,8 +1,5 @@
 # Testing
 
-Table of Contents?
-
-
 I have organized the testing.md file by first testing the HTML files, CSS file, the JavaScript file, the Python file, and finally general site testing. I tested each component of the website on desktop, tablet, and mobile. 
 
 ## HTML 
@@ -21,7 +18,6 @@ I tested my CSS code via W3C CSS Validator. No errors were found here.
 
 
 ## JavaScript 
-
 
 ### JSHint Testing 
 
@@ -59,11 +55,11 @@ I have mainly used JavaScript to help add and remove classes for validation purp
 
 I tested my Python code using [PEP8 Online Validator](http://pep8online.com/). There were no errors found.
 
-I checked Gitpods python linter, and no errors were found, except for the env, WHICH I'LL REMOVE WHEN COMPLETE!
+I checked Gitpods python linter, and no errors were found, except for the message that 'env' is imported by unused.
 
 ## Site General Testing
 
-I tested the various aspects of the website through the development process. Once the project was deployed to Heroku I once again tested the website, to ensure that there were no oversights or unknown bugs. 
+I tested the various aspects of the website through the development process. Once the project was deployed to Heroku I once again tested the website, to ensure that there were no oversights or unknown bugs.
 
 ### Navigation
 
