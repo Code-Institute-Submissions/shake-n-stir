@@ -231,7 +231,7 @@ I tested the various aspects of the website through the development process. Onc
 * I want to have my own profile to store my created cocktails.
 
     * When a user creates a cocktail, the cocktail information is also stored on their profile. Each time a user is logged into their Profile, they can quickly view their cocktails. 
-        * This can be seen[here](./user-stories/view-self-cocktails.png)
+        * This can be seen[here](./user-stories/user-story-view-self-cocktails.png)
 
 * I want to be able to edit or delete my created cocktail recipes.
 
@@ -246,5 +246,5 @@ I tested the various aspects of the website through the development process. Onc
 
 * I want my profile to be password protected.
 
-    * A user is not able to create an account, without also creating a password for their account. A profile cannot be accessed when logging in without knowing the password. All passwords are protected by HASH??? 
+    * A user is not able to create an account, without also creating a password for their account. A profile cannot be accessed when logging in without knowing the password. In addition, all passwords are protected by hashing. 
         * A the login form displaying the password can be seen [here](./user-stories/user-story-password.png)
