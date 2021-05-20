@@ -89,7 +89,7 @@ I tested the various aspects of the website through the development process. Onc
 * I confirmed that on mobile, the footer links are stacked to aid with design. 
 
 
-### Further General Testing on Homepage. 
+### Further General Testing on Homepage
 
 * I clicked on every home page button to make sure that they led the user to the correct section of the website. 
 * I clicked on the cocktail cards featured on the home page and confirmed they directed users to the correct cocktail page. 

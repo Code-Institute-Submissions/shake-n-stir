@@ -253,7 +253,7 @@ If an internal server error occurs, users are presented with a 500.html page. Th
 
 4. Finally, in the future, I would also like to introduce more admin accounts, to help manage the website. 
 
-## Database Information. 
+## Database Information
 
 I used a NoSQL Database, namely MongoDB for this project. MongoDB was used to store category, cocktail, and user information. I tried to keep the information as concise as possible, and where possible link data to one another. For instance, each cocktail has a created_by which links to the id of a user. Each cocktail also has a category, which links to the category's 'category_name' value.
 
