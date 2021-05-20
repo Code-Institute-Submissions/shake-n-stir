@@ -325,6 +325,7 @@ I experienced several issues in different stages of development. Often these iss
 
 	I resolved this issue by placing the for loop outside of the column declaration. 
 
+7. I experienced an issue when trying to edit a cocktail. I would receive a 503 Error when submitting the new cocktail form. The issue was resolved by placing the POST method above the GET methods. 
 
 ## Known Issues 
 
