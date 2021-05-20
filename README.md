@@ -393,6 +393,34 @@ Before attempting to deploy this website on Heroku, I first created my Database 
 9. You can decide to manually add the remaining information for this document, or insert more information later with Python. I chose to populate the remaining information with Python. 
 10. To continue to create your Database manually, repeat steps 6-8 as needed.
 
+The database I have created for this project is as follows: 
+
+| Users | type|   	
+|---	|---	
+|_id  	| ObjectId ('User ID') |   
+|username | "string" |   	  
+|password | "string" |  
+
+
+| Categories | type|   	
+|---	|---	
+|_id  	| ObjectId ('Category ID') |   
+|category_name | "string" |
+
+
+| Cocktails | type|   	
+|---	|---	
+|_id  	| ObjectId ('cocktail ID') |   
+|category_name | "string" |
+|cocktail_name 	| "string" |   
+|cocktail_description | "string" |
+|cocktail_ingredients | "string" |
+|cocktail_instructions 	| "string" |
+|cocktail_serving | "string" |
+|created_by | "string" |
+|cocktail_img | "string" |
+
+
 ### Heroku Deployment 
 
 It's important to ensure that the Requirements.txt file is up to date with the resources used in the project. 
