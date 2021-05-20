@@ -255,7 +255,7 @@ If an internal server error occurs, users are presented with a 500.html page. Th
 
 ## Database Information. 
 
-I have opted to use a NoSQL database, namely, MongoDB to store category, cocktail, and user information. I tried to keep the information as concise as possible, and where possible link data to one another. For instance, each cocktail has a created_by which links to the id of a user. Each cocktail also has a category, which links to the catetories 'category_name' value.
+I used a NoSQL Database, namely MongoDB for this project. MongoDB was used to store category, cocktail, and user information. I tried to keep the information as concise as possible, and where possible link data to one another. For instance, each cocktail has a created_by which links to the id of a user. Each cocktail also has a category, which links to the category's 'category_name' value.
 
 I have created a database wireframe using dbdiagram. This can be seen [here](./docs/wireframes/database-wireframe.png)
 
