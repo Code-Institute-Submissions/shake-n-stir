@@ -208,7 +208,7 @@ def edit_cocktail(cocktail_id):
             "cocktail_img": request.form.get("cocktail_img")
         }
         mongo.db.cocktails.update({"_id": ObjectId(cocktail_id)}, submit)
-        flash("Cocktail Successfully Added")
+        flash("Cocktail Successfully Updated")
         return redirect(url_for('view_cocktails'))
 
     # allows access to admin or cocktail creator to edit cocktail
