@@ -239,6 +239,10 @@ Users can search for cocktail names and cocktail categories. If a user searches 
 
 If a user finds themselves with a broken link or a page that doesn't exist, they are presented with a 404.html page. This page features a title, and some text to explain what has happened. It also features a button to redirect users to the home page. This creates a better experience for all users, so they do not have to use the browser to navigate.
 
+#### 500 Error Page
+
+If an internal server error occurs, users are presented with a 500.html page. This page has the same features as the 404 page, except with a different title and text to inform the users about the specific error that has occurred.
+
 ### Future Features 
 
 1. In the future, I would like to deepen the search parameters, so when a user searches for lime, all the cocktails with lime garnish will populate. 
@@ -320,6 +324,21 @@ I experienced several issues in different stages of development. Often these iss
 6. I experienced an issue when trying to display all created cocktails in a structure card layout. I initially, placed a for loop after Bootstrap's col class. This resulted in the cocktail cards just occupying one side of the screen. Since I placed the loop after the column was placed, each iteration continued to add to a single column. 
 
 	I resolved this issue by placing the for loop outside of the column declaration. 
+
+
+## Known Issues 
+
+There are two known issues with this project.
+
+1. When viewing the live preview from Gitpod, a warning appears on the console. This warning relates to the site.webmanifest:1 for favicons.
+
+```
+Manifest: Line: 1, column: 1, Syntax error.
+```
+
+I chose to ignore this warning, as on the deployed Heroku version of the website, this error does not occur. 
+
+
 
 ## Technologies Used
 
@@ -493,7 +512,7 @@ Cocktail recipes were taken from [Liquor.com](https://www.liquor.com/recipes/)
 *  Slack discussion on iterating through modal ID's can be found [here](https://code-institute-room.slack.com/archives/C7JQY2RHC/p1619951407137000?thread_ts=1619950530.136800&cid=C7JQY2RHC)
 *  Code to help understand creating a regex pattern for accepted numbers can be found [here](https://stackoverflow.com/questions/32435949/regex-to-allow-only-number-between-1-to-12)
 *  Code to help understand Python's Splitlines() function can be found [here](https://www.w3schools.com/python/ref_string_splitlines.asp) 
-*  Code to help implement 404 Page Not Found Error can be found on Flask's Official Documentation [here](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/)
+*  Code to help implement 404 Page Not Found Error and 500 Internal Server Error can be found on Flask's Official Documentation [here](https://flask.palletsprojects.com/en/2.0.x/errorhandling/)
 
 
 ## Acknowledgements
