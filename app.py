@@ -196,17 +196,6 @@ def edit_cocktail(cocktail_id):
     if session.get("user") is None:
         return render_template("login.html")
 
-    # allows access to admin or cocktail creator to edit cocktail
-    if session.get("user") == cocktail["created_by"] or (
-                                session["user"] == "admin".lower()):
-        return render_template(
-                "edit_cocktail.html", cocktail=cocktail, categories=categories)
-
-    # prevents users from gaining access to editing other cocktails
-    else:
-        flash("You can only edit cocktails that you created.")
-        return render_template("cocktails.html")
-
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -221,6 +210,17 @@ def edit_cocktail(cocktail_id):
         mongo.db.cocktails.update({"_id": ObjectId(cocktail_id)}, submit)
         flash("Cocktail Successfully Added")
         return redirect(url_for('view_cocktails'))
+
+    # allows access to admin or cocktail creator to edit cocktail
+    if session.get("user") == cocktail["created_by"] or (
+                                session["user"] == "admin".lower()):
+        return render_template(
+                "edit_cocktail.html", cocktail=cocktail, categories=categories)
+
+    # prevents users from gaining access to editing other cocktails
+    else:
+        flash("You can only edit cocktails that you created.")
+        return render_template("cocktails.html")
 
     cocktail = mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
@@ -337,4 +337,4 @@ def internal_server_error(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
