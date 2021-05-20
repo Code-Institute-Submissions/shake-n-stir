@@ -188,7 +188,7 @@ I tested the various aspects of the website through the development process. Onc
 
 * I tested the website using [Google Mobile Friendly Test](https://search.google.com/test/mobile-friendly) and the website has passed. 
 
-* I tested the website uisng Google Lighthouse on both mobile and desktop. The website scored '97' on Desktop and '81' on Mobile.
+* I tested the website using Google Lighthouse on both mobile and desktop. The website scored '97' on Desktop and '81' on Mobile.
 
 
 ## Testing User Stories 
@@ -229,7 +229,7 @@ I tested the various aspects of the website through the development process. Onc
 * I want to have my own profile to store my created cocktails.
 
     * When a user creates a cocktail, the cocktail information is also stored on their profile. Each time a user is logged into their Profile, they can quickly view their cocktails. 
-        * This can be seen[here](./user-stories/user-story-view-self-cocktails.png)
+        * This can be seen [here](./user-stories/user-story-view-self-cocktails.png)
 
 * I want to be able to edit or delete my created cocktail recipes.
 
