@@ -328,16 +328,15 @@ I experienced several issues in different stages of development. Often these iss
 
 ## Known Issues 
 
-There are two known issues with this project.
+There is one known issue with this project.
 
-1. When viewing the live preview from Gitpod, a warning appears on the console. This warning relates to the site.webmanifest:1 for favicons.
+A warning appears on the deployed Heroku version of the website.
 
 ```
-Manifest: Line: 1, column: 1, Syntax error.
+rollbar.min.js:1 env-config Cannot read environment override from local storage
 ```
 
-I chose to ignore this warning, as on the deployed Heroku version of the website, this error does not occur. 
-
+ This warning relates to the Cloudinary widget, as when searching for 'rollbar.min.js' within my files, it doesn't exist. I have searched extensively for a solution for this warning, and I was unable to find one. However, upon speaking with Code Institute's Tutor support, it seems the issue is with Cloudinary. As a result, at least for now, I have to ignore this warning. 
 
 
 ## Technologies Used
