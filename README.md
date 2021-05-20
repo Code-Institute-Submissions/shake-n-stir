@@ -1,4 +1,4 @@
-# Shake n Stir - Cocktails right at home
+# Shake n Stir
 
 Shake and Stir is a community-focused cocktail recipe app. This app aims to promote, discover and share different cocktail recipes.
 
