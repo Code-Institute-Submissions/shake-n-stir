@@ -100,7 +100,7 @@ I tested the various aspects of the website through the development process. Onc
 
 * I created an account for a user with a correct username and password and confirmed the account was created successfully. I checked the database and could see the newly created user.
 * I attempted to create an account with a username that already exists in the database. I confirmed it is not possible, and the user is notified the username already exists. 
-* I attempted to create an account without matching the password fields and confirmed both password fields need to match to create an account. 
+* I attempted to create an account without matching the password fields and confirmed both password fields need to match to create an account.
 
 
 #### Login Form
@@ -172,10 +172,12 @@ I tested the various aspects of the website through the development process. Onc
 * I correctly submitted the Add Category form, and confirmed it populated on the category page, and category section in add/edit cocktail forms.
 
 
-### 404 Page 
+### 404 and 500 Error Pages 
 
 * I entered an incorrect URL and confirmed that the 404.html is rendered. I confirmed that the home button on the 404 page redirects users back to the correct page.
-* I have confirmed that the navigation links and footer links operate correctly on the 404.html. 
+* I have confirmed that the navigation links and footer links operate correctly on the 404.html.
+* I purposely created a typo with the cocktails.html template to envoke a 500 internal error. I confirmed that the 500.html page is rendered. 
+* I have confirmed that the home button on the 500 error page redirects users back to the correct page.
 
 
 ### Responsiveness 
