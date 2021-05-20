@@ -69,6 +69,7 @@ def register():
         if password != confirm_password:
             flash("Please ensure that your passwords match.")
             return redirect(url_for("register"))
+        # if passwords match account will be created
         if password == confirm_password:
             register = {
                 "username": request.form.get("username").lower(),
@@ -191,14 +192,17 @@ def edit_cocktail(cocktail_id):
     cocktail = mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
 
+    # prevents non-user from editing cocktails
     if session.get("user") is None:
         return render_template("login.html")
 
+    # allows access to admin or cocktail creator to edit cocktail
     if session.get("user") == cocktail["created_by"] or (
                                 session["user"] == "admin".lower()):
         return render_template(
                 "edit_cocktail.html", cocktail=cocktail, categories=categories)
 
+    # prevents users from gaining access to editing other cocktails
     else:
         flash("You can only edit cocktails that you created.")
         return render_template("cocktails.html")
@@ -280,6 +284,7 @@ def edit_category(category_id):
         flash("You must have an admin account to edit categories")
         return render_template("login.html")
 
+    # provides access for admin accounts to edit categories
     if session["user"] == "admin".lower():
         if request.method == "POST":
             submit = {
@@ -288,6 +293,8 @@ def edit_category(category_id):
             mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
             flash("Category Successfully Updated")
             return redirect(url_for("get_categories"))
+
+    # prevents non admin users from editing cocktails
     else:
         flash("You must have an admin account to edit categories")
         return redirect(url_for("view_cocktails"))
@@ -303,11 +310,13 @@ def delete_category(category_id):
         flash("You must have an admin account to edit categories")
         return render_template("login.html")
 
+    # allows admin account to delete categories
     if session["user"] == "admin".lower():
         mongo.db.categories.remove({"_id": ObjectId(category_id)})
         flash("Category Successfully Deleted")
         return redirect(url_for("get_categories"))
 
+    # prevents non admin accounts from deleting categories
     else:
         flash("You must have an admin account to delete categories")
         return redirect(url_for("view_cocktails"))
